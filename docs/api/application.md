@@ -39,11 +39,9 @@ Creates an application instance.
   const app = createApp(App)
   ```
 
-- **See also:** [Guide - Creating a Vue Application](/guide/essentials/application.html)
-
 ## createSSRApp() {#createssrapp}
 
-Creates an application instance in [SSR Hydration](/guide/scaling-up/ssr.html#client-hydration) mode. Usage is exactly the same as `createApp()`.
+Creates an application instance in mode. Usage is exactly the same as `createApp()`.
 
 ## app.mount() {#app-mount}
 
@@ -63,7 +61,7 @@ Mounts the application instance in a container element.
 
   If the component has a template or a render function defined, it will replace any existing DOM nodes inside the container. Otherwise, if the runtime compiler is available, the `innerHTML` of the container will be used as the template.
 
-  In SSR hydration mode, it will hydrate the existing DOM nodes inside the container. If there are [mismatches](/guide/scaling-up/ssr.html#hydration-mismatch), the existing DOM nodes will be morphed to match the expected output.
+  In SSR hydration mode, it will hydrate the existing DOM nodes inside the container. If there are, the existing DOM nodes will be morphed to match the expected output.
 
   For each app instance, `mount()` can only be called once.
 
@@ -148,9 +146,6 @@ Provide a value that can be injected in all descendant components within the app
 
   </div>
 
-- **See also:**
-  - [Provide / Inject](/guide/components/provide-inject.html)
-  - [App-level Provide](/guide/components/provide-inject.html#app-level-provide)
 
 ## app.component() {#app-component}
 
@@ -180,8 +175,6 @@ Registers a global component if passing both a name string and a component defin
   // retrieve a registered component
   const MyComponent = app.component('my-component')
   ```
-
-- **See also:** [Component Registration](/guide/components/registration.html)
 
 ## app.directive() {#app-directive}
 
@@ -219,11 +212,9 @@ Registers a global custom directive if passing both a name string and a directiv
   const myDirective = app.directive('my-directive')
   ```
 
-- **See also:** [Custom Directives](/guide/reusability/custom-directives.html)
-
 ## app.use() {#app-use}
 
-Installs a [plugin](/guide/reusability/plugins.html).
+Installs a.
 
 - **Type**
 
@@ -254,8 +245,6 @@ Installs a [plugin](/guide/reusability/plugins.html).
   app.use(MyPlugin)
   ```
 
-- **See also:** [Plugins](/guide/reusability/plugins.html)
-
 ## app.mixin() {#app-mixin}
 
 Applies a global mixin (scoped to the application). A global mixin applies its included options to every component instance in the application.
@@ -263,7 +252,7 @@ Applies a global mixin (scoped to the application). A global mixin applies its i
 :::warning Not Recommended
 Mixins are supported in Vue 3 mainly for backwards compatibility, due to their widespread use in ecosystem libraries. Use of mixins, especially global mixins, should be avoided in application code.
 
-For logic reuse, prefer [Composables](/guide/reusability/composables.html) instead.
+For logic reuse, prefer instead.
 :::
 
 - **Type**
@@ -276,7 +265,7 @@ For logic reuse, prefer [Composables](/guide/reusability/composables.html) inste
 
 ## app.version {#app-version}
 
-Provides the version of Vue that the application was created with. This is useful inside [plugins](/guide/reusability/plugins.html), where you might need conditional logic based on different Vue versions.
+Provides the version of Vue that the application was created with. This is useful inside, where you might need conditional logic based on different Vue versions.
 
 - **Type**
 
@@ -300,8 +289,6 @@ Provides the version of Vue that the application was created with. This is usefu
     }
   }
   ```
-
-- **See also:** [Global API - version](/api/general.html#version)
 
 ## app.config {#app-config}
 
@@ -391,15 +378,13 @@ Assign a custom handler for runtime warnings from Vue.
 
 ## app.config.performance {#app-config-performance}
 
-Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the [performance.mark](https://developer.mozilla.org/en-US/docs/Web/API/Performance/mark) API.
+Set this to `true` to enable component init, compile, render and patch performance tracing in the browser devtool performance/timeline panel. Only works in development mode and in browsers that support the API.
 
 - **Type**: `boolean`
 
-- **See also:** [Guide - Performance](/guide/best-practices/performance.html)
-
 ## app.config.compilerOptions {#app-config-compileroptions}
 
-Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the [`compilerOptions` option](/api/options-rendering.html#compileroptions).
+Configure runtime compiler options. Values set on this object will be passed to the in-browser template compiler and affect every component in the configured app. Note you can also override these options on a per-component basis using the .
 
 ::: warning Important
 This config option is only respected when using the full build (i.e. the standalone `vue.js` that can compile templates in the browser). If you are using the runtime-only build with a build setup, compiler options must be passed to `@vue/compiler-dom` via build tool configurations instead.
@@ -429,8 +414,6 @@ Specifies a check method to recognize native custom elements.
     return tag.startsWith('ion-')
   }
   ```
-
-- **See also:** [Vue and Web Components](/guide/extras/web-components.html)
 
 ### app.config.compilerOptions.whitespace {#app-config-compileroptions-whitespace}
 
@@ -575,5 +558,3 @@ An object for defining merging strategies for custom component options.
   app.mount('#app')
   // logs 'Hello Vue'
   ```
-
-- **See also:** [Component Instance - `$options`](/api/component-instance.html#options)
