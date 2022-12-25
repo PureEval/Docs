@@ -12,7 +12,11 @@ export default {
 
     nav: [
       { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
-      { text: 'API Reference Documentation', link: '/api/reference', activeMatch: '/api/' }
+      {
+        text: 'API Reference Documentation', 
+        activeMatch: `^/api/`,
+        link: '/api/'
+      }
     ],
 
     editLink: {
@@ -25,4 +29,15 @@ export default {
       copyright: 'Copyright © 2022 PureEval'
     }
   }
+}
+
+export const sidebar = {
+  '/api/': [
+    {
+      text: 'Global API',
+      items: [
+        { text: 'Application', link: '/api/application' },
+      ]
+    },
+  ]
 }
