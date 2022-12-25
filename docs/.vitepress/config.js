@@ -3,8 +3,6 @@ export default {
   title: 'PureEval',
   description: 'PureEval Documentation',
 
-  base: '/documentation/',
-
   lastUpdated: true,
 
   themeConfig: {
