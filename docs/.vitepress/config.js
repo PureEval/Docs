@@ -6,6 +6,7 @@ export default {
   lastUpdated: true,
 
   themeConfig: {
+
     logo: '/logo.svg',
 
     nav: [
@@ -15,6 +16,10 @@ export default {
         activeMatch: `^/api/`,
         link: '/api/'
       }
+    ],
+
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/PureEval/PureEval' }
     ],
 
     editLink: {
