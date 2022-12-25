@@ -2,11 +2,11 @@
 layout: home
 
 title: PureEval
-titleTemplate: A JavaScript Functional-Programming Toolset
+titleTemplate: A JavaScript Functional Programming Toolset
 
 hero:
   name: PureEval
-  text: A JavaScript functional-programming toolset
+  text: A JavaScript functional programming toolset
   actions:
     - theme: brand
       text: Get Started
@@ -23,3 +23,10 @@ features:
   - title: Lightweight
     details: PureEval is lightweight and easy to integrate.
 ---
+
+<style>
+  :root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe, #41d1ff);
+}
+</style>
