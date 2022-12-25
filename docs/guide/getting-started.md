@@ -31,7 +31,7 @@ console.log(pureEval.add(1)(114513)); //114514
 
 ## For ESM
 
-Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.es.min.js` and `require` it in your code like below.
+Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.es.min.js` and `import` it in your code like below.
 
 ```javascript
 import * as pureEval from 'PureEval.es.min.js'
