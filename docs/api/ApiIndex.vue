@@ -7,7 +7,9 @@ import { ref, computed } from 'vue'
 
 const query = ref('')
 const normalize = (s: string) => s.toLowerCase().replace(/-/g, ' ')
+
 const unavailableNotice = "API reference documentation is not available, this page is just a layout example, forked from Vue.js."
+const unavailableStatus = false
 
 const filtered = computed(() => {
   const q = normalize(query.value)
@@ -64,7 +66,7 @@ const filtered = computed(() => {
       </div>
     </div>
 
-    <section id="unavailable">
+    <section id="unavailable" v-if="unavailableStatus">
     <span>{{unavailableNotice}}</span>
     </section>
 
