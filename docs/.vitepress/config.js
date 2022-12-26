@@ -1,3 +1,7 @@
+import mathjax3 from 'markdown-it-mathjax3'
+
+const customElements = ['mjx-container']
+
 export default {
   lang: 'en-US',
   title: 'PureEval',
@@ -12,7 +16,7 @@ export default {
     nav: [
       { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
       {
-        text: 'API Reference Documentation', 
+        text: 'API Reference Documentation',
         activeMatch: `^/api/`,
         link: '/api/'
       }
@@ -30,6 +34,20 @@ export default {
     footer: {
       message: 'PureEval released under the GPL-3.0 License.',
       copyright: 'Copyright © 2022 PureEval'
+    }
+  },
+
+  markdown: {
+    config: (md) => {
+      md.use(mathjax3)
+    }
+  },
+
+  vue: {
+    template: {
+      compilerOptions: {
+        isCustomElement: (tag) => customElements.includes(tag)
+      }
     }
   }
 }
