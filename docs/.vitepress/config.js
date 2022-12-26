@@ -39,7 +39,7 @@ export const sidebar = {
     {
       text: 'Global API',
       items: [
-        { text: 'Application', link: '/api/application' },
+        { text: 'Curry', link: '/api/curry' },
       ]
     },
   ]
