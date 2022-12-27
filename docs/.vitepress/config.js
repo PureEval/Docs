@@ -58,6 +58,7 @@ export const sidebar = {
       text: 'Global API',
       items: [
         { text: 'Curry', link: '/api/curry' },
+        { text: "Transform", link: '/api/transform' }
       ]
     },
   ]

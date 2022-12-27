@@ -1,5 +1,7 @@
 # Curry {#curry-api}
 
+在这里要提醒您：PureEval 中一切的多参函数都是柯里化的。
+
 ## curry() {#curry}
 
 将一个函数变为柯里化函数
