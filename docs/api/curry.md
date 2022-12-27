@@ -18,7 +18,7 @@ $$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarro
 
 柯里化后的函数中有两个特殊属性：
 
-$$Curried \ \begin{cases}len \ \leftarrow \ 当前函数距离调用还需要传入的参数数量\\ origin \ \leftarrow \ 当前函数的逆柯里化函数\end{cases}$$
+$$Curried \ \begin{cases}len \ \leftarrow \ Number of arguments required for this function\\ origin \ \leftarrow \ This function after inverse Coriolisation\end{cases}$$
 
 - **Example**
 
