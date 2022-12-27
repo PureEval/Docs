@@ -18,7 +18,11 @@ $$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarro
 
 柯里化后的函数中有两个特殊属性：
 
-$$Curried \ \begin{cases}len \ \leftarrow \ Number of arguments required for this function\\ origin \ \leftarrow \ This function after inverse Coriolisation\end{cases}$$
+$$Curried \ \begin{cases}len \ \leftarrow \\ origin \ \leftarrow \end{cases}$$
+
+> `len` is the number of arguments required for this function
+
+> `origin` is this function after inverse Coriolisation
 
 - **Example**
 
