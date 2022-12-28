@@ -59,7 +59,8 @@ export const sidebar = {
       items: [
         { text: 'Currying', link: '/api/currying' },
         { text: "Transform", link: '/api/transform' },
-        { text: "Logic", link: '/api/logic' }
+        { text: "Logic", link: '/api/logic' },
+        { text: "String", link: '/api/string' }
       ]
     },
   ]

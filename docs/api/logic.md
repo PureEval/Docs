@@ -10,7 +10,7 @@ $$Bool \rightarrow Bool \rightarrow Bool$$
 
 - **Details**
 
-传入两个布尔类型的参数（记为 $a,b$），则结果为 $a || b$。
+传入两个布尔类型的参数（记为 $a,b$），则结果为 $a \vee b$。
 
 - **Example**
 
@@ -30,7 +30,7 @@ $$Bool \rightarrow Bool \rightarrow Bool$$
 
 - **Details**
 
-传入两个布尔类型的参数（记为 $a,b$），则结果为 $a \&\& b$。
+传入两个布尔类型的参数（记为 $a,b$），则结果为 $a \land b$。
 
 - **Example**
 
