@@ -43,3 +43,24 @@ const div_and_add = pipe(div(2), add(1));
 
 div_and_add(229026);//114514
 ```
+
+## call() {#call}
+
+执行一个已有的函数。
+
+- **Type**
+
+
+$$((a,b,...,n)\rightarrow x)\rightarrow [a,b,...,n]\rightarrow x$$
+
+- **Details**
+
+第一个参数为需要执行的函数，第二个参数通过数组的方式表示传入需执行函数的参数。
+
+- **Example**
+
+```js
+const foo = (a, b) => a + b;
+
+call(foo, ['114', '514']);//114514
+```

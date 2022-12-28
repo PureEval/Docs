@@ -1,4 +1,4 @@
-# Curry {#curry-api}
+# Currying {#curry-api}
 
 在这里要提醒您：PureEval 中一切的多参函数都是柯里化的。
 
@@ -20,11 +20,11 @@ $$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarro
 
 柯里化后的函数中有两个特殊属性：
 
-$$Curried \ \begin{cases}len \ \leftarrow \\ origin \ \leftarrow \end{cases}$$
+$$Curried \ \begin{cases}len \ \leftarrow \ 当前函数距离调用还需要传入的参数数量\\ origin \ \leftarrow \ 当前函数的逆柯里化函数\end{cases}$$
 
-> `len` is the number of arguments required for this function
+<!-- > `len` is the number of arguments required for this function -->
+<!-- > `origin` is this function after inverse Coriolisation -->
 
-> `origin` is this function after inverse Coriolisation
 
 - **Example**
 
