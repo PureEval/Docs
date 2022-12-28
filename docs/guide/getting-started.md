@@ -4,7 +4,7 @@ This section will guide you through the use of PureEval.
 
 ## For CommonJS
 
-Add PureEval and Vue as dependencies for the project.
+Add PureEval as dependencies for your project.
 
 ### Using NPM
 
