@@ -302,3 +302,39 @@ const foo = when_v(v => v == "is you!", v => "homo" + v, v => "homo" + v);
 
 when("not you!");//"homo not you!";
 ```
+
+## common() {#common}
+
+返回与传入的参数。
+
+- **Type**
+
+$$a \rightarrow a$$
+
+- **Details**
+
+传入一个参数，并直接返回它。
+
+- **Example**
+
+```js
+common(114514);//114514
+```
+
+## always() {#always}
+
+构造一个返回常量的函数。
+
+- **Type**
+
+$$a \rightarrow () \rightarrow a$$
+
+- **Details**
+
+传入一个参数作为常量，返回值为一个函数值为该常量的函数。
+
+- **Example**
+
+```js
+always(114514)();//114514
+```

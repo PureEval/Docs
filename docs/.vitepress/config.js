@@ -58,11 +58,15 @@ export const sidebar = {
       text: 'Global API',
       items: [
         { text: '⭐Currying', link: '/api/currying' },
-        { text: "⭐Transform", link: '/api/transform' },
-        { text: "Logic", link: '/api/logic' },
-        { text: "String", link: '/api/string' },
-        { text: "⭐StateMachine", link: '/api/stateMachine' },
-        { text: "Math", link: '/api/mathematics' }
+        { text: '⭐Transform', link: '/api/transform' },
+        { text: 'Logic', link: '/api/logic' },
+        { text: 'String', link: '/api/string' },
+        { text: '⭐StateMachine', link: '/api/stateMachine' },
+        { text: 'Math', link: '/api/mathematics' },
+        { text: 'Range', link: '/api/range' },
+        { text: '⭐Bind', link: '/api/bind' },
+        { text: '⭐Match', link: '/api/match' },
+        { text: 'List', link: '/api/list' }
       ]
     },
   ]
