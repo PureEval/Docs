@@ -68,7 +68,8 @@ export const sidebar = {
         { text: '⭐Match', link: '/api/match' },
         { text: 'List', link: '/api/list' },
         { text: 'Object', link: '/api/object' },
-        { text: '⭐Iterate', link: '/api/iterate' }
+        { text: '⭐Iterate', link: '/api/iterate' },
+        { text: 'filter', link: '/api/filter' }
       ]
     },
   ]
