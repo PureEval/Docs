@@ -10,6 +10,7 @@ export default {
   lastUpdated: true,
 
   themeConfig: {
+    sidebar,
 
     logo: '/logo.svg',
 

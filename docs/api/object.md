@@ -26,7 +26,7 @@ $$[String|Int]\rightarrow Object \ a \rightarrow a$$
 
 - **Example**
 
-```js
+```javascript
 //Overload 1
 prop("homo", { "homo": 114514 });//114514
 //Overload 2
@@ -61,7 +61,7 @@ $$[String|Int]\rightarrow b\rightarrow Object \ a \rightarrow Object \ b$$
 
 - **Example**
 
-```js
+```javascript
 //Overload 1
 assoc("homo", "yeah", { "homo": 114514 });//{ "homo": "yeah" }
 //Overload 2
@@ -96,7 +96,7 @@ $$[String|Int]\rightarrow (a\rightarrow b)\rightarrow Object \ a \rightarrow Obj
 
 - **Example**
 
-```js
+```javascript
 //Overload 1
 modify("homo", v => "yeah", { "homo": 114514 });//{ "homo": "yeah" }
 //Overload 2
@@ -131,7 +131,7 @@ $$[String|Int]\rightarrow Object \ a \rightarrow Object$$
 
 - **Example**
 
-```js
+```javascript
 //Overload 1
 dissoc("homo", { "homo": 114514 });//{}
 //Overload 2
@@ -152,7 +152,7 @@ $$Object \ a\rightarrow [a]$$
 
 - **Example**
 
-```js
+```javascript
 valuesIn({a: 1, b: 2, c: 3});//[1, 2, 3]
 ```
 
@@ -170,7 +170,7 @@ $$[[a,b]]\rightarrow Object \ a:b$$
 
 - **Example**
 
-```js
+```javascript
 makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
 ```
 
@@ -180,7 +180,7 @@ makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
 
 - **Type**
 
-![](/public/construct.png)
+<img class="constructFlowImage" :src="constructFlowImage()" style="margin: 0 auto;">
 
 - **Details**
 
@@ -188,7 +188,7 @@ makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
 
 - **Example**
 
-```js
+```javascript
 class foo{
     constructor (a, b, c){
         //do something...
@@ -211,6 +211,20 @@ $$String|Int\rightarrow Object\rightarrow Bool$$
 
 - **Example**
 
-```js
+```javascript
 has({ homo: 1 })("homo");//true
 ```
+
+<script setup>
+import { useData } from 'vitepress'
+const { isDark } = useData()
+
+const constructFlowImage = function () {
+    if (isDark.value) {
+        return "/images/api/pureeval.ist.drawio-pi-dark.svg"
+    } else {
+        return "/images/api/pureeval.ist.drawio-pi-light.svg"
+    }
+}
+
+</script>

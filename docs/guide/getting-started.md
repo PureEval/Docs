@@ -4,6 +4,8 @@ This section will guide you through the use of PureEval.
 
 ## For CommonJS
 
+{{ 1 + 1 }}
+
 Add PureEval as dependencies for your project.
 
 ### Using NPM
