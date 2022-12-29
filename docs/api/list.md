@@ -211,7 +211,7 @@ anyCheck(v => v < 3, [1, 1, 4, 5, 1, 4]);//true
 
 - **Type**
 
-$$[a]\rightarrow [b]\rightarrow [a|b]$$
+$$[*]\rightarrow [*]\rightarrow [*]$$
 
 - **Details**
 

@@ -66,7 +66,8 @@ export const sidebar = {
         { text: 'Range', link: '/api/range' },
         { text: '⭐Bind', link: '/api/bind' },
         { text: '⭐Match', link: '/api/match' },
-        { text: 'List', link: '/api/list' }
+        { text: 'List', link: '/api/list' },
+        { text: 'object', link: '/api/object' }
       ]
     },
   ]
