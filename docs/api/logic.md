@@ -40,6 +40,24 @@ either(true, false);//false
 either(true)(true);//true
 ```
 
+## not() {#not}
+
+计算非运算的结果。
+
+- **Type**
+
+$$Bool \rightarrow Bool$$
+
+- **Details**
+
+传入一个布尔类型的参数（记为 $a$），则结果为 $!a$。
+
+- **Example**
+
+```js
+not(false);//true
+```
+
 ## gt() {#gt}
 
 计算 < 运算的结果。

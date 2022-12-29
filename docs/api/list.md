@@ -95,7 +95,7 @@ $$Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-take(3, "the boy next dor");//"the"
+take(3, "the boy next door");//"the"
 ```
 
 ## takeWhile() {#takeWhile}

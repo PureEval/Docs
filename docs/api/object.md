@@ -226,5 +226,4 @@ const constructFlowImage = function () {
         return "/images/api/pureeval.ist.drawio-pi-light.svg"
     }
 }
-
 </script>

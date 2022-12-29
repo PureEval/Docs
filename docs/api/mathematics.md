@@ -354,3 +354,39 @@ $$[Number]\rightarrow Number$$
 ```js
 min([1, 1, 4, 5, 1, 4]);//1
 ```
+
+## dec() {#dec}
+
+计算数字自减的值。
+
+- **Type**
+
+$$Number\rightarrow Number$$
+
+- **Details**
+
+传入一个数字类型的变量，返回其自减的结果。
+
+- **Example**
+
+```js
+dec(114515);//114514
+```
+
+## inc() {#inc}
+
+计算数字自增的值。
+
+- **Type**
+
+$$Number\rightarrow Number$$
+
+- **Details**
+
+传入一个数字类型的变量，返回其自增的结果。
+
+- **Example**
+
+```js
+inc(114513);//114514
+```
