@@ -6,7 +6,8 @@ titleTemplate: A JavaScript Functional Programming Toolset
 
 hero:
   name: PureEval
-  text: A JavaScript functional programming toolset
+  text: Functional Programming in JavaScript
+  tagline: Elegant functional programming in JavaScript, all ready to go.
   actions:
     - theme: brand
       text: Get Started
