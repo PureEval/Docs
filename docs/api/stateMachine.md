@@ -8,7 +8,7 @@
 
 请注意：该类型不唯一，视偏移数组而定。
 
-$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Number]\rightarrow (a\rightarrow a)$$
+$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\rightarrow a)$$
 
 - **Details**
 
@@ -32,7 +32,7 @@ higherPipe([add(1), mul(2)], [5, 1])(1);//12
 
 请注意：该类型不唯一，视偏移数组而定。
 
-$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Number]\rightarrow (a\rightarrow a)$$
+$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\rightarrow a)$$
 
 - **Details**
 
@@ -87,7 +87,7 @@ foo();//2
 
 请注意：该类型不唯一，视偏移数组而定。
 
-$$a\rightarrow [(a\rightarrow b),...,(c\rightarrow d)]\rightarrow ([Number]\rightarrow d)$$
+$$a\rightarrow [(a\rightarrow b),...,(c\rightarrow d)]\rightarrow ([Int]\rightarrow d)$$
 
 - **Details**
 

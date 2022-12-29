@@ -22,10 +22,6 @@ $$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarro
 
 $$Curried \ \begin{cases}len \ \leftarrow \ 当前函数距离调用还需要传入的参数数量\\ origin \ \leftarrow \ 当前函数的逆柯里化函数\end{cases}$$
 
-<!-- > `len` is the number of arguments required for this function -->
-<!-- > `origin` is this function after inverse Coriolisation -->
-
-
 - **Example**
 
 ```js

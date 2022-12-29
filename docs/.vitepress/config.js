@@ -62,7 +62,7 @@ export const sidebar = {
         { text: "Logic", link: '/api/logic' },
         { text: "String", link: '/api/string' },
         { text: "⭐StateMachine", link: '/api/stateMachine' },
-        { text: "Math", link: '/api/math' }
+        { text: "Math", link: '/api/mathematics' }
       ]
     },
   ]
