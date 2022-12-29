@@ -61,7 +61,8 @@ export const sidebar = {
         { text: "⭐Transform", link: '/api/transform' },
         { text: "Logic", link: '/api/logic' },
         { text: "String", link: '/api/string' },
-        {text:"⭐StateMachine",link: '/api/stateMachine'}
+        { text: "⭐StateMachine", link: '/api/stateMachine' },
+        { text: "Math", link: '/api/math' }
       ]
     },
   ]

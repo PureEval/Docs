@@ -2,13 +2,13 @@
 
 ## higherPipe() {#higherPipe}
 
-进行高维维度的从左向右的函数组合。
+进行高维度的从左向右的函数组合。
 
 - **Type**
 
 请注意：该类型不唯一，视偏移数组而定。
 
-$$[(a \rightarrow b),...,(o \rightarrow x)]\rightarrow [Number]\rightarrow (a\rightarrow x)$$
+$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Number]\rightarrow (a\rightarrow a)$$
 
 - **Details**
 
@@ -26,13 +26,13 @@ higherPipe([add(1), mul(2)], [5, 1])(1);//12
 
 ## higherCompose() {#higherCompose}
 
-进行高维维度的从右向左的函数组合。
+进行高维度的从右向左的函数组合。
 
 - **Type**
 
 请注意：该类型不唯一，视偏移数组而定。
 
-$$[(x \rightarrow o),...,(b \rightarrow a)]\rightarrow [Number]\rightarrow (a\rightarrow x)$$
+$$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Number]\rightarrow (a\rightarrow a)$$
 
 - **Details**
 
