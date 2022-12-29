@@ -180,7 +180,7 @@ makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
 
 - **Type**
 
-![](/public/construct.png)
+![](/construct.png)
 
 - **Details**
 
