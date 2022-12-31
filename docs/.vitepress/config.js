@@ -12,7 +12,10 @@ export default {
   themeConfig: {
     sidebar,
 
-    logo: '/logo.svg',
+    logo: {
+      light: '/images/icons/logo-light.svg',
+      dark: '/images/icons/logo-dark.svg'
+    },
 
     nav: [
       { text: 'Guide', link: '/guide/getting-started', activeMatch: '/guide/' },
