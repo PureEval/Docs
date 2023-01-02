@@ -2,7 +2,7 @@
 // a file ending with data.(j|t)s will be evaluated in Node.js
 import fs from 'fs'
 import path from 'path'
-import type { MultiSidebarConfig } from '@vue/theme/src/vitepress/config'
+import { MultiSidebarConfig } from '@vue/theme/src/vitepress/config'
 import { sidebar } from '../.vitepress/config'
 
 interface APIHeader {
@@ -48,6 +48,7 @@ const headersCache = new Map<
 >()
 
 function parsePageHeaders(link: string) {
+  // eslint-disable-next-line no-undef
   const fullPath = path.join(__dirname, '../', link) + '.md'
   const timestamp = fs.statSync(fullPath).mtimeMs
 
@@ -87,9 +88,9 @@ function slugify(text: string): string {
       // Replace special characters
       .replace(/[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'<>,.?/]+/g, '-')
       // Remove continuous separators
-      .replace(/\-{2,}/g, '-')
+      .replace(/-{2,}/g, '-')
       // Remove prefixing and trailing separators
-      .replace(/^\-+|\-+$/g, '')
+      .replace(/^-+|-+$/g, '')
       // ensure it doesn't start with a number (#121)
       .replace(/^(\d)/, '_$1')
       // lowercase
