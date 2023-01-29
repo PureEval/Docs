@@ -27,25 +27,24 @@ $$a\rightarrow (a\rightarrow b)\rightarrow a \rightarrow (a\rightarrow c) \right
 
 ```js
 const sort = match(
-    [], always([]),
+    [], [],
     _ , (a, x, s) => [...sort(filter(lte(x), s)), x, ...sort(filter(gt(x), s))]
 );
 
 const fib = match(
-    1, always(1),
-    2, always(2),
-    _, v=>fib(v-1)+fib(v-2);
+    1, 1,
+    2, 2,
+    _, (v) => fib(v-1) + fib(v-2);
 );
 
 const ishomo = match(
     Just("homo"), common,
-    Nothing,      always("Nothing"),
-    _,            always("Others")
+    Nothing,      "Nothing",
+    _,            "Others"
 );
 
-const check = obj => obj.homo?true:false;
+const check = (obj) => obj.homo ? true : false;
 const homoinside = match(
-    check, always("Yes"),
-    _,     always("No")
+    check, "Yes",
+    _,     "No"
 );
-```
