@@ -17,7 +17,7 @@ $$((b\rightarrow a),(c \rightarrow b),...,(o\rightarrow p),((u,v,...,n)\rightarr
 - **Example**
 
 ```js
-const div_and_add = compose(add(1), div(2));
+const div_and_add = compose(add(1), mul(0.5));
 
 div_and_add(229026);//114514
 ```
@@ -39,7 +39,7 @@ $$(((u,v,...,n)\rightarrow o),(o\rightarrow p),...,(c \rightarrow b),(b\rightarr
 - **Example**
 
 ```js
-const div_and_add = pipe(div(2), add(1));
+const div_and_add = pipe(mul(0.5), add(1));
 
 div_and_add(229026);//114514
 ```

@@ -24,7 +24,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 higherPipe([add(1), mul(2)], [5, 1])(1);//12
 ```
 
-## higherCompose() {#higherCompose}
+## higherComp() {#higherCompose}
 
 进行高维度的从右向左的函数组合。
 
@@ -45,7 +45,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 - **Example**
 
 ```js
-higherCompose([mul(2), add(1)], [1, 5])(1);//12
+higherComp([mul(2), add(1)], [1, 5])(1);//12
 ```
 
 ## coalgebra() {#coalgebra}
