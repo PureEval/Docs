@@ -17,7 +17,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-filter(v => v == 1)([1, 1, 4, 5, 1, 4]);//[1, 1, 1]
+filter((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[1, 1, 1]
 ```
 
 ## reject() {#reject}
@@ -37,7 +37,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-reject(v => v == 1)([1, 1, 4, 5, 1, 4]);//[4, 5, 4]
+reject((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 ```
 
 ## shied() {#shied}
@@ -57,7 +57,7 @@ $$[a]\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-shied([1])([1, 1, 4, 5, 1, 4]);//[4, 5, 4]
+shied([1])([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 ```
 
 ## choose() {#choose}
@@ -77,5 +77,5 @@ $$[a]\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-choose([1])([1, 1, 4, 5, 1, 4]);//[1, 1, 1]
+choose([1])([1, 1, 4, 5, 1, 4]); //[1, 1, 1]
 ```

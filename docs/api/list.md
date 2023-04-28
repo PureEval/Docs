@@ -18,7 +18,7 @@ $$((a\rightarrow b)\rightarrow c)\rightarrow [a]\rightarrow [b]\rightarrow [c]$$
 
 ```js
 const f = (a, b) => a + b;
-zipWith(f, [1, 2, 3], [4, 5, 6]);//[5, 7, 9]
+zipWith(f, [1, 2, 3], [4, 5, 6]); //[5, 7, 9]
 ```
 
 ## zip() {#zip}
@@ -40,7 +40,7 @@ $$[a]\rightarrow [b]\rightarrow [[a,b]]$$
 - **Example**
 
 ```js
-zip([1, 2, 3], [4, 5, 6]);//[[1, 4], [2, 5], [3, 6]]
+zip([1, 2, 3], [4, 5, 6]); //[[1, 4], [2, 5], [3, 6]]
 ```
 
 ## join() {#join}
@@ -58,8 +58,8 @@ $$String\rightarrow [a]\rightarrow String$$
 - **Example**
 
 ```js
-join('|', [1, 2, 3]);//"1|2|3"
-join('|')([1, 2, 3]);//"1|2|3"
+join("|", [1, 2, 3]); //"1|2|3"
+join("|")([1, 2, 3]); //"1|2|3"
 ```
 
 ## slice() {#slice}
@@ -77,7 +77,7 @@ $$Int\rightarrow Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-slice(0, 3, 'homo');//'hom'
+slice(0, 3, "homo"); //'hom'
 ```
 
 ## take() {#take}
@@ -95,7 +95,7 @@ $$Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-take(3, "the boy next door");//"the"
+take(3, "the boy next door"); //"the"
 ```
 
 ## takeWhile() {#takeWhile}
@@ -117,9 +117,8 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-takeWhile(v => v < 3, [1, 1, 4, 5, 1, 4]);//[1, 1]
+takeWhile((v) => v < 3, [1, 1, 4, 5, 1, 4]); //[1, 1]
 ```
-
 
 ## drop() {#drop}
 
@@ -138,7 +137,7 @@ $$Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-drop(3, "homo");//"o"
+drop(3, "homo"); //"o"
 ```
 
 ## dropWhile() {#dropWhile}
@@ -162,7 +161,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-dropWhile(v => v < 3, [4, 5, 1, 4]);//[4, 5, 1, 4]
+dropWhile((v) => v < 3, [4, 5, 1, 4]); //[4, 5, 1, 4]
 ```
 
 ## allCheck() {#allCheck}
@@ -182,7 +181,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
 - **Example**
 
 ```js
-allCheck(v => v < 3, [1, 1, 4, 5, 1, 4]);//false
+allCheck((v) => v < 3, [1, 1, 4, 5, 1, 4]); //false
 ```
 
 ## anyCheck() {#anyCheck}
@@ -202,7 +201,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
 - **Example**
 
 ```js
-anyCheck(v => v < 3, [1, 1, 4, 5, 1, 4]);//true
+anyCheck((v) => v < 3, [1, 1, 4, 5, 1, 4]); //true
 ```
 
 ## concat() {#concat}
@@ -220,7 +219,7 @@ $$[*]\rightarrow [*]\rightarrow [*]$$
 - **Example**
 
 ```js
-concat([1, 2, 3], [1, 2, 3]);//[1, 2, 3, 4, 5, 6]
+concat([1, 2, 3], [1, 2, 3]); //[1, 2, 3, 4, 5, 6]
 ```
 
 ## head() {#head}
@@ -238,7 +237,7 @@ $$[a]\rightarrow a$$
 - **Example**
 
 ```js
-head([1, 2, 3]);//1
+head([1, 2, 3]); //1
 ```
 
 ## tail() {#tail}
@@ -256,7 +255,7 @@ $$[a]\rightarrow a$$
 - **Example**
 
 ```js
-tail([1, 2, 3]);//3
+tail([1, 2, 3]); //3
 ```
 
 ## dropHead() {#dropHead}
@@ -274,7 +273,7 @@ $$[a]\rightarrow [a]$$
 - **Example**
 
 ```js
-dropHead([1, 2, 3]);//[2, 3]
+dropHead([1, 2, 3]); //[2, 3]
 ```
 
 ## dropTail() {#dropTail}
@@ -292,7 +291,7 @@ $$[a]\rightarrow [a]$$
 - **Example**
 
 ```js
-dropTail([1, 2, 3]);//[1, 2]
+dropTail([1, 2, 3]); //[1, 2]
 ```
 
 ## reverse() {#reverse}
@@ -310,5 +309,5 @@ $$[a]\rightarrow [a]$$
 - **Example**
 
 ```js
-reverse([1, 2, 3]);//[3, 2, 1]
+reverse([1, 2, 3]); //[3, 2, 1]
 ```

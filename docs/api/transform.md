@@ -19,7 +19,7 @@ $$((b\rightarrow a),(c \rightarrow b),...,(o\rightarrow p),((u,v,...,n)\rightarr
 ```js
 const div_and_add = compose(add(1), mul(0.5));
 
-div_and_add(229026);//114514
+div_and_add(229026); //114514
 ```
 
 ## pipe() {#pipe}
@@ -41,7 +41,7 @@ $$(((u,v,...,n)\rightarrow o),(o\rightarrow p),...,(c \rightarrow b),(b\rightarr
 ```js
 const div_and_add = pipe(mul(0.5), add(1));
 
-div_and_add(229026);//114514
+div_and_add(229026); //114514
 ```
 
 ## call() {#call}
@@ -49,7 +49,6 @@ div_and_add(229026);//114514
 执行一个已有的函数。
 
 - **Type**
-
 
 $$((a,b,...,n)\rightarrow x)\rightarrow [a,b,...,n]\rightarrow x$$
 
@@ -62,5 +61,5 @@ $$((a,b,...,n)\rightarrow x)\rightarrow [a,b,...,n]\rightarrow x$$
 ```js
 const foo = (a, b) => a + b;
 
-call(foo, ['114', '514']);//114514
+call(foo, ["114", "514"]); //114514
 ```

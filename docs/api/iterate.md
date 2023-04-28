@@ -41,7 +41,7 @@ $$(a\rightarrow b)\rightarrow [a]\rightarrow [b]$$
 - **Example**
 
 ```js
-map(add(1))([1, 2, 3]);//[2, 3, 4]
+map(add(1))([1, 2, 3]); //[2, 3, 4]
 ```
 
 ## flatMap() {#flatMap}
@@ -63,7 +63,7 @@ $$(a\rightarrow [b])\rightarrow [a]\rightarrow [b]$$
 - **Example**
 
 ```js
-flatMap(v => [v, v])([1, 2, 3]);//[1, 1, 2, 2, 3, 3]
+flatMap((v) => [v, v])([1, 2, 3]); //[1, 1, 2, 2, 3, 3]
 ```
 
 ## forEach() {#forEach}
@@ -84,7 +84,7 @@ $$(a\rightarrow *)\rightarrow [a]$$
 
 ```js
 const list = [];
-forEach(v => list.push(v), [1, 2, 3]);
+forEach((v) => list.push(v), [1, 2, 3]);
 //list : [1, 2, 3]
 ```
 
@@ -105,7 +105,7 @@ $$(a,b,c)\rightarrow a \rightarrow a$$
 - **Example**
 
 ```js
-reduce((a, b) => a + b, 0, [1, 2, 3]);//6
+reduce((a, b) => a + b, 0, [1, 2, 3]); //6
 ```
 
 ## fold() {#fold}
@@ -125,7 +125,7 @@ $$(a\rightarrow a)\rightarrow Int\rightarrow a\rightarrow a$$
 - **Example**
 
 ```js
-fold(v => v + 1, 5, 0);//5
+fold((v) => v + 1, 5, 0); //5
 ```
 
 ## scan() {#scan}
@@ -145,5 +145,5 @@ $$(a\rightarrow a)\rightarrow Int\rightarrow a\rightarrow [a]$$
 - **Example**
 
 ```js
-scan(1)(add(1))(5);//[2, 3, 4, 5, 6]
+scan(1)(add(1))(5); //[2, 3, 4, 5, 6]
 ```

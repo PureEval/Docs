@@ -15,7 +15,7 @@ $$Int\rightarrow Bool$$
 - **Example**
 
 ```js
-odd(114514);//false
+odd(114514); //false
 ```
 
 ## even() {#even}
@@ -33,7 +33,7 @@ $$Int\rightarrow Bool$$
 - **Example**
 
 ```js
-odd(114514);//true
+odd(114514); //true
 ```
 
 ## add() {#add}
@@ -51,8 +51,8 @@ $$Number\rightarrow Number\rightarrow Number$$
 - **Example**
 
 ```js
-add(1, 114513);//114514
-add(1)(114513);//114514
+add(1, 114513); //114514
+add(1)(114513); //114514
 ```
 
 ## minus() {#minus}
@@ -70,8 +70,8 @@ $$Number\rightarrow Number\rightarrow Number$$
 - **Example**
 
 ```js
-minus(114515, 1);//114514
-minus(114515)(1);//114514
+minus(114515, 1); //114514
+minus(114515)(1); //114514
 ```
 
 ## mul() {#mul}
@@ -89,8 +89,8 @@ $$Number\rightarrow Number\rightarrow Number$$
 - **Example**
 
 ```js
-mul(57257, 2);//114514
-mul(57257)(2);//114514
+mul(57257, 2); //114514
+mul(57257)(2); //114514
 ```
 
 ## div() {#div}
@@ -108,8 +108,8 @@ $$Number\rightarrow Number\rightarrow Number$$
 - **Example**
 
 ```js
-div(229030, 2);//114514
-div(229030)(2);//114514
+div(229030, 2); //114514
+div(229030)(2); //114514
 ```
 
 ## mod() {#mod}
@@ -129,8 +129,8 @@ $$Int\rightarrow Int\rightarrow Int$$
 - **Example**
 
 ```js
-mod(114514, 1);//0
-mod(114514)(1);//0
+mod(114514, 1); //0
+mod(114514)(1); //0
 ```
 
 ## rema() {#rema}
@@ -150,8 +150,8 @@ $$Int\rightarrow Int\rightarrow Int$$
 - **Example**
 
 ```js
-rema(114514, 1);//0
-rema(114514)(1);//0
+rema(114514, 1); //0
+rema(114514)(1); //0
 ```
 
 ## power() {#power}
@@ -169,8 +169,8 @@ $$Number\rightarrow Number\rightarrow Number$$
 - **Example**
 
 ```js
-pow(114514, 1);//114514
-pow(2)(3);//8
+pow(114514, 1); //114514
+pow(2)(3); //8
 ```
 
 ## negate() {#negate}
@@ -188,7 +188,7 @@ $$Number\rightarrow Number$$
 - **Example**
 
 ```js
-negate(-114514);//114514
+negate(-114514); //114514
 ```
 
 ## upper() {#upper}
@@ -206,7 +206,7 @@ $$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
 - **Example**
 
 ```js
-sort(upper(), [3, 2, 1]);//[3, 2, 1]
+sort(upper(), [3, 2, 1]); //[3, 2, 1]
 ```
 
 ## under() {#under}
@@ -224,7 +224,7 @@ $$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
 - **Example**
 
 ```js
-sort(under(), [3, 2, 1]);//[1, 2, 3]
+sort(under(), [3, 2, 1]); //[1, 2, 3]
 ```
 
 ## sort() {#sort}
@@ -244,7 +244,7 @@ $$Ord \ a \Rightarrow [a] \rightarrow ((a,a)\rightarrow Int) \rightarrow [a]$$
 - **Example**
 
 ```js
-sort(under(), [3, 2, 1]);//[1, 2, 3]
+sort(under(), [3, 2, 1]); //[1, 2, 3]
 ```
 
 ## median() {#median}
@@ -262,7 +262,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-median([1, 2, 3, 4, 5, 6]);//3.5
+median([1, 2, 3, 4, 5, 6]); //3.5
 ```
 
 ## sum() {#sum}
@@ -280,7 +280,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-sum([1, 2, 3, 4, 5, 6]);//21
+sum([1, 2, 3, 4, 5, 6]); //21
 ```
 
 ## average() {#average}
@@ -298,7 +298,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-average([1, 2, 3, 4, 5, 6]);//3.5
+average([1, 2, 3, 4, 5, 6]); //3.5
 ```
 
 ## prod() {#prod}
@@ -316,7 +316,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-prod([1, 2, 3, 4, 5, 6]);//720
+prod([1, 2, 3, 4, 5, 6]); //720
 ```
 
 ## max() {#max}
@@ -334,7 +334,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-max([1, 1, 4, 5, 1, 4]);//5
+max([1, 1, 4, 5, 1, 4]); //5
 ```
 
 ## min() {#min}
@@ -352,7 +352,7 @@ $$[Number]\rightarrow Number$$
 - **Example**
 
 ```js
-min([1, 1, 4, 5, 1, 4]);//1
+min([1, 1, 4, 5, 1, 4]); //1
 ```
 
 ## dec() {#dec}
@@ -370,7 +370,7 @@ $$Number\rightarrow Number$$
 - **Example**
 
 ```js
-dec(114515);//114514
+dec(114515); //114514
 ```
 
 ## inc() {#inc}
@@ -388,5 +388,5 @@ $$Number\rightarrow Number$$
 - **Example**
 
 ```js
-inc(114513);//114514
+inc(114513); //114514
 ```

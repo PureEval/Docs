@@ -23,8 +23,8 @@ $$a\rightarrow Maybe\ a$$
 - **Example**
 
 ```js
-Maybe.lift(1);//Just 1
-Maybe.lift(null);//Nothing
+Maybe.lift(1); //Just 1
+Maybe.lift(null); //Nothing
 ```
 
 ### Maybe.is() {#is}
@@ -38,8 +38,8 @@ $$*\rightarrow Bool$$
 - **Example**
 
 ```js
-Maybe.is(Just(1));//true
-Maybe.is(Nothing);//true
+Maybe.is(Just(1)); //true
+Maybe.is(Nothing); //true
 ```
 
 ### Maybe.isNothing() {#isnothing}
@@ -53,8 +53,8 @@ $$\overline{Maybe\ a}\rightarrow Bool$$
 - **Example**
 
 ```js
-Just(1).isNothing();//false
-Just(null).isNothing();//true
+Just(1).isNothing(); //false
+Just(null).isNothing(); //true
 ```
 
 ### Maybe.map() {#map}
@@ -66,7 +66,7 @@ $$\overline{Maybe\ a}\rightarrow (a\rightarrow b)\rightarrow Maybe\ b$$
 - **Example**
 
 ```js
-Just(1).map(add(114513));//Just 114514
+Just(1).map(add(114513)); //Just 114514
 ```
 
 ### Maybe.chain() {#chain}
@@ -78,7 +78,7 @@ $$\overline{Maybe\ a}\rightarrow (a\rightarrow b)\rightarrow b$$
 - **Example**
 
 ```js
-Just(1).chain(add(114513));//114514
+Just(1).chain(add(114513)); //114514
 ```
 
 ### Maybe.fold() {#fold}
@@ -89,7 +89,6 @@ Just(1).chain(add(114513));//114514
 
 当匹配到 $Maybe\ a$ 时，对应函数将会应用到 $a$ 上，其函数值将作为返回值。
 
-
 - **Type**
 
 $$\overline{Maybe\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow b)\rightarrow b$$
@@ -97,10 +96,7 @@ $$\overline{Maybe\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow
 - **Example**
 
 ```js
-Just("The body next door").fold(
-    () => "Nothing", 
-    common
-); //"The body next door"
+Just("The body next door").fold(() => "Nothing", common); //"The body next door"
 ```
 
 ## Just() {#just}
@@ -116,7 +112,7 @@ $$a\rightarrow Maybe\ a$$
 - **Example**
 
 ```js
-Just(1);//Just 1
+Just(1); //Just 1
 ```
 
 ## Nothing {#Nothing}

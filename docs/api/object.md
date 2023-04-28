@@ -28,9 +28,9 @@ $$[String|Int]\rightarrow Object \ a \rightarrow a$$
 
 ```javascript
 //Overload 1
-prop("homo", { "homo": 114514 });//114514
+prop("homo", { homo: 114514 }); //114514
 //Overload 2
-prop(["inside", "homo"], { "inside": { "homo": 114514 } });//114514
+prop(["inside", "homo"], { inside: { homo: 114514 } }); //114514
 ```
 
 ## assoc() {#assoc}
@@ -63,9 +63,9 @@ $$[String|Int]\rightarrow b\rightarrow Object \ a \rightarrow Object \ b$$
 
 ```javascript
 //Overload 1
-assoc("homo", "yeah", { "homo": 114514 });//{ "homo": "yeah" }
+assoc("homo", "yeah", { homo: 114514 }); //{ "homo": "yeah" }
 //Overload 2
-assoc(["inside", "homo"], "yeah", { "inside": { "homo": 114514 } });//{ "inside": { "homo": "yeah" } }
+assoc(["inside", "homo"], "yeah", { inside: { homo: 114514 } }); //{ "inside": { "homo": "yeah" } }
 ```
 
 ## modify() {#modify}
@@ -98,9 +98,9 @@ $$[String|Int]\rightarrow (a\rightarrow b)\rightarrow Object \ a \rightarrow Obj
 
 ```javascript
 //Overload 1
-modify("homo", v => "yeah", { "homo": 114514 });//{ "homo": "yeah" }
+modify("homo", (v) => "yeah", { homo: 114514 }); //{ "homo": "yeah" }
 //Overload 2
-modify(["inside", "homo"], v => "yeah", { "inside": { "homo": 114514 } });//{ "inside": { "homo": "yeah" } }
+modify(["inside", "homo"], (v) => "yeah", { inside: { homo: 114514 } }); //{ "inside": { "homo": "yeah" } }
 ```
 
 ## dissoc() {#dissoc}
@@ -133,9 +133,9 @@ $$[String|Int]\rightarrow Object \ a \rightarrow Object$$
 
 ```javascript
 //Overload 1
-dissoc("homo", { "homo": 114514 });//{}
+dissoc("homo", { homo: 114514 }); //{}
 //Overload 2
-dissoc(["inside", "homo"], { "inside": { "homo": 114514 } });//{ "inside": {} }
+dissoc(["inside", "homo"], { inside: { homo: 114514 } }); //{ "inside": {} }
 ```
 
 ## valuesIn() {#valuesIn}
@@ -153,7 +153,7 @@ $$Object \ a\rightarrow [a]$$
 - **Example**
 
 ```javascript
-valuesIn({a: 1, b: 2, c: 3});//[1, 2, 3]
+valuesIn({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
 ```
 
 ## makePair() {#makePair}
@@ -171,7 +171,7 @@ $$[[a,b]]\rightarrow Object \ a:b$$
 - **Example**
 
 ```javascript
-makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
+makePair(["c", "a", "i"], ["m", "e", "o"]); //{ c: "m", a: "e", i: "o" }
 ```
 
 ## construct() {#construct}
@@ -189,10 +189,10 @@ makePair(["c", "a", "i"], ["m", "e", "o"]);//{ c: "m", a: "e", i: "o" }
 - **Example**
 
 ```javascript
-class foo{
-    constructor (a, b, c){
-        //do something...
-    }
+class foo {
+  constructor(a, b, c) {
+    //do something...
+  }
 }
 construct(foo)(1)(2)(3);
 ```
@@ -212,7 +212,7 @@ $$String|Int\rightarrow Object\rightarrow Bool$$
 - **Example**
 
 ```javascript
-has({ homo: 1 })("homo");//true
+has({ homo: 1 })("homo"); //true
 ```
 
 <script setup>

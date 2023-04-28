@@ -15,6 +15,6 @@ $$Number|Char \rightarrow Number|Char \rightarrow [Number|Char]$$
 - **Example**
 
 ```js
-range(1, 5);//[1, 2, 3, 4, 5]
-range('a')('c');//['a', 'b', 'c']
+range(1, 5); //[1, 2, 3, 4, 5]
+range("a")("c"); //['a', 'b', 'c']
 ```

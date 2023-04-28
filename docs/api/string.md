@@ -17,7 +17,7 @@ $$RegExp \rightarrow String \rightarrow [String|null]$$
 - **Example**
 
 ```js
-rexMatch(/([a-z]m)/g, 'homomomo');//[ 'om', 'om', 'om' ]
+rexMatch(/([a-z]m)/g, "homomomo"); //[ 'om', 'om', 'om' ]
 ```
 
 ## rexReplace() {#rexReplace}
@@ -37,7 +37,7 @@ $$RegExp|String \rightarrow String \rightarrow String \rightarrow String$$
 - **Example**
 
 ```js
-rexReplace("homo", "nimo", 'homomomo');//nimomomo
+rexReplace("homo", "nimo", "homomomo"); //nimomomo
 ```
 
 ## rexText() {#rexTest}
@@ -57,7 +57,7 @@ $$RegExp \rightarrow String \rightarrow Bool$$
 - **Example**
 
 ```js
-rexTest(/^h/,"homo");//true
+rexTest(/^h/, "homo"); //true
 ```
 
 ## split() {#split}
@@ -77,8 +77,8 @@ $$RexExp|String \rightarrow Char \rightarrow [String]$$
 - **Example**
 
 ```js
-split("1", "ho1mo");//["ho","mo"];
-split("1")("ho1mo");//["ho","mo"];
+split("1", "ho1mo"); //["ho","mo"];
+split("1")("ho1mo"); //["ho","mo"];
 ```
 
 ## toLower() {#toLower}
@@ -96,7 +96,7 @@ $$String \rightarrow String$$
 - **Example**
 
 ```js
-toLower("ABCD");//"abcd"
+toLower("ABCD"); //"abcd"
 ```
 
 ## toUpper() {#toUpper}
@@ -114,7 +114,7 @@ $$String \rightarrow String$$
 - **Example**
 
 ```js
-toUpper("abcd");//"ABCD"
+toUpper("abcd"); //"ABCD"
 ```
 
 ## trim() {#trim}
@@ -132,7 +132,7 @@ $$String \rightarrow String$$
 - **Example**
 
 ```js
-trim(" homo ");//"homo"
+trim(" homo "); //"homo"
 ```
 
 ## words() {#words}
@@ -150,5 +150,5 @@ $$String \rightarrow [String]$$
 - **Example**
 
 ```js
-words("the boy next door");//['the', 'boy', 'next', 'door']
+words("the boy next door"); //['the', 'boy', 'next', 'door']
 ```

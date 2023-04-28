@@ -15,9 +15,9 @@ $$Bool \rightarrow Bool \rightarrow Bool$$
 - **Example**
 
 ```js
-either(true, false);//true
+either(true, false); //true
 
-either(false)(false);//false
+either(false)(false); //false
 ```
 
 ## both() {#both}
@@ -35,9 +35,9 @@ $$Bool \rightarrow Bool \rightarrow Bool$$
 - **Example**
 
 ```js
-either(true, false);//false
+either(true, false); //false
 
-either(true)(true);//true
+either(true)(true); //true
 ```
 
 ## not() {#not}
@@ -55,7 +55,7 @@ $$Bool \rightarrow Bool$$
 - **Example**
 
 ```js
-not(false);//true
+not(false); //true
 ```
 
 ## gt() {#gt}
@@ -73,9 +73,9 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-gt(2, 3);//true
+gt(2, 3); //true
 
-gt(3)(3);//false
+gt(3)(3); //false
 ```
 
 ## gte() {#gte}
@@ -93,9 +93,9 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-gte(2, 3);//true
+gte(2, 3); //true
 
-gte(3)(3);//true
+gte(3)(3); //true
 ```
 
 ## lt() {#lt}
@@ -113,9 +113,9 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-lt(2, 3);//false
+lt(2, 3); //false
 
-lt(3)(3);//false
+lt(3)(3); //false
 ```
 
 ## lte() {#lte}
@@ -133,9 +133,9 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-lte(2, 3);//false
+lte(2, 3); //false
 
-lte(3)(3);//true
+lte(3)(3); //true
 ```
 
 ## equal() {#equal}
@@ -153,11 +153,10 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-equal(1, 1);//true
+equal(1, 1); //true
 
-equal(5)(1);//false
+equal(5)(1); //false
 ```
-
 
 ## when() {#when}
 
@@ -180,9 +179,12 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow a \rightarrow a
 - **Example**
 
 ```js
-const foo = when(v => v == 114515, () => "homo!");
+const foo = when(
+  (v) => v == 114515,
+  () => "homo!"
+);
 
-when(114514);//"homo!";
+when(114514); //"homo!";
 ```
 
 ## when_v() {#when_v}
@@ -208,9 +210,12 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 - **Example**
 
 ```js
-const foo = when_v(v => v == "is you!", v => "homo"+v);
+const foo = when_v(
+  (v) => v == "is you!",
+  (v) => "homo" + v
+);
 
-when("is you!");//"homo is you!";
+when("is you!"); //"homo is you!";
 ```
 
 ## unless() {#unless}
@@ -234,9 +239,12 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow a \rightarrow a
 - **Example**
 
 ```js
-const foo = when(v => !(v == 114515), () => "homo!");
+const foo = when(
+  (v) => !(v == 114515),
+  () => "homo!"
+);
 
-when(114514);//"homo!";
+when(114514); //"homo!";
 ```
 
 ## unless_v() {#unless_v}
@@ -262,9 +270,12 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 - **Example**
 
 ```js
-const foo = when_v(v => !(v == "is you!"), v => "homo"+v);
+const foo = when_v(
+  (v) => !(v == "is you!"),
+  (v) => "homo" + v
+);
 
-when("is you!");//"homo is you!";
+when("is you!"); //"homo is you!";
 ```
 
 ## ifElse() {#ifElse}
@@ -288,9 +299,13 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow 
 - **Example**
 
 ```js
-const foo = ifElse(v => v == 114515, () => "homo!",() => "not homo!");
+const foo = ifElse(
+  (v) => v == 114515,
+  () => "homo!",
+  () => "not homo!"
+);
 
-when(114513);//"not homo!";
+when(114513); //"not homo!";
 ```
 
 ## ifElse_v() {#ifElse_v}
@@ -316,12 +331,16 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow 
 - **Example**
 
 ```js
-const foo = when_v(v => v == "is you!", v => "homo" + v, v => "homo" + v);
+const foo = when_v(
+  (v) => v == "is you!",
+  (v) => "homo" + v,
+  (v) => "homo" + v
+);
 
-when("not you!");//"homo not you!";
+when("not you!"); //"homo not you!";
 ```
 
-## common() {#common}
+## id() {#id}
 
 返回与传入的参数。
 
@@ -336,7 +355,7 @@ $$a \rightarrow a$$
 - **Example**
 
 ```js
-common(114514);//114514
+id(114514); //114514
 ```
 
 ## always() {#always}
@@ -354,5 +373,25 @@ $$a \rightarrow () \rightarrow a$$
 - **Example**
 
 ```js
-always(114514)();//114514
+always(114514)(); //114514
+```
+
+//arr_equal
+
+## arrEqual() {#arrEqual}
+
+构造一个返回常量的函数。
+
+- **Type**
+
+$$Array \rightarrow Array \rightarrow Bool$$
+
+- **Details**
+
+传入一个参数作为常量，返回值为一个函数值为该常量的函数。
+
+- **Example**
+
+```js
+arrEqual([1, 2, 3], [4, 5, 6]); //false
 ```

@@ -21,7 +21,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 - **Example**
 
 ```js
-higherPipe([add(1), mul(2)], [5, 1])(1);//12
+higherPipe([add(1), mul(2)], [5, 1])(1); //12
 ```
 
 ## higherComp() {#higherCompose}
@@ -45,7 +45,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 - **Example**
 
 ```js
-higherComp([mul(2), add(1)], [1, 5])(1);//12
+higherComp([mul(2), add(1)], [1, 5])(1); //12
 ```
 
 ## coalgebra() {#coalgebra}
@@ -69,13 +69,13 @@ $$a\rightarrow (a\rightarrow a)\rightarrow (()\rightarrow a)$$
 - **Example**
 
 ```js
-const foo=coalgebra(1, add(1));
+const foo = coalgebra(1, add(1));
 
-foo();//1
-foo();//2
+foo(); //1
+foo(); //2
 ```
 
-## stateMachine() {#stateMachine} 
+## stateMachine() {#stateMachine}
 
 ::: warning
 尽管该函数为一个纯函数，但其返回值并非一个纯函数(Pure Function)，这意味着它可能对于相同的参数具有不同的返回值。
@@ -100,8 +100,8 @@ $$a\rightarrow [(a\rightarrow b),...,(c\rightarrow d)]\rightarrow ([Int]\rightar
 - **Example**
 
 ```js
-const foo=stateMachine(1,[add(1),mul(2),div(3)]);
+const foo = stateMachine(1, [add(1), mul(2), div(3)]);
 
-foo([0,2,0]);//4
-foo([2,0,1]);//2
+foo([0, 2, 0]); //4
+foo([2, 0, 1]); //2
 ```

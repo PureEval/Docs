@@ -27,7 +27,7 @@ $$Curried \ \begin{cases}len \ \leftarrow \ 当前函数距离调用还需要传
 ```js
 const foo = (a, b, c) => a + b + c;
 
-curry(foo)(1)(2, 3);//6
+curry(foo)(1)(2, 3); //6
 ```
 
 ## uncurry() {#uncurry}
@@ -47,5 +47,5 @@ $$(a\rightarrow b\rightarrow ... \rightarrow n\rightarrow x)\rightarrow (a,b,...
 ```js
 const foo = (a, b, c) => a + b + c;
 
-uncurry(curry(foo)(1));//(b, c) -> a + b + c
+uncurry(curry(foo)(1)); //(b, c) -> a + b + c
 ```
