@@ -1,6 +1,6 @@
 # Currying {#curry-api}
 
-在这里要提醒您：PureEval 中一切的多参函数都是柯里化的。
+在这里要提醒您：除非特别说明，PureEval 中一切的多参函数都是柯里化的。
 
 ## curry() {#curry}
 
@@ -17,10 +17,6 @@ $$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarro
 柯里化后的函数一次传入一个参数或多个参数，如果没有达到原函数所需要接收的参数的量，则会返回一个函数继续接受接下来的参数。
 
 显然的，非柯里化的函数必须要有与需求相符合的 `length` 属性以表明其参数数量。
-
-柯里化后的函数中有两个特殊属性：
-
-$$Curried \ \begin{cases}len \ \leftarrow \ 当前函数距离调用还需要传入的参数数量\\ origin \ \leftarrow \ 当前函数的逆柯里化函数\end{cases}$$
 
 - **Example**
 
