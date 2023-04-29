@@ -35,7 +35,7 @@ const sort = match(
 const fib = match(
     1, 1,
     2, 2,
-    _, (v) => fib(v-1) + fib(v-2);
+    _, (v) => fib(v-1) + fib(v-2)
 );
 
 const ishomo = match(
