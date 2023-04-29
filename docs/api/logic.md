@@ -68,7 +68,7 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
 - **Details**
 
-传入两个数字类型的参数（记为 $a,b$），则结果为 $a<b$。
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a<b$。
 
 - **Example**
 
@@ -88,7 +88,7 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
 - **Details**
 
-传入两个数字类型的参数（记为 $a,b$），则结果为 $a<=b$。
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a<=b$。
 
 - **Example**
 
@@ -108,7 +108,7 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
 - **Details**
 
-传入两个数字类型的参数（记为 $a,b$），则结果为 $a>b$。
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a>b$。
 
 - **Example**
 
@@ -128,7 +128,7 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
 - **Details**
 
-传入两个数字类型的参数（记为 $a,b$），则结果为 $a>=b$。
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a>=b$。
 
 - **Example**
 
@@ -148,7 +148,7 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
 - **Details**
 
-传入两个数字类型的参数（记为 $a,b$），则结果为 $a==b$。
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a==b$。
 
 - **Example**
 
@@ -158,7 +158,27 @@ equal(1, 1); //true
 equal(5)(1); //false
 ```
 
-## arrEqual() {#arrEqual}
+## equalStrict() {#equalstrict}
+
+计算 === 运算的结果。
+
+- **Type**
+
+$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+
+- **Details**
+
+传入两个可比较类型的参数（记为 $a,b$），则结果为 $a===b$。
+
+- **Example**
+
+```js
+equalStrict(1, 1); //true
+
+equalStrict(5)(1); //false
+```
+
+## arrEqual() {#arrequal}
 
 构造一个返回常量的函数。
 
