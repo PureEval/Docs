@@ -158,36 +158,25 @@ equal(1, 1); //true
 equal(5)(1); //false
 ```
 
-## when() {#when}
+## arrEqual() {#arrEqual}
 
-构造一个参数符合条件后执行一定操作的函数。
+构造一个返回常量的函数。
 
 - **Type**
 
-$$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow a \rightarrow a|b $$
+$$Array \rightarrow Array \rightarrow Bool$$
 
 - **Details**
 
-初始传入两个函数类型的参数（记为 $a,b$），返回值为传入一个参数的函数。
-
-该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `true`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `false`，则将原样返回传入的参数。
-
-显然，$a$ 函数必须为一个单元函数，而 $b$ 函数不接收参数。
-
-如果你希望 $b$ 函数与 $a$ 函数接受相同的参数，请参见 [when_v](#when_v)。
+传入一个参数作为常量，返回值为一个函数值为该常量的函数。
 
 - **Example**
 
 ```js
-const foo = when(
-  (v) => v == 114515,
-  () => "homo!"
-);
-
-when(114514); //"homo!";
+arrEqual([1, 2, 3], [4, 5, 6]); //false
 ```
 
-## when_v() {#when_v}
+## when() {#when}
 
 构造一个参数符合条件后执行一定操作的函数。
 
@@ -201,16 +190,14 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `true`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `false`，则将原样返回传入的参数。
 
-特别的，传入 $b$ 函数的参数将与传入 $a$ 函数的参数相同。
+特别的，传入 $b$ 函数的参数将与传入 $a$ 函数的参数相同，$b$ 函数可以不接受参数。
 
 显然，$a,b$ 函数均为单元函数。
-
-如果你希望 $b$ 不接受参数，请参见 [when](#when)。
 
 - **Example**
 
 ```js
-const foo = when_v(
+const foo = when(
   (v) => v == "is you!",
   (v) => "homo" + v
 );
@@ -224,35 +211,6 @@ when("is you!"); //"homo is you!";
 
 - **Type**
 
-$$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow a \rightarrow a|b $$
-
-- **Details**
-
-初始传入两个函数类型的参数（记为 $a,b$），返回值为传入一个参数的函数。
-
-该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `false`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `true`，则将原样返回传入的参数。
-
-显然，$a$ 函数必须为一个单元函数，而 $b$ 函数不接收参数。
-
-如果你希望 $b$ 函数与 $a$ 函数接受相同的参数，请参见 [unless_v](#unless_v)。
-
-- **Example**
-
-```js
-const foo = when(
-  (v) => !(v == 114515),
-  () => "homo!"
-);
-
-when(114514); //"homo!";
-```
-
-## unless_v() {#unless_v}
-
-构造一个参数符合条件后执行一定操作的函数。
-
-- **Type**
-
 $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|b $$
 
 - **Details**
@@ -261,21 +219,19 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `false`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `true`，则将原样返回传入的参数。
 
-特别的，传入 $b$ 函数的参数将与传入 $a$ 函数的参数相同。
+特别的，传入 $b$ 函数的参数将与传入 $a$ 函数的参数相同，$b$ 函数可以不接受参数。
 
 显然，$a,b$ 函数均为单元函数。
-
-如果你希望 $b$ 不接受参数，请参见 [unless_v](#unless_v)。
 
 - **Example**
 
 ```js
-const foo = when_v(
+const foo = unless(
   (v) => !(v == "is you!"),
   (v) => "homo" + v
 );
 
-when("is you!"); //"homo is you!";
+unless("is you!"); //"homo is you!";
 ```
 
 ## ifElse() {#ifElse}
@@ -292,52 +248,20 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow 
 
 该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `true`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `false`，则将执行 $c$ 函数并返回其返回值。
 
-显然，$a$ 函数必须为一个单元函数，而 $b,c$ 函数不接收参数。
+特别的，传入 $b,c$ 函数的参数将与传入 $a$ 函数的参数相同，$b,c$ 函数可以不接受参数。
 
-如果你希望 $b,c$ 函数与 $a$ 函数接受相同的参数，请参见 [ifElse_v](#ifElse_v)。
+显然，$a,b,c$ 函数均为单元函数。
 
 - **Example**
 
 ```js
 const foo = ifElse(
-  (v) => v == 114515,
-  () => "homo!",
-  () => "not homo!"
-);
-
-when(114513); //"not homo!";
-```
-
-## ifElse_v() {#ifElse_v}
-
-构造一个参数符合条件后执行一定操作的函数。
-
-- **Type**
-
-$$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow c) \rightarrow b|c $$
-
-- **Details**
-
-初始传入三个函数类型的参数（记为 $a,b,c$），返回值为传入一个参数的函数。
-
-该函数的行为是：将参数传给 $a$ 函数，若 $a$ 函数返回值为 `true`，则将执行 $b$ 函数并返回其返回值；相反，如果 $a$ 函数的返回值为 `false`，则将执行 $c$ 函数并返回其返回值。
-
-特别的，传入 $b,c$ 函数的参数将与传入 $a$ 函数的参数相同。
-
-显然，$a,b,c$ 函数均为单元函数。
-
-如果你希望 $b,c$ 不接受参数，请参见 [ifElse](#ifElse)。
-
-- **Example**
-
-```js
-const foo = when_v(
   (v) => v == "is you!",
   (v) => "homo" + v,
   (v) => "homo" + v
 );
 
-when("not you!"); //"homo not you!";
+ifElse("not you!"); //"homo not you!";
 ```
 
 ## id() {#id}
@@ -374,24 +298,4 @@ $$a \rightarrow () \rightarrow a$$
 
 ```js
 always(114514)(); //114514
-```
-
-//arr_equal
-
-## arrEqual() {#arrEqual}
-
-构造一个返回常量的函数。
-
-- **Type**
-
-$$Array \rightarrow Array \rightarrow Bool$$
-
-- **Details**
-
-传入一个参数作为常量，返回值为一个函数值为该常量的函数。
-
-- **Example**
-
-```js
-arrEqual([1, 2, 3], [4, 5, 6]); //false
 ```
