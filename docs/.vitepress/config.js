@@ -76,7 +76,8 @@ export const sidebar = {
         { text: 'filter', link: '/api/filter' },
         { text: '⭐Optics', link: '/api/optics' },
 		{ text: '⭐Maybe(Monad)', link: '/api/maybe' },
-        { text: '⚠List(Cons)', link: '/api/listcons' }
+        { text: '⚠List(Cons)', link: '/api/listcons' },
+        { text: '⚠Data', link: '/api/data' }
       ],
     },
   ],
