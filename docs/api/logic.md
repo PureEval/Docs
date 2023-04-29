@@ -218,7 +218,7 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 ```js
 const foo = when(
-  (v) => v == "is you!",
+  (v) => v == " is you!",
   (v) => "homo" + v
 );
 
@@ -247,7 +247,7 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 ```js
 const foo = unless(
-  (v) => !(v == "is you!"),
+  (v) => !(v == " is you!"),
   (v) => "homo" + v
 );
 
@@ -276,7 +276,7 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow 
 
 ```js
 const foo = ifElse(
-  (v) => v == "is you!",
+  (v) => v == " is you!",
   (v) => "homo" + v,
   (v) => "homo" + v
 );
