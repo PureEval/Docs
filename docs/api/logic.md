@@ -222,7 +222,7 @@ const foo = when(
   (v) => "homo" + v
 );
 
-when("is you!"); //"homo is you!";
+foo("is you!"); //"homo is you!";
 ```
 
 ## unless() {#unless}
@@ -251,7 +251,7 @@ const foo = unless(
   (v) => "homo" + v
 );
 
-unless("is you!"); //"homo is you!";
+foo("is you!"); //"homo is you!";
 ```
 
 ## ifElse() {#ifElse}
@@ -281,7 +281,7 @@ const foo = ifElse(
   (v) => "homo" + v
 );
 
-ifElse("not you!"); //"homo not you!";
+foo("not you!"); //"homo not you!";
 ```
 
 ## id() {#id}
