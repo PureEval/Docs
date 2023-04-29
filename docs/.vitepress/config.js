@@ -37,7 +37,7 @@ export default {
 
     footer: {
       message: 'PureEval released under the GPL-3.0 License.',
-      copyright: 'Copyright © 2022 PureEval',
+      copyright: 'Copyright © 2023 PureEval',
     },
   },
 
@@ -75,7 +75,8 @@ export const sidebar = {
         { text: '⭐Iterate', link: '/api/iterate' },
         { text: 'filter', link: '/api/filter' },
         { text: '⭐Optics', link: '/api/optics' },
-		{ text: '⭐Maybe(Monad)', link: '/api/maybe' }
+		{ text: '⭐Maybe(Monad)', link: '/api/maybe' },
+        { text: '⚠List(Cons)', link: '/api/listcons' }
       ],
     },
   ],

@@ -39,7 +39,7 @@ const fib = match(
 );
 
 const ishomo = match(
-    Just("homo"), common,
+    Just("homo"), id,
     Nothing,      "Nothing",
     _,            "Others"
 );
