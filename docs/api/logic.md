@@ -58,7 +58,7 @@ $$Bool \rightarrow Bool$$
 not(false); //true
 ```
 
-## gt() {#gt}
+## lt() {#lt}
 
 计算 < 运算的结果。
 
@@ -73,12 +73,12 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-gt(2, 3); //true
+lt(2, 3); //true
 
-gt(3)(3); //false
+lt(3)(3); //false
 ```
 
-## gte() {#gte}
+## lte() {#lte}
 
 计算 <= 运算的结果。
 
@@ -93,12 +93,12 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-gte(2, 3); //true
+lte(2, 3); //true
 
-gte(3)(3); //true
+lte(3)(3); //true
 ```
 
-## lt() {#lt}
+## gt() {#gt}
 
 计算 > 运算的结果。
 
@@ -113,12 +113,12 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-lt(2, 3); //false
+gt(2, 3); //false
 
-lt(3)(3); //false
+gt(3)(3); //false
 ```
 
-## lte() {#lte}
+## gte() {#gte}
 
 计算 >= 运算的结果。
 
@@ -133,9 +133,9 @@ $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 - **Example**
 
 ```js
-lte(2, 3); //false
+gte(2, 3); //false
 
-lte(3)(3); //true
+gte(3)(3); //true
 ```
 
 ## equal() {#equal}
