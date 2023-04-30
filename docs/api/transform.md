@@ -61,5 +61,5 @@ $$((a,b,...,n)\rightarrow x)\rightarrow [a,b,...,n]\rightarrow x$$
 ```js
 const foo = (a, b) => a + b;
 
-call(foo, ["114", "514"]); //114514
+call(foo, ["114", "514"]); //"114514"
 ```

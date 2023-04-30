@@ -96,7 +96,7 @@ $$\overline{Maybe\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow
 - **Example**
 
 ```js
-Just("The body next door").fold(() => "Nothing", common); //"The body next door"
+Just("The body next door").fold(() => "Nothing", id); //"The body next door"
 ```
 
 ## Just() {#just}

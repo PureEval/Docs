@@ -71,8 +71,8 @@ $$a\rightarrow (a\rightarrow a)\rightarrow (()\rightarrow a)$$
 ```js
 const foo = coalgebra(1, add(1));
 
-foo(); //1
 foo(); //2
+foo(); //3
 ```
 
 ## stateMachine() {#stateMachine}
