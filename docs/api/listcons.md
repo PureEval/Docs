@@ -14,7 +14,7 @@
 
 - **Type**
 
-$$Iterable \rightarrow List$$
+$$Iterable\ a \rightarrow List\ a$$
 
 - **Details**
 
@@ -32,7 +32,7 @@ L.lazy([1, 1, 4, 5, 1, 4]); //List [1, 1, 4, 5, 1, 4]
 
 - **Type**
 
-$$List \rightarrow Array$$
+$$List\ a \rightarrow Array\ a$$
 
 - **Details**
 
@@ -50,7 +50,7 @@ L.seq(L.lazy([1, 1, 4, 5, 1, 4])); // [1, 1, 4, 5, 1, 4]
 
 - **Type**
 
-$$List a\rightarrow a$$
+$$x:[x]\rightarrow x$$
 
 - **Details**
 
@@ -86,7 +86,7 @@ L.isEmpty(L.lazy([])); // true
 
 - **Type**
 
-$$List \rightarrow Iterable$$
+$$List\ a \rightarrow Iterable\ a$$
 
 - **Details**
 
@@ -105,7 +105,7 @@ for (const x of L.iter(myList)) console.log(x); //1 2 3 4 5
 
 - **Type**
 
-$$Number \rightarrow Number \rightarrow Number \rightarrow List$$
+$$Number \rightarrow Number \rightarrow Number \rightarrow List\ Number$$
 
 - **Details**
 
