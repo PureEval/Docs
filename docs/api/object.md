@@ -171,7 +171,11 @@ $$[[a,b]]\rightarrow Object \ a:b$$
 - **Example**
 
 ```javascript
-makePair(["c", "a", "i"], ["m", "e", "o"]); //{ c: "m", a: "e", i: "o" }
+makePair([
+  ["c", "m"],
+  ["a", "e"],
+  ["i", "o"],
+]); //{ c: "m", a: "e", i: "o" }
 ```
 
 ## construct() {#construct}
@@ -212,7 +216,7 @@ $$String|Int\rightarrow Object\rightarrow Bool$$
 - **Example**
 
 ```javascript
-has({ homo: 1 })("homo"); //true
+has("homo")({ homo: 1 }); //true
 ```
 
 <script setup>
