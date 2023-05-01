@@ -59,6 +59,8 @@ Just(null).isNothing(); //true
 
 ### Maybe.map() {#map}
 
+将 Maybe 中的值经过函数处理映射为新的值，并构造新的 Maybe 来保存。
+
 - **Type**
 
 $$\overline{Maybe\ a}\rightarrow (a\rightarrow b)\rightarrow Maybe\ b$$
@@ -70,6 +72,12 @@ Just(1).map(add(114513)); //Just 114514
 ```
 
 ### Maybe.chain() {#chain}
+
+::: warning
+请注意：该函数不能保证 Maybe 中的结果为 Nothing 时的正确性，因此我们更推荐您使用 [fold](#fold) 来处理可能出现副作用的操作。
+:::
+
+将 Maybe 中的值经过函数处理映射为新的值，并直接返回。
 
 - **Type**
 
@@ -103,7 +111,7 @@ Just("The body next door").fold(() => "Nothing", id); //"The body next door"
 
 $Maybe$ 类型的构造函数。
 
-实际同
+实际同 [Maybe.lift](#lift)。
 
 - **Type**
 
