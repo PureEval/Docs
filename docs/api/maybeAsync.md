@@ -43,7 +43,7 @@ $$*\rightarrow Bool$$
 
 ```js
 MaybeAsync.is(JustAsync(new Promise((res) => res(1)))); //true
-MaybeAsync.is(Nothing)Async; //true
+MaybeAsync.is(NothingAsync); //true
 ```
 
 ### MaybeAsync.isNothing() {#isnothing}
@@ -82,7 +82,7 @@ JustAsync(new Promise((res) => res("Hello, World!"))).map(toLowerCase); // Maybe
 :::
 
 ::: warning
-请注意：该函数不能保证 MaybeAsync 中的结果为 Nothing 时的正确性，因此我们更推荐您使用 [fold](#fold) 来处理可能出现副作用的操作。
+请注意：该函数不能保证 MaybeAsync 中的值为 [NothingAsync](#nothing) 时的正确性，因此我们更推荐您使用 [fold](#fold) 来处理可能出现副作用的操作。
 :::
 
 将 Maybe 中的值经过函数处理映射为新的值，并直接返回。
@@ -120,10 +120,7 @@ await JustAsync(new Promise((res) => res("Hello, World!"))).fold(
   () => "fuck",
   id
 ); //"Hello, World!"
-await JustAsync(new Promise((res) => res(null))).fold(
-  () => "fuck",
-  id
-); //"fuck"
+await JustAsync(new Promise((res) => res(null))).fold(() => "fuck", id); //"fuck"
 ```
 
 ## JustAsync() {#just}
@@ -142,6 +139,6 @@ $$a\rightarrow MaybeAsync\ a$$
 JustAsync(1); //Just 1
 ```
 
-## NothingAsync {#Nothing}
+## NothingAsync {#nothing}
 
 $Maybe$ 类型的构造函数。
