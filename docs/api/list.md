@@ -77,7 +77,7 @@ $$Int\rightarrow Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-slice(0, 3, "homo"); //'hom'
+slice(0, 3, [1, 2, 3, 4]); //[1, 2, 3]
 ```
 
 ## take() {#take}
@@ -95,7 +95,7 @@ $$Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-take(3, "the boy next door"); //"the"
+take(3, [1, 2, 3, 4]); //[1, 2, 3]]
 ```
 
 ## takeWhile() {#takeWhile}
@@ -137,7 +137,7 @@ $$Int\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-drop(3, "homo"); //"o"
+drop(3, [1, 2, 3, 4]); //[4]
 ```
 
 ## dropWhile() {#dropWhile}
@@ -292,6 +292,25 @@ $$[a]\rightarrow [a]$$
 
 ```js
 dropTail([1, 2, 3]); //[1, 2]
+```
+
+## includes() {#includes}
+
+判断某值是否在列表中。
+
+- **Type**
+
+$$a\rightarrow [a]\rightarrow Bool$$
+
+- **Details**
+
+传入一个需要检验的值，再传入一个列表，返回的结果为该值是否在列表中。
+
+- **Example**
+
+```js
+includes(4)([1, 3, 4]); //true
+includes(5)([1, 3, 4]); //false
 ```
 
 ## reverse() {#reverse}
