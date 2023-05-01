@@ -20,7 +20,7 @@ $$Data\ Maybe\ a=Just\ a\ |\ Nothing$$
 
 - **Type**
 
-$$Promise a\rightarrow Maybe\ a$$
+$$Promise\ a\rightarrow Maybe\ a$$
 
 - **Example**
 
@@ -89,7 +89,7 @@ JustAsync(new Promise((res) => res("Hello, World!"))).map(toLowerCase); // Maybe
 
 - **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow (a\rightarrow b)\rightarrow Promise b$$
+$$\overline{MaybeAsync\ a}\rightarrow (a\rightarrow b)\rightarrow Promise\ b$$
 
 - **Example**
 
@@ -111,7 +111,7 @@ await JustAsync(new Promise((res) => res("Hello, World!"))).chain(id); //"Hello,
 
 - **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow b)\rightarrow Promise b$$
+$$\overline{MaybeAsync\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow b)\rightarrow Promise\ b$$
 
 - **Example**
 
