@@ -138,6 +138,24 @@ dissoc("homo", { homo: 114514 }); //{}
 dissoc(["inside", "homo"], { inside: { homo: 114514 } }); //{ "inside": {} }
 ```
 
+## deepClone() {#deepClone}
+
+深复制一个对象。
+
+- **Type**
+
+$$Object \ a\rightarrow Object$$
+
+- **Details**
+
+传入一个 $Object$，返回其深复制的结果。
+
+- **Example**
+
+```javascript
+deepClone({ a: 1, b: 2, c: 3 }); //{ a: 1, b: 2, c: 3 }
+```
+
 ## valuesIn() {#valuesIn}
 
 取出 Object 内的所有值。

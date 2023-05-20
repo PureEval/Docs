@@ -178,22 +178,25 @@ equalStrict(1, 1); //true
 equalStrict(5)(1); //false
 ```
 
-## arrEqual() {#arrequal}
+## deepEqual() {#deepequal}
 
-构造一个返回常量的函数。
+比较两个值（可以是数组、对象、或者一般的值）是否相等。
+
+需要注意的是，如果传入的是一般值，比较规则将与 [equalStrict](#equalStrict) 同。
 
 - **Type**
 
-$$Array \rightarrow Array \rightarrow Bool$$
+$$* \rightarrow * \rightarrow Bool$$
 
 - **Details**
 
-传入一个参数作为常量，返回值为一个函数值为该常量的函数。
+传入两个值。
 
 - **Example**
 
 ```js
-arrEqual([1, 2, 3], [4, 5, 6]); //false
+deepEqual([1, 2, 3], [4, 5, 6]); //false
+deepEqual({ a: 1 }, { a: 1 }); //true
 ```
 
 ## when() {#when}

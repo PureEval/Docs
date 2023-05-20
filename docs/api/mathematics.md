@@ -112,6 +112,25 @@ div(229030, 2); //114514
 div(229030)(2); //114514
 ```
 
+## divr() {#divr}
+
+计算两数的商。
+
+- **Type**
+
+$$Number\rightarrow Number\rightarrow Number$$
+
+- **Details**
+
+传入两个数字作为参数（记为 $a,b$），则结果为 $b/a$。
+
+- **Example**
+
+```js
+div(2, 229030); //114514
+div(2)(229030); //114514
+```
+
 ## mod() {#mod}
 
 计算整数取余的结果。

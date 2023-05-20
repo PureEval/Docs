@@ -38,15 +38,21 @@ const fib = match(
     _, (v) => fib(v-1) + fib(v-2)
 );
 
-const ishomo = match(
+const maybeFoo = match(
     Just("homo"), id,
     Nothing,      "Nothing",
     _,            "Others"
 );
 
 const check = (obj) => obj.homo ? true : false;
-const homoinside = match(
+const homoInside = match(
     check, "Yes",
     _,     "No"
+    
+);
+
+const objectFoo = match(
+    { homo: "Yes" }, "Yes".
+    _,               "No" 
 );
 ```
