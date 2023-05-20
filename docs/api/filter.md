@@ -40,7 +40,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 reject((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 ```
 
-## shied() {#shied}
+## shield() {#shield}
 
 从列表中删除指定的元素列表中的元素。
 
@@ -57,7 +57,7 @@ $$[a]\rightarrow [a]\rightarrow [a]$$
 - **Example**
 
 ```js
-shied([1])([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
+shield([1])([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 ```
 
 ## choose() {#choose}

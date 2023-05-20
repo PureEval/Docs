@@ -385,7 +385,7 @@ L.zipWith((a, b) => a + b, L.lazy([1, 2, 3]), L.lazy([1, 2, 3]));
 // List [2, 4, 6]
 ```
 
-## L.shied() {#shied}
+## L.shield() {#shield}
 
 删除列表中的某值。
 
@@ -400,7 +400,7 @@ $$a\rightarrow [a] \rightarrow [a]$$
 - **Example**
 
 ```js
-L.shied(1, L.Lazy([1, 1, 4, 5, 1, 4]));
+L.shield(1, L.Lazy([1, 1, 4, 5, 1, 4]));
 // List [4, 5, 4]
 ```
 
@@ -419,6 +419,6 @@ $$a\rightarrow [a] \rightarrow [a]$$
 - **Example**
 
 ```js
-L.shied(1, L.Lazy([1, 1, 4, 5, 1, 4]));
+L.choose(1, L.Lazy([1, 1, 4, 5, 1, 4]));
 // List [1, 1, 1]
 ```
