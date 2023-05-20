@@ -156,13 +156,31 @@ $$Object \ a\rightarrow Object$$
 deepClone({ a: 1, b: 2, c: 3 }); //{ a: 1, b: 2, c: 3 }
 ```
 
+## keys() {#keys}
+
+取出 Object 内的所有键。
+
+- **Type**
+
+$$Object \ [key:a]\rightarrow [key]$$
+
+- **Details**
+
+传入一个 $Object$，返回一个其所有键组成的列表。
+
+- **Example**
+
+```javascript
+keys({ a: 1, b: 2, c: 3 }); //['a', 'b', 'c']
+```
+
 ## valuesIn() {#valuesIn}
 
 取出 Object 内的所有值。
 
 - **Type**
 
-$$Object \ a\rightarrow [a]$$
+$$Object \ [key:a]\rightarrow [a]$$
 
 - **Details**
 
