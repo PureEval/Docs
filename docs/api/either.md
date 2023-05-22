@@ -16,7 +16,7 @@ function parseJSON(str) {
   }
 }
 
-console.log(parseJSON("{sfdas").map(JSON.stringify).value);
+parseJSON("{sfdas").map(JSON.stringify).fold(console.error, console.log);
 ```
 
 ## Right {#right}
@@ -55,18 +55,20 @@ $$Right\ a\rightarrow (a\rightarrow b)\rightarrow Right\ b$$
 Right.of(1).map(add(1)); //Right 2
 ```
 
-### Right.value {#rightvalue}
+### Right.fold {#rightfold}
 
-Right 中存放的值。
+将 Right 中的值进行映射并折叠出值。
+
+传入一个 reject 函数与一个 resolve 函数，对于 Right 只会执行 resolve。
 
 - **Type**
 
-$$Static\ *$$
+$$(e\rightarrow a)\rightarrow(b\rightarrow c)\rightarrow c$$
 
 - **Example**
 
 ```js
-Right.of(1).map(add(1)).value; //2
+Right.of(1).map(add(1)).fold(console.error, id); //2
 ```
 
 ## Left {#left}
@@ -107,16 +109,18 @@ $$Left\ a\rightarrow (a\rightarrow b)\rightarrow Left a$$
 Left.of(1).map(add(1)); //Left 1
 ```
 
-### Left.value {#leftvalue}
+### Left.fold {#leftfold}
 
-Left 中存放的值。
+将 Right 中的值进行映射并折叠出值。
+
+传入一个 reject 函数与一个 resolve 函数，对于 Right 只会执行 reject。
 
 - **Type**
 
-$$Static\ *$$
+$$(e\rightarrow a)\rightarrow(b\rightarrow c)\rightarrow c$$
 
 - **Example**
 
 ```js
-Left.of(1).map(add(1)).value; //1
+Left.of(1).map(add(1)).fold(id, console.log); //1
 ```
