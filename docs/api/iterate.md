@@ -145,5 +145,5 @@ $$(a\rightarrow a)\rightarrow Int\rightarrow a\rightarrow [a]$$
 - **Example**
 
 ```js
-scan(1)(add(1))(5); //[2, 3, 4, 5, 6]
+scan(add(1))(5)(1); //[2, 3, 4, 5, 6]
 ```
