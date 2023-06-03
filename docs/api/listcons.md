@@ -101,20 +101,20 @@ for (const x of L.iter(myList)) console.log(x); //1 2 3 4 5
 
 ## L.range() {#range}
 
-按照范围和步长生成一个列表。
+按照范围和迭代函数生成一个列表。
 
 - **Type**
 
-$$Number \rightarrow Number \rightarrow Number \rightarrow List\ Number$$
+$$Number \rightarrow Number \rightarrow (Number\rightarrow Number) \rightarrow List\ Number$$
 
 - **Details**
 
-传入三个参数，分别为区间起始，区间结束，步长。最终返回一个结果为 $\{x\ |\ l\le x\le r \ 且 x=l+kr,k\in \mathbb{N^+}\}$。
+传入三个参数，分别为区间起始，区间结束，迭代函数。最终返回一个结果为区间起始开始迭代直到区间结束值为止的列表。
 
 - **Example**
 
 ```js
-L.range(1, 5, 1); // List [1, 2, 3, 4, 5]
+L.range(1, 5, add(1)); // List [1, 2, 3, 4, 5]
 ```
 
 ## L.tail() {#tail}
