@@ -6,35 +6,31 @@
 
 光学组件透镜。
 
-### Lens.of() {#of}
+## Lens.of() {#of}
 
 构造一个透镜。
 
-- **Type**
+-   **Type**
 
 $$(s\rightarrow a)\rightarrow(s\rightarrow a\rightarrow s)\rightarrow Len$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个 getter 方法，第二个参数传入一个 setter 方法。
 
 返回值为一个透镜。
 
-- **Example**
+-   **Example**
 
 ```js
-Lens.of(
-    (s) => s.a,
-    assoc('a')
-);
+Lens.of((s) => s.a, assoc('a'));
 ```
 
-
-### Lens.bind() {#bind}
+## Lens.bind() {#bind}
 
 直接将元素绑定在透镜。
 
-- **Type**
+-   **Type**
 
 ##### Overload 1
 
@@ -44,7 +40,7 @@ $$String|Int\rightarrow Lens$$
 
 $$[String|Int]\rightarrow Lens$$
 
-- **Details**
+-   **Details**
 
 ##### Overload 1
 
@@ -63,17 +59,17 @@ Lens.bind(['a', 'b']);
 
 返回一个数据结构中透镜聚焦的部分。
 
-- **Type**
+-   **Type**
 
 $$Len\rightarrow Data a\rightarrow a$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个透镜，第二个参数传入对应的数据结构。
 
 返回值为该数据结构中透镜聚焦的部分。
 
-- **Example**
+-   **Example**
 
 ```js
 const lens = Lens.bind('a');
@@ -84,17 +80,17 @@ view(lens, { a: 1 }); //1
 
 对一个数据结构中透镜聚焦的部分的值进行设置。
 
-- **Type**
+-   **Type**
 
 $$Len\rightarrow b \rightarrow Data a\rightarrow Data b$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个透镜，第二个参数传入需要设置为的目标值，第三个参数传入对应的数据结构。
 
 返回值为该数据结构被设置完成的结果
 
-- **Example**
+-   **Example**
 
 ```js
 const lens = Lens.bind('a');
@@ -105,17 +101,17 @@ set(lens, 2, { a: 1 }); //{ a: 2 }
 
 对一个数据结构中透镜聚焦的部分的应用函数。
 
-- **Type**
+-   **Type**
 
 $$Len\rightarrow (a\rightarrow b) \rightarrow Data a\rightarrow Data b$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个透镜，第二个参数传入要应用的函数，第三个参数传入对应的数据结构。
 
 返回值为该数据结构应用函数后的结果。
 
-- **Example**
+-   **Example**
 
 ```js
 const lens = Lens.bind('a');

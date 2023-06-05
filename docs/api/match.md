@@ -4,11 +4,11 @@
 
 进行模式匹配
 
-- **Type**
+-   **Type**
 
 $$a\rightarrow (a\rightarrow b)\rightarrow a \rightarrow (a\rightarrow c) \rightarrow ... \rightarrow a \rightarrow *$$
 
-- **Details**
+-   **Details**
 
 传入偶数个参数，每两个参数被认为是一对匹配规则（记为 $r_i$ 与 $f_i$，其中 $r_i$ 为一个值或函数，$f_i$ 为一个单元函数）。
 
@@ -24,7 +24,7 @@ $$a\rightarrow (a\rightarrow b)\rightarrow a \rightarrow (a\rightarrow c) \right
 
 目前支持匹配的类型：字面值，$Maybe$，$Array$。
 
-- **Example**
+-   **Example**
 
 ```js
 const sort = match(

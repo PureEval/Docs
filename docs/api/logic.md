@@ -4,15 +4,15 @@
 
 计算逻辑或运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Bool \rightarrow Bool \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个布尔类型的参数（记为 $a,b$），则结果为 $a \vee b$。
 
-- **Example**
+-   **Example**
 
 ```js
 either(true, false); //true
@@ -24,15 +24,15 @@ either(false)(false); //false
 
 计算逻辑与运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Bool \rightarrow Bool \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个布尔类型的参数（记为 $a,b$），则结果为 $a \land b$。
 
-- **Example**
+-   **Example**
 
 ```js
 either(true, false); //false
@@ -44,15 +44,15 @@ either(true)(true); //true
 
 计算非运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Bool \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入一个布尔类型的参数（记为 $a$），则结果为 $!a$。
 
-- **Example**
+-   **Example**
 
 ```js
 not(false); //true
@@ -62,15 +62,15 @@ not(false); //true
 
 计算 < 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a<b$。
 
-- **Example**
+-   **Example**
 
 ```js
 lt(2, 3); //true
@@ -82,15 +82,15 @@ lt(3)(3); //false
 
 计算 <= 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a<=b$。
 
-- **Example**
+-   **Example**
 
 ```js
 lte(2, 3); //true
@@ -102,15 +102,15 @@ lte(3)(3); //true
 
 计算 > 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a>b$。
 
-- **Example**
+-   **Example**
 
 ```js
 gt(2, 3); //false
@@ -122,15 +122,15 @@ gt(3)(3); //false
 
 计算 >= 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a>=b$。
 
-- **Example**
+-   **Example**
 
 ```js
 gte(2, 3); //false
@@ -142,15 +142,15 @@ gte(3)(3); //true
 
 计算 == 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a==b$。
 
-- **Example**
+-   **Example**
 
 ```js
 equal(1, 1); //true
@@ -162,15 +162,15 @@ equal(5)(1); //false
 
 计算 === 运算的结果。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个可比较类型的参数（记为 $a,b$），则结果为 $a===b$。
 
-- **Example**
+-   **Example**
 
 ```js
 equalStrict(1, 1); //true
@@ -184,15 +184,15 @@ equalStrict(5)(1); //false
 
 需要注意的是，如果传入的是一般值，比较规则将与 [equalStrict](#equalStrict) 同。
 
-- **Type**
+-   **Type**
 
 $$* \rightarrow * \rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入两个值。
 
-- **Example**
+-   **Example**
 
 ```js
 deepEqual([1, 2, 3], [4, 5, 6]); //false
@@ -203,11 +203,11 @@ deepEqual({ a: 1 }, { a: 1 }); //true
 
 构造一个参数符合条件后执行一定操作的函数。
 
-- **Type**
+-   **Type**
 
 $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|b $$
 
-- **Details**
+-   **Details**
 
 初始传入两个函数类型的参数（记为 $a,b$），返回值为传入一个参数的函数。
 
@@ -217,26 +217,26 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 显然，$a,b$ 函数均为单元函数。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = when(
-  (v) => v == " is you!",
-  (v) => "homo" + v
+	(v) => v == ' is you!',
+	(v) => 'homo' + v
 );
 
-foo(" is you!"); //"homo is you!";
+foo(' is you!'); //"homo is you!";
 ```
 
 ## unless() {#unless}
 
 构造一个参数符合条件后执行一定操作的函数。
 
-- **Type**
+-   **Type**
 
 $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|b $$
 
-- **Details**
+-   **Details**
 
 初始传入两个函数类型的参数（记为 $a,b$），返回值为传入一个参数的函数。
 
@@ -246,26 +246,26 @@ $$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|
 
 显然，$a,b$ 函数均为单元函数。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = unless(
-  (v) => !(v == " is you!"),
-  (v) => "homo" + v
+	(v) => !(v == ' is you!'),
+	(v) => 'homo' + v
 );
 
-foo(" is you!"); //"homo is you!";
+foo(' is you!'); //"homo is you!";
 ```
 
 ## ifElse() {#ifElse}
 
 构造一个参数符合条件后执行一定操作的函数。
 
-- **Type**
+-   **Type**
 
 $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow c) \rightarrow b|c $$
 
-- **Details**
+-   **Details**
 
 初始传入三个函数类型的参数（记为 $a,b,c$），返回值为传入一个参数的函数。
 
@@ -275,31 +275,31 @@ $$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow 
 
 显然，$a,b,c$ 函数均为单元函数。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = ifElse(
-  (v) => v == " is you!",
-  (v) => "homo" + v,
-  (v) => "homo" + v
+	(v) => v == ' is you!',
+	(v) => 'homo' + v,
+	(v) => 'homo' + v
 );
 
-foo(" not you!"); //"homo not you!";
+foo(' not you!'); //"homo not you!";
 ```
 
 ## id() {#id}
 
 返回与传入的参数。
 
-- **Type**
+-   **Type**
 
 $$a \rightarrow a$$
 
-- **Details**
+-   **Details**
 
 传入一个参数，并直接返回它。
 
-- **Example**
+-   **Example**
 
 ```js
 id(114514); //114514
@@ -309,15 +309,15 @@ id(114514); //114514
 
 构造一个返回常量的函数。
 
-- **Type**
+-   **Type**
 
 $$a \rightarrow () \rightarrow a$$
 
-- **Details**
+-   **Details**
 
 传入一个参数作为常量，返回值为一个函数值为该常量的函数。
 
-- **Example**
+-   **Example**
 
 ```js
 always(114514)(); //114514

@@ -4,15 +4,15 @@
 
 判断整数是否为奇数。
 
-- **Type**
+-   **Type**
 
 $$Int\rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入一个整数作为参数，若该整数为奇数，则返回 `true`，否则返回 `false`。
 
-- **Example**
+-   **Example**
 
 ```js
 odd(114514); //false
@@ -22,15 +22,15 @@ odd(114514); //false
 
 判断整数是否为偶数。
 
-- **Type**
+-   **Type**
 
 $$Int\rightarrow Bool$$
 
-- **Details**
+-   **Details**
 
 传入一个整数作为参数，若该整数为偶数，则返回 `true`，否则返回 `false`。
 
-- **Example**
+-   **Example**
 
 ```js
 odd(114514); //true
@@ -40,15 +40,15 @@ odd(114514); //true
 
 计算两数的加和。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $a+b$。
 
-- **Example**
+-   **Example**
 
 ```js
 add(1, 114513); //114514
@@ -59,15 +59,15 @@ add(1)(114513); //114514
 
 计算两数的差。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $a-b$。
 
-- **Example**
+-   **Example**
 
 ```js
 minus(114515, 1); //114514
@@ -78,15 +78,15 @@ minus(114515)(1); //114514
 
 计算两数的积。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $a*b$。
 
-- **Example**
+-   **Example**
 
 ```js
 mul(57257, 2); //114514
@@ -97,15 +97,15 @@ mul(57257)(2); //114514
 
 计算两数的商。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $a/b$。
 
-- **Example**
+-   **Example**
 
 ```js
 div(229030, 2); //114514
@@ -116,15 +116,15 @@ div(229030)(2); //114514
 
 计算两数的商。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $b/a$。
 
-- **Example**
+-   **Example**
 
 ```js
 div(2, 229030); //114514
@@ -135,17 +135,17 @@ div(2)(229030); //114514
 
 计算整数取余的结果。
 
-- **Type**
+-   **Type**
 
 $$Int\rightarrow Int\rightarrow Int$$
 
-- **Details**
+-   **Details**
 
 传入两个整数作为参数（记为 $a,b$），则结果为 $a\%b$。
 
 如果你希望计算取模而非取余，应使用 [rema](#rema)。
 
-- **Example**
+-   **Example**
 
 ```js
 mod(114514, 1); //0
@@ -156,17 +156,17 @@ mod(114514)(1); //0
 
 计算整数取模的结果。
 
-- **Type**
+-   **Type**
 
 $$Int\rightarrow Int\rightarrow Int$$
 
-- **Details**
+-   **Details**
 
 传入两个整数作为参数（记为 $a,b$），则结果为 $a \ mod\ b$。
 
 如果你希望计算取余而非取模，应使用 [mod](#mod)。
 
-- **Example**
+-   **Example**
 
 ```js
 rema(114514, 1); //0
@@ -177,15 +177,15 @@ rema(114514)(1); //0
 
 计算数的幂次。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入两个数字作为参数（记为 $a,b$），则结果为 $a^b$。
 
-- **Example**
+-   **Example**
 
 ```js
 pow(114514, 1); //114514
@@ -196,15 +196,15 @@ pow(2)(3); //8
 
 将数字取反。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字，返回其相反数。
 
-- **Example**
+-   **Example**
 
 ```js
 negate(-114514); //114514
@@ -214,15 +214,15 @@ negate(-114514); //114514
 
 生成适用于 [sort](#sort) 函数的降序比较器。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
 
-- **Details**
+-   **Details**
 
 返回值为一个适用于 sort 函数的降序比较器。
 
-- **Example**
+-   **Example**
 
 ```js
 sort(upper(), [3, 2, 1]); //[3, 2, 1]
@@ -232,15 +232,15 @@ sort(upper(), [3, 2, 1]); //[3, 2, 1]
 
 生成适用于 [sort](#sort) 函数的升序比较器。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
 
-- **Details**
+-   **Details**
 
 返回值为一个适用于 sort 函数的升序比较器。
 
-- **Example**
+-   **Example**
 
 ```js
 sort(under(), [3, 2, 1]); //[1, 2, 3]
@@ -250,17 +250,19 @@ sort(under(), [3, 2, 1]); //[1, 2, 3]
 
 将数组按照一定规则排序。
 
-- **Type**
+-   **Type**
 
 $$Ord \ a \Rightarrow [a] \rightarrow ((a,a)\rightarrow Int) \rightarrow [a]$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个规则函数，第二个参数传入一个待排序的数组，返回值为排序后的数组。
 
+规则函数可以填写 [\_](/api/bind.html#_) 来代表采取默认规则。
+
 规则函数与 `Array.prototype.sort` 所使用的规则函数相同。
 
-- **Example**
+-   **Example**
 
 ```js
 sort(under(), [3, 2, 1]); //[1, 2, 3]
@@ -270,15 +272,15 @@ sort(under(), [3, 2, 1]); //[1, 2, 3]
 
 求数字数组的中位数。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其中位数。
 
-- **Example**
+-   **Example**
 
 ```js
 median([1, 2, 3, 4, 5, 6]); //3.5
@@ -288,15 +290,15 @@ median([1, 2, 3, 4, 5, 6]); //3.5
 
 求数字数组的总和。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其所有元素总和。
 
-- **Example**
+-   **Example**
 
 ```js
 sum([1, 2, 3, 4, 5, 6]); //21
@@ -306,15 +308,15 @@ sum([1, 2, 3, 4, 5, 6]); //21
 
 求数字数组的平均值。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其所有元素的平均值。
 
-- **Example**
+-   **Example**
 
 ```js
 average([1, 2, 3, 4, 5, 6]); //3.5
@@ -324,15 +326,15 @@ average([1, 2, 3, 4, 5, 6]); //3.5
 
 求数字数组的连乘积。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其所有元素的连乘积。
 
-- **Example**
+-   **Example**
 
 ```js
 prod([1, 2, 3, 4, 5, 6]); //720
@@ -342,15 +344,15 @@ prod([1, 2, 3, 4, 5, 6]); //720
 
 求数字数组的中的最大值。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其所有元素中的最大值。
 
-- **Example**
+-   **Example**
 
 ```js
 max([1, 1, 4, 5, 1, 4]); //5
@@ -360,15 +362,15 @@ max([1, 1, 4, 5, 1, 4]); //5
 
 求数字数组的中的最小值。
 
-- **Type**
+-   **Type**
 
 $$[Number]\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的数组，返回值为其所有元素中的最小值。
 
-- **Example**
+-   **Example**
 
 ```js
 min([1, 1, 4, 5, 1, 4]); //1
@@ -378,15 +380,15 @@ min([1, 1, 4, 5, 1, 4]); //1
 
 计算数字自减的值。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的变量，返回其自减的结果。
 
-- **Example**
+-   **Example**
 
 ```js
 dec(114515); //114514
@@ -396,15 +398,15 @@ dec(114515); //114514
 
 计算数字自增的值。
 
-- **Type**
+-   **Type**
 
 $$Number\rightarrow Number$$
 
-- **Details**
+-   **Details**
 
 传入一个数字类型的变量，返回其自增的结果。
 
-- **Example**
+-   **Example**
 
 ```js
 inc(114513); //114514

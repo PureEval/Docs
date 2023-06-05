@@ -4,17 +4,17 @@
 
 给定左右端点构造一个范围。
 
-- **Type**
+-   **Type**
 
 $$Number|Char \rightarrow Number|Char \rightarrow [Number|Char]$$
 
-- **Details**
+-   **Details**
 
 传入两个数字或字符类型的参数（记为 $a,b$），则结果为数学意义上的闭区间 $[a,b]$。
 
-- **Example**
+-   **Example**
 
 ```js
 range(1, 5); //[1, 2, 3, 4, 5]
-range("a")("c"); //['a', 'b', 'c']
+range('a')('c'); //['a', 'b', 'c']
 ```

@@ -10,16 +10,16 @@
 
 构造一个抽象数据结构。
 
-- **Details**
+-   **Details**
 
 传入一组构造函数，返回这些构造函数所组成的代数数据结构。
 
-- **Example**
+-   **Example**
 
 ##### Example 1
 
 ```js
-const Maybe = Data("Just a", "Nothing");
+const Maybe = Data('Just a', 'Nothing');
 ```
 
 此时 Maybe 对象的定义如下：
@@ -48,7 +48,7 @@ Maybe.is.Just(foo); // true
 你还可以引入多个构造参数来完成更复杂的代数数据结构：
 
 ```js
-const Round = Data("Round x y r");
+const Round = Data('Round x y r');
 
 // Square Round x y r => Number
 const Square = (round) => 3.14 * round.r ** 2;
@@ -62,7 +62,7 @@ Square(Round.Round(1, 1, 5)); //78.5
 
 ```js
 //Node.js v16.15.0
-Object.assign(global, Data("Round x y r"));
+Object.assign(global, Data('Round x y r'));
 
 // Square Round x y r => Number
 const Square = (round) => 3.14 * round.r ** 2;

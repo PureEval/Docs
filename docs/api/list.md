@@ -164,7 +164,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
 dropWhile((v) => v < 3, [4, 5, 1, 4]); //[4, 5, 1, 4]
 ```
 
-## allCheck() {#allCheck}
+## every() {#every}
 
 检查一个列表，其必须完全满足需求。
 
@@ -181,10 +181,10 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
 - **Example**
 
 ```js
-allCheck((v) => v < 3, [1, 1, 4, 5, 1, 4]); //false
+every((v) => v < 3, [1, 1, 4, 5, 1, 4]); //false
 ```
 
-## anyCheck() {#anyCheck}
+## some() {#some}
 
 检查一个列表，其有任意一个元素满足需求即可。
 
@@ -201,7 +201,7 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
 - **Example**
 
 ```js
-anyCheck((v) => v < 3, [1, 1, 4, 5, 1, 4]); //true
+some((v) => v < 3, [1, 1, 4, 5, 1, 4]); //true
 ```
 
 ## concat() {#concat}

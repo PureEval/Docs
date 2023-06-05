@@ -4,13 +4,13 @@
 
 进行高维度的从左向右的函数组合。
 
-- **Type**
+-   **Type**
 
 请注意：该类型不唯一，视偏移数组而定。
 
 $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\rightarrow a)$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个函数数组，第二个参数传入以数字构成的偏移数组，两个数组长度应等长。
 
@@ -18,7 +18,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 
 返回值为按上述规则组合后的新函数，参数个数为偏移数组中从左到右第一个数值不为 0 的值所对应的函数的参数个数。
 
-- **Example**
+-   **Example**
 
 ```js
 higherPipe([add(1), mul(2)], [5, 1])(1); //12
@@ -28,13 +28,13 @@ higherPipe([add(1), mul(2)], [5, 1])(1); //12
 
 进行高维度的从右向左的函数组合。
 
-- **Type**
+-   **Type**
 
 请注意：该类型不唯一，视偏移数组而定。
 
 $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\rightarrow a)$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个函数数组，第二个参数传入以数字构成的偏移数组，两个数组长度应等长。
 
@@ -42,7 +42,7 @@ $$[(a \rightarrow a),...,(a \rightarrow a)]\rightarrow [Int]\rightarrow (a\right
 
 返回值为按上述规则组合后的新函数，参数个数为偏移数组中从右到左第一个数值不为 0 的值所对应的函数的参数个数。
 
-- **Example**
+-   **Example**
 
 ```js
 higherComp([mul(2), add(1)], [1, 5])(1); //12
@@ -56,17 +56,17 @@ higherComp([mul(2), add(1)], [1, 5])(1); //12
 
 生成一个支持无限迭代的函数。
 
-- **Type**
+-   **Type**
 
 $$a\rightarrow (a\rightarrow a)\rightarrow (()\rightarrow a)$$
 
-- **Details**
+-   **Details**
 
 第一个参数设定一个 seed，第二个参数传入一个单元函数。
 
 返回值为一个函数，其每次被调用时候将会返回单元函数以 seed 为参数的函数值并将 seed 更新为该函数值。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = coalgebra(1, add(1));
@@ -83,13 +83,13 @@ foo(); //3
 
 生成一个通过偏移量偏移状态的函数状态机。
 
-- **Type**
+-   **Type**
 
 请注意：该类型不唯一，视偏移数组而定。
 
 $$a\rightarrow [(a\rightarrow b),...,(c\rightarrow d)]\rightarrow ([Int]\rightarrow d)$$
 
-- **Details**
+-   **Details**
 
 第一个参数设定一个 seed，第二个参数传入一个函数数组。
 
@@ -97,7 +97,7 @@ $$a\rightarrow [(a\rightarrow b),...,(c\rightarrow d)]\rightarrow ([Int]\rightar
 
 对于每一次传入的偏移数组，会对原函数数组以[高维管道](#higherPipe)方式组合，最终返回组合后函以 seed 作为参数的函数值并将 seed 的值更新为该函数值。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = stateMachine(1, [add(1), mul(2), div(3)]);

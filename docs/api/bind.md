@@ -8,11 +8,11 @@
 
 将函数的某些参数提前绑定。
 
-- **Type**
+-   **Type**
 
 $$(a\rightarrow b \rightarrow c \rightarrow ...\rightarrow x)\rightarrow a \rightarrow b \rightarrow \bar{c} \rightarrow ... \rightarrow c \rightarrow x$$
 
-- **Details**
+-   **Details**
 
 第一个参数传入一个函数，接下来传入的参数不超过该函数参数个数个参数。
 
@@ -20,7 +20,7 @@ $$(a\rightarrow b \rightarrow c \rightarrow ...\rightarrow x)\rightarrow a \righ
 
 返回值即为对原函数按上述参数绑定值后的新函数。
 
-- **Example**
+-   **Example**
 
 ```js
 const foo = (a, b, c) => a + b + c;
