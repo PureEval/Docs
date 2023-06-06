@@ -174,7 +174,7 @@ $$Object \ [key:a]\rightarrow [key]$$
 keys({ a: 1, b: 2, c: 3 }); //['a', 'b', 'c']
 ```
 
-## valuesIn() {#valuesIn}
+## values() {#values}
 
 取出 Object 内的所有值。
 
@@ -189,7 +189,7 @@ $$Object \ [key:a]\rightarrow [a]$$
 -   **Example**
 
 ```js
-valuesIn({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
+values({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
 ```
 
 ## makePair() {#makePair}
