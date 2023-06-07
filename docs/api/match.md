@@ -38,6 +38,26 @@ const fib = match(
     _, (v) => fib(v-1) + fib(v-2)
 );
 
+
+/*
+(In Haskell)
+Data Square = Round x y r
+Square :: Round -> Number
+Square Round x y r = 3.14 * r * r
+Square _ = "Error" 
+*/
+Object.assign(global, Data('Round x y r'));
+const Square = match(
+	eqData(
+        Round, {
+		    x: _,
+		    y: _,
+		    r: _
+	    }
+    ), (v) => 3.14 * v.r ** 2,
+	_, 'Error'
+);
+
 const maybeFoo = match(
     Just("homo"), id,
     Nothing,      "Nothing",
@@ -48,11 +68,10 @@ const check = (obj) => obj.homo ? true : false;
 const homoInside = match(
     check, "Yes",
     _,     "No"
-    
 );
 
 const objectFoo = match(
-    { homo: "Yes" }, "Yes".
-    _,               "No" 
+    { homo: "Yes" }, "Yes",
+    _,               "No"
 );
 ```

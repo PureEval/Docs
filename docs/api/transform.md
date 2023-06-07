@@ -63,3 +63,25 @@ const foo = (a, b) => a + b;
 
 call(foo, ['114', '514']); //"114514"
 ```
+
+## then() {#then}
+
+在 Promise 后添加函数，等同于 Promise.then。
+
+-   **Type**
+
+$$(resolve,reject)\rightarrow a|e\rightarrow Promise\ a\rightarrow a|e$$
+
+-   **Details**
+
+第一个参数为函数，第二个参数传入需要操作的 Promise 对象。
+
+-   **Example**
+
+```js
+const fetch = () => new Promise((resolve, reject) => {
+    //...do sth.
+});
+
+await pipe(fetch,then(toUpper));
+```

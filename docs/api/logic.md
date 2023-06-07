@@ -322,3 +322,25 @@ $$a \rightarrow () \rightarrow a$$
 ```js
 always(114514)(); //114514
 ```
+
+## eqData() {#eqData}
+
+比较两个抽象数据结构是否相等。
+
+-   **Type**
+
+$$Data\rightarrow a\rightarrow b\rightarrow Boolen$$
+
+-   **Details**
+
+第一个参数传入一个抽象数据结构的构造函数，然后传入两个对象，该函数可以判断这两个对象是否来自该抽象数据结构并且相等。
+
+第一个参数的对应值可以传入 [\_](/api/bind.html#_) 以表示对该参数任意匹配。
+
+-   **Example**
+
+```js
+const foo = Data('A a b c');
+eqData(foo.A, { a: 1, b: 1, c: 2 }, foo.A(1, 1, 2)); //true
+eqData(foo.A, { a: 1, b: 1, c: { r: _ } }, foo.A(1, 1, { r: 1 })); //true
+```
