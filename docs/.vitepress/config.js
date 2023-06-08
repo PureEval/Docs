@@ -79,6 +79,8 @@ export const sidebar = {
         { text: '⭐MaybeAsync', link: '/api/maybeAsync' },
         { text: '⭐Task', link: '/api/task' },
         { text: '⭐Either', link: '/api/either' },
+        { text: '⭐IO(Monad)', link: '/api/io' },
+        { text: '⭐IOAsync', link: '/api/ioasync' },
         { text: '⚠List(Cons)', link: '/api/listcons' },
         { text: '⚠Data', link: '/api/data' }
       ],

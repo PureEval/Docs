@@ -16,8 +16,8 @@ $ npm i pureeval
 Then reference it in your code as follows.
 
 ```javascript
-const pureEval = require("pureeval");
-console.log(pureEval.add(1)(114513)); //114514
+const P = require('pureeval');
+console.log(P.add(1)(114513)); //114514
 ```
 
 ### Get from GitHub Release
@@ -25,8 +25,8 @@ console.log(pureEval.add(1)(114513)); //114514
 Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.common.min.js` and `require` it in your code like below.
 
 ```javascript
-const pureEval = require("PureEval.common.min.js");
-console.log(pureEval.add(1)(114513)); //114514
+const P = require('PureEval.common.min.js');
+console.log(P.add(1)(114513)); //114514
 ```
 
 ## For ESM
@@ -34,8 +34,8 @@ console.log(pureEval.add(1)(114513)); //114514
 Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.es.min.js` and `import` it in your code like below.
 
 ```javascript
-import * as pureEval from "PureEval.es.min.js";
-console.log(pureEval.add(1)(114513)); //114514
+import * as P from 'PureEval.es.min.js';
+console.log(P.add(1)(114513)); //114514
 ```
 
 ## What's next?

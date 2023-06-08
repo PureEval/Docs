@@ -18,7 +18,7 @@ hero:
 
 features:
   - title: Currying or Partial Evaluation
-    details: Support for functions with arbitrary arguments to be collyrized.
+    details: Support for functions with arbitrary arguments to be curried.
   - title: Everything you need for Functional Programming with JavaScript
     details: PureEval has built-in Monad and Optics components, and unique non-variable binding iterate strategy included.
   - title: Lightweight
