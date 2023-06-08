@@ -79,9 +79,32 @@ $$(resolve,reject)\rightarrow a|e\rightarrow Promise\ a\rightarrow a|e$$
 -   **Example**
 
 ```js
-const fetch = () => new Promise((resolve, reject) => {
-    //...do sth.
-});
+const fetch = () =>
+	new Promise((resolve, reject) => {
+		//...do sth.
+	});
 
-await pipe(fetch,then(toUpper));
+await pipe(fetch, then(toUpper));
+```
+
+## tryCatch() {#tryCatch}
+
+用于错误检测的函数包装。
+
+-   **Type**
+
+$$f\rightarrow (e\rightarrow *)\rightarrow f$$
+
+-   **Details**
+
+第一个参数传入一个函数 tryer，第二个参数传入一个函数 reject，返回值是柯里化后包装的 tryer 函数。
+
+tryCatch 等于给 tryer 创建了一个 wrapper，在不出现错误时正常返回 tryer 的返回值，否则会将错误和传入 tryer 的参数一并传递给 reject。
+
+-   **Example**
+
+```js
+const foo = tryCatch(div(1), always('hello'));
+foo(1); //1
+foo(0); //hello/INF
 ```

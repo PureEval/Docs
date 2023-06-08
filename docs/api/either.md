@@ -24,6 +24,8 @@ parseJSON('{sfdas').map(JSON.stringify).fold(console.error, console.log);
 Right 代表可以被接受的值，其中的值将会被 Either 链一直传递并参与映射。
 Left 代表发生错误的值，其中的值会被 Either 链只读传递。
 
+在 Right 执行过程中如果产生错误，该 Right 值会变为 Left。
+
 -   **Type**
 
 $$a\rightarrow Either\ a$$

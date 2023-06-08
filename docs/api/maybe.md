@@ -6,6 +6,8 @@
 
 Maybe 类型内包含一个不确定的值。
 
+如果一个确定的值在 Maybe 中执行发生错误，该 Maybe 也会变为 Nothing。
+
 `undefined` 与 `null` 值都将被认为 [Nothing](#Noting)。
 
 -   **Type**
