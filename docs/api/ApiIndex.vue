@@ -74,10 +74,13 @@ const filtered = computed(() => {
       <div class="api-groups">
         <div
           v-for="item of section.items"
+          :id="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? item.text.slice(1) : item.text"
           :key="item.text"
           class="api-group"
         >
-          <h3>{{ item.text }}</h3>
+          <h3>
+            <a :href="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? '#' + item.text.slice(1) : '#' + item.text">{{ item.text }}</a>
+          </h3>
           <ul>
             <li
               v-for="h of item.headers"
@@ -138,6 +141,17 @@ h3 {
   margin-bottom: 1em;
   transition: color 0.5s;
 }
+
+.api-group h3 a {
+  letter-spacing: -0.01em;
+  color: var(--vt-c-green);
+  font-size: 18px;
+  margin-bottom: 1em;
+  transition: color 0.5s;
+  font-weight: 600;
+  line-height: 1;
+}
+
 
 .api-section {
   margin-bottom: 64px;
