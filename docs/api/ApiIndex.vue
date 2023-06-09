@@ -79,7 +79,7 @@ const filtered = computed(() => {
           class="api-group"
         >
           <h3>
-            <a :href="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? '#' + item.text.slice(1) : '#' + item.text">{{ item.text }}</a>
+            <a :href="item.link">{{ item.text }}</a>
           </h3>
           <ul>
             <li
