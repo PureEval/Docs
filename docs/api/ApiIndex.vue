@@ -111,14 +111,24 @@ const filtered = computed(() => {
 
 h1,
 h2,
-h3 {
+h3,
+.api-group h3 a {
   font-weight: 600;
   line-height: 1;
+  transition: color 0.5s;
 }
 
 h1,
 h2 {
   letter-spacing: -0.02em;
+}
+
+h3,
+.api-group h3 a {
+  letter-spacing: -0.01em;
+  color: var(--vt-c-green);
+  font-size: 18px;
+  margin-bottom: 1em;
 }
 
 h1 {
@@ -129,18 +139,10 @@ h2 {
   font-size: 24px;
   color: var(--vt-c-text-1);
   margin: 36px 0;
-  transition: color 0.5s;
   padding-top: 36px;
   border-top: 1px solid var(--vt-c-divider-light);
 }
 
-h3 {
-  letter-spacing: -0.01em;
-  color: var(--vt-c-green);
-  font-size: 18px;
-  margin-bottom: 1em;
-  transition: color 0.5s;
-}
 
 .api-group h3 a {
   letter-spacing: -0.01em;
