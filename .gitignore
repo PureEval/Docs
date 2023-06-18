@@ -11,3 +11,6 @@ cache
 node_modules
 pnpm-global
 yarn.lock
+package.json
+pnpm-lock.yaml
+.directory
