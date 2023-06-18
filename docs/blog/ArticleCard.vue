@@ -2,7 +2,10 @@
   <div class="card">
     <div class="flex">
       <div class="media">
-        <img :src="image" :alt="title" />
+        <img 
+          :src="image" 
+          :alt="title"
+        >
       </div>
       <div class="details">
         <a :href="href">
@@ -11,7 +14,9 @@
         </a>
         <div class="author">
           <div>
-            <h3 class="name">{{ author }}</h3>
+            <h3 class="name">
+              {{ author }}
+            </h3>
           </div>
         </div>
       </div>

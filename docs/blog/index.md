@@ -1,5 +1,5 @@
 <script setup>
-  import Article from './Article.vue'
+  import Article from './ArticleCard.vue'
     import data from './data.json'
 
 </script>
