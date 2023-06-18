@@ -15,6 +15,12 @@ hero:
     - theme: alt
       text: View on GitHub
       link: https://github.com/PureEval/PureEval
+    - theme: alt
+      text: API Doc
+      link: /api/
+    - theme: alt
+      text: Blog
+      link: /blog/index
 
 features:
   - title: Currying or Partial Evaluation

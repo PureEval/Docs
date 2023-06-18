@@ -24,6 +24,9 @@ export default {
         activeMatch: `^/api/`,
         link: '/api/',
       },
+      {
+        text: 'Blog', link: '/blog/' , activeMatch: '/blog'
+      }
     ],
 
     socialLinks: [
@@ -75,7 +78,7 @@ export const sidebar = {
         { text: '⭐Iterate', link: '/api/iterate' },
         { text: 'Filter', link: '/api/filter' },
         { text: '⭐Optics', link: '/api/optics' },
-		{ text: '⭐Maybe(Monad)', link: '/api/maybe' },
+		    { text: '⭐Maybe(Monad)', link: '/api/maybe' },
         { text: '⭐MaybeAsync', link: '/api/maybeAsync' },
         { text: '⭐Task', link: '/api/task' },
         { text: '⭐Either', link: '/api/either' },
