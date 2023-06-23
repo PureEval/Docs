@@ -258,7 +258,7 @@ $$Ord \ a \Rightarrow [a] \rightarrow ((a,a)\rightarrow Int) \rightarrow [a]$$
 
 第一个参数传入一个规则函数，第二个参数传入一个待排序的数组，返回值为排序后的数组。
 
-规则函数可以填写 [\_](/api/bind.html#_) 来代表采取默认规则。
+规则函数可以填写 [\_](/api/placeholder.html#_) 来代表采取默认规则。
 
 规则函数与 `Array.prototype.sort` 所使用的规则函数相同。
 

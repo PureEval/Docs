@@ -98,6 +98,40 @@ await JustAsync(new Promise((res) => res('Hello, World!'))).fold(() => 'fuck', i
 await JustAsync(new Promise((res) => res(null))).fold(() => 'fuck', id); //"fuck"
 ```
 
+## MaybeAsync.chain() {#chain}
+
+在 MaybeAsync 后链接一个返回 MaybeAsync 类型的函数，可作为链式调用。
+
+传入一个返回 MaybeAsync 类型的函数，返回值为链接后的 MaybeAsync 对象。
+
+-   **Type**
+
+$$\overline{MaybeAsync\ a}\rightarrow (a\rightarrow MaybeAsync\ b)\rightarrow MaybeAsync\ b$$
+
+-   **Example**
+
+```js
+const getUserById = async (id) => {
+  // some async operation to fetch user by id
+};
+
+const getUserEmail = async (user) => {
+  // some async operation to fetch user email
+};
+
+const sendEmail = async (email) => {
+  // some async operation to send email
+};
+
+const sendEmailToUserById = (id) =>
+  MaybeAsync.of(getUserById(id))
+    .chain((user) => (user ? JustAsync(user) : NothingAsync))
+    .chain(getUserEmail)
+    .chain(sendEmail);
+
+sendEmailToUserById(123);
+```
+
 ## JustAsync() {#just}
 
 $Maybe$ 类型的构造函数。

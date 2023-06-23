@@ -91,6 +91,55 @@ $$\overline{Maybe\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow
 Just('The body next door').fold(() => 'Nothing', id); //"The body next door"
 ```
 
+## Maybe.chain() {#chain}
+
+在 Maybe 后链接一个返回 Maybe 类型的函数，可作为链式调用。
+
+传入一个返回 Maybe 类型的函数，返回值为链接后的 Maybe 对象。
+
+-   **Type**
+
+$$\overline{Maybe\ a}\rightarrow (a\rightarrow Maybe\ b)\rightarrow Maybe\ b$$
+
+-   **Example**
+
+```js
+const getUser = (id) => {
+	if (id === 1) {
+		return Just({ id: 1, name: 'Alice' });
+	} else {
+		return Nothing;
+	}
+};
+
+const getAddress = (user) => {
+	if (user.name === 'Alice') {
+		return Just({ street: '123 Main St', city: 'Anytown' });
+	} else {
+		return Nothing;
+	}
+};
+
+const getCity = (address) => {
+	if (address.street === '123 Main St') {
+		return Just(address.city);
+	} else {
+		return Nothing;
+	}
+};
+
+const city = Just(1)
+	.chain(getUser)
+	.chain(getAddress)
+	.chain(getCity)
+	.fold(
+		() => 'Unknown',
+		(city) => city
+	);
+
+console.log(city); // 'Anytown'
+```
+
 ## Just() {#just}
 
 $Maybe$ 类型的构造函数。

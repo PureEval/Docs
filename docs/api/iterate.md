@@ -102,7 +102,7 @@ $$(a,b,c)\rightarrow a \rightarrow a$$
 
 接下来的参数传入一个初始值和一个列表，返回值为按规则折叠列表后的结果。
 
-初始值可以填写占位符 [\_](/api/bind.html#_) 来代表采用默认初始值。
+初始值可以填写占位符 [\_](/api/placeholder.html#_) 来代表采用默认初始值。
 
 -   **Example**
 

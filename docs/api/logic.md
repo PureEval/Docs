@@ -182,6 +182,8 @@ equalStrict(5)(1); //false
 
 比较两个值（可以是数组、对象、或者一般的值）是否相等。
 
+可以采用占位符 [\_](/api/placeholder.html#_) 来统配匹配。
+
 需要注意的是，如果传入的是一般值，比较规则将与 [equalStrict](#equalStrict) 同。
 
 -   **Type**
@@ -197,6 +199,7 @@ $$* \rightarrow * \rightarrow Bool$$
 ```js
 deepEqual([1, 2, 3], [4, 5, 6]); //false
 deepEqual({ a: 1 }, { a: 1 }); //true
+deepEqual({ a: _, b: [_, 1, 2, 3] }, { a: 1, b: [1, 1, 2, 3] }); //true
 ```
 
 ## when() {#when}
@@ -335,7 +338,7 @@ $$Data\rightarrow a\rightarrow b\rightarrow Boolen$$
 
 第一个参数传入一个抽象数据结构的构造函数，然后传入两个对象，该函数可以判断这两个对象是否来自该抽象数据结构并且相等。
 
-第一个参数的对应值可以传入 [\_](/api/bind.html#_) 以表示对该参数任意匹配。
+第一个参数的对应值可以传入 [\_](/api/placeholder.html#_) 以表示对该参数任意匹配。
 
 -   **Example**
 

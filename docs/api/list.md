@@ -331,7 +331,7 @@ $$[a]\rightarrow [a]$$
 reverse([1, 2, 3]); //[3, 2, 1]
 ```
 
-## count() {#count}
+## countWith() {#countWith}
 
 -   **Type**
 
@@ -339,12 +339,28 @@ $$(a\rightarrow Bool)\rightarrow [a]\rightarrow Number$$
 
 -   **Details**
 
-传入一个列表，按规则统计其中符合规则的元素数。
+传入一个规则，再传入一个列表，按规则统计其中符合规则的元素数。
 
 -   **Example**
 
 ```js
-count(equal(5), [1, 2, 3, 4, 5, 5, 5]); //3
+countWith(equal(5), [1, 2, 3, 4, 5, 5, 5]); //3
+```
+
+## count() {#count}
+
+-   **Type**
+
+$$a\rightarrow [a]\rightarrow Number$$
+
+-   **Details**
+
+传入一个值，再传入一个列表，查找列表中该值出现的次数。
+
+-   **Example**
+
+```js
+count([1, 2, 3, 4, 5, 5, 5]); //3
 ```
 
 ## pairList() {#pairList}

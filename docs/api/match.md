@@ -20,9 +20,11 @@ $$a\rightarrow (a\rightarrow b)\rightarrow a \rightarrow (a\rightarrow c) \right
 
 另外，如果匹配到的是一个列表，则 $f_i$ 可以是三元函数，第一个参数为原列表，第二个参数为原列表的第一个元素，第三个参数为原列表去除第一个元素后的列表。
 
-还可以使用占位符 [\_](/api/bind.html#_) 表示任意值传入都可以匹配成功。
+附加的，如果 $f_i$ 为一个字面值，则 $f_i$ 的语义为一个返回该字面值的常函数。
 
-目前支持匹配的类型：字面值，$Maybe$，$Array$。
+还可以使用占位符 [\_](/api/placeholder.html#_) 表示任意值传入都可以匹配成功，而对于 $Array$ 和 $Object$ 的匹配亦可。
+
+目前支持匹配的类型：字面值，$Maybe$，$Array$，$Object$。
 
 -   **Example**
 
@@ -73,5 +75,10 @@ const homoInside = match(
 const objectFoo = match(
     { homo: "Yes" }, "Yes",
     _,               "No"
+);
+
+const autoFoo = match(
+    { a: _, b: [_, 1, _, 2, _, 3] }, "Yes",
+    _,                               "No"
 );
 ```
