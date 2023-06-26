@@ -14,7 +14,7 @@
 
 -   **Type**
 
-$$Iterable\ a \rightarrow List\ a$$
+$$Iterable \ a \Rightarrow \ a \rightarrow List\ a$$
 
 -   **Details**
 
@@ -50,7 +50,7 @@ L.seq(L.lazy([1, 1, 4, 5, 1, 4])); // [1, 1, 4, 5, 1, 4]
 
 -   **Type**
 
-$$x:[x]\rightarrow x$$
+$$[x]\rightarrow x$$
 
 -   **Details**
 
@@ -86,7 +86,7 @@ L.isEmpty(L.lazy([])); // true
 
 -   **Type**
 
-$$List\ a \rightarrow Iterable\ a$$
+$$Iterable \ a \Rightarrow List\ a \rightarrow \ a$$
 
 -   **Details**
 

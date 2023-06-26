@@ -78,6 +78,10 @@ console.log(example);
 
 run 方法用来执行一个 IO 单子。
 
+::: warning
+这个操作是 Unsafe 的。
+:::
+
 -   **Type**
 
 $$IO\ a\rightarrow a$$

@@ -60,7 +60,7 @@ Left(1).map(add(1)); //Left 1
 
 -   **Type**
 
-$$Either\ a\rightarrow(e\rightarrow a)\rightarrow(b\rightarrow c)\rightarrow c$$
+$$Either\ a\rightarrow(e\rightarrow a)\rightarrow(b\rightarrow\  c)\rightarrow c$$
 
 -   **Example**
 
@@ -75,7 +75,7 @@ Light(1).map(add(1)).fold(console.error, id); //err: 1
 
 -   **Type**
 
-$$Either\ a\rightarrow(a\rightarrow Either b)\rightarrow Either b$$
+$$Either\ a\rightarrow(a\rightarrow Either \ b)\rightarrow Either \ b$$
 
 -   **Example**
 

@@ -21,10 +21,13 @@ JavaScript 常见的数据类型将标记如下：
 | String (字符串)  | $String$  |
 |  Object (对象)   | $Object$  |
 |   Array (数组)   |  $Array$  |
-|   Any (任意值)   |    $*$    |
+|   List (列表，元素类型为 $a$) | $[a]$ | 
+|   Any (所有类型)   |    $*$    |
+| Unknown (某未知类型) | 小写斜体字母 |
 |    Void (空)     |   $()$    |
 
-其他自建类型也使用类似的斜体标记，如 $Either$ 和 $Maybe$ 等。
+- 无特殊说明，我们将使用 $[a]$ 标记数组。
+- 其他自建类型也使用类似的斜体标记，如 $Either$ 和 $Maybe$ 等。
 
 ### Sum Type
 

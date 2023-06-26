@@ -12,7 +12,7 @@
 
 -   **Type**
 
-$$(s\rightarrow a)\rightarrow(s\rightarrow a\rightarrow s)\rightarrow Len$$
+$$(s\rightarrow a)\rightarrow(s\rightarrow a\rightarrow s)\rightarrow Len \ s \ a$$
 
 -   **Details**
 
@@ -61,7 +61,7 @@ Lens.bind(['a', 'b']);
 
 -   **Type**
 
-$$Len\rightarrow Data a\rightarrow a$$
+$$Len\rightarrow a\rightarrow b$$
 
 -   **Details**
 
@@ -82,7 +82,7 @@ view(lens, { a: 1 }); //1
 
 -   **Type**
 
-$$Len\rightarrow b \rightarrow Data a\rightarrow Data b$$
+$$Len\rightarrow a \rightarrow b\rightarrow c$$
 
 -   **Details**
 
@@ -103,7 +103,7 @@ set(lens, 2, { a: 1 }); //{ a: 2 }
 
 -   **Type**
 
-$$Len\rightarrow (a\rightarrow b) \rightarrow Data a\rightarrow Data b$$
+$$Len\rightarrow (a\rightarrow b) \rightarrow Data \ a\rightarrow Data \ b$$
 
 -   **Details**
 

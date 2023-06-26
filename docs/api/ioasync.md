@@ -98,7 +98,7 @@ run 方法用来执行一个 IOAsync 单子。
 
 -   **Type**
 
-$$IOAsync\ a\rightarrow async\ a$$
+$$IOAsync\ a\rightarrow Async\ a$$
 
 -   **Example**
 

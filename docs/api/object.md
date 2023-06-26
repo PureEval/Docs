@@ -1,5 +1,5 @@
 # Object {#object-api}
-
+> 约定： $Object \ a$ 指某函数处理的 $Obejct$ 的属性为类型 $a$
 ## prop() {#prop}
 
 取出 $Object$ 中的一个属性。
@@ -111,11 +111,11 @@ modify(['inside', 'homo'], (v) => 'yeah', { inside: { homo: 114514 } }); //{ "in
 
 ##### Overload 1
 
-$$String|Int\rightarrow Object \ a \rightarrow Object$$
+$$String|Int\rightarrow Object \ a \rightarrow Object \ *$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow Object \ a \rightarrow Object$$
+$$[String|Int]\rightarrow Object \ a \rightarrow Object \ *$$
 
 -   **Details**
 
@@ -144,7 +144,7 @@ dissoc(['inside', 'homo'], { inside: { homo: 114514 } }); //{ "inside": {} }
 
 -   **Type**
 
-$$Object \ a\rightarrow Object$$
+$$Object\rightarrow Object$$
 
 -   **Details**
 
@@ -162,7 +162,7 @@ deepClone({ a: 1, b: 2, c: 3 }); //{ a: 1, b: 2, c: 3 }
 
 -   **Type**
 
-$$Object \ [key:a]\rightarrow [key]$$
+$$Object\rightarrow [String]$$
 
 -   **Details**
 
@@ -180,7 +180,7 @@ keys({ a: 1, b: 2, c: 3 }); //['a', 'b', 'c']
 
 -   **Type**
 
-$$Object \ [key:a]\rightarrow [a]$$
+$$Object\rightarrow [*]$$
 
 -   **Details**
 
@@ -198,7 +198,7 @@ values({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
 
 -   **Type**
 
-$$[[a,b]]\rightarrow Object \ a:b$$
+$$[(a,b)]\rightarrow Object \ b $$
 
 -   **Details**
 
