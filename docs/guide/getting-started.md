@@ -40,4 +40,4 @@ console.log(P.add(1)(114513)); //114514
 
 ## What's next?
 
-By now, you can read the [API Reference Documentation](/api/) to use PureEval. (Do forget to read the [Notations](/blog/notations) )
+By now, [API Reference Documentation](https://pureeval.org/api/) is ready for use PureEval. (Do forget to read the [Notations](/blog/notations) )
