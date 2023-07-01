@@ -13,7 +13,7 @@ $ npm i pureeval
 # or use any package manager you like, such as yarn, etc.
 ```
 
-Then reference it in your code as follows.
+Then we go as follows.
 
 ```javascript
 const P = require('pureeval');
