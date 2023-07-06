@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$Bool \rightarrow Bool \rightarrow Bool$$
+$$Bool \to Bool \to Bool$$
 
 -   **Details**
 
@@ -26,7 +26,7 @@ either(false)(false); //false
 
 -   **Type**
 
-$$Bool \rightarrow Bool \rightarrow Bool$$
+$$Bool \to Bool \to Bool$$
 
 -   **Details**
 
@@ -46,7 +46,7 @@ either(true)(true); //true
 
 -   **Type**
 
-$$Bool \rightarrow Bool$$
+$$Bool \to Bool$$
 
 -   **Details**
 
@@ -64,7 +64,7 @@ not(false); //true
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -84,7 +84,7 @@ lt(3)(3); //false
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -104,7 +104,7 @@ lte(3)(3); //true
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -124,7 +124,7 @@ gt(3)(3); //false
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -144,7 +144,7 @@ gte(3)(3); //true
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -164,7 +164,7 @@ equal(5)(1); //false
 
 -   **Type**
 
-$$Ord \ a \Rightarrow a \rightarrow a \rightarrow Bool$$
+$$Ord \ a \Rightarrow a \to a \to Bool$$
 
 -   **Details**
 
@@ -188,7 +188,7 @@ equalStrict(5)(1); //false
 
 -   **Type**
 
-$$* \rightarrow * \rightarrow Bool$$
+$$* \to * \to Bool$$
 
 -   **Details**
 
@@ -208,7 +208,7 @@ deepEqual({ a: _, b: [_, 1, 2, 3] }, { a: 1, b: [1, 1, 2, 3] }); //true
 
 -   **Type**
 
-$$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|b $$
+$$(a \to Bool) \to (a\to b) \to a \to a|b $$
 
 -   **Details**
 
@@ -237,7 +237,7 @@ foo(' is you!'); //"homo is you!";
 
 -   **Type**
 
-$$(a \rightarrow Bool) \rightarrow (a\rightarrow b) \rightarrow a \rightarrow a|b $$
+$$(a \to Bool) \to (a\to b) \to a \to a|b $$
 
 -   **Details**
 
@@ -266,7 +266,7 @@ foo(' is you!'); //"homo is you!";
 
 -   **Type**
 
-$$(a \rightarrow Bool) \rightarrow (()\rightarrow b) \rightarrow (()\rightarrow c) \rightarrow b|c $$
+$$(a \to Bool) \to (()\to b) \to (()\to c) \to b|c $$
 
 -   **Details**
 
@@ -296,7 +296,7 @@ foo(' not you!'); //"homo not you!";
 
 -   **Type**
 
-$$a \rightarrow a$$
+$$a \to a$$
 
 -   **Details**
 
@@ -314,7 +314,7 @@ id(114514); //114514
 
 -   **Type**
 
-$$a \rightarrow () \rightarrow a$$
+$$a \to () \to a$$
 
 -   **Details**
 
@@ -332,7 +332,7 @@ always(114514)(); //114514
 
 -   **Type**
 
-$$Data\rightarrow a\rightarrow b\rightarrow Boolen$$
+$$Data\to a\to b\to Boolen$$
 
 -   **Details**
 

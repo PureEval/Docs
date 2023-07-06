@@ -20,7 +20,7 @@ $$Data\ Maybe\ a=Just\ a\ |\ Nothing$$
 
 -   **Type**
 
-$$Promise\ a\rightarrow Maybe\ a$$
+$$Promise\ a\to Maybe\ a$$
 
 -   **Example**
 
@@ -37,7 +37,7 @@ const task = MaybeAsync.of(foo);
 
 -   **Type**
 
-$$*\rightarrow Bool$$
+$$*\to Bool$$
 
 -   **Example**
 
@@ -52,7 +52,7 @@ MaybeAsync.is(NothingAsync); //true
 
 -   **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow Bool$$
+$$\overline{MaybeAsync\ a}\to Bool$$
 
 -   **Example**
 
@@ -67,7 +67,7 @@ JustAsync(null).isNothing(); //true
 
 -   **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow (a\rightarrow b)\rightarrow MaybeAsync\ b$$
+$$\overline{MaybeAsync\ a}\to (a\to b)\to MaybeAsync\ b$$
 
 -   **Example**
 
@@ -89,7 +89,7 @@ JustAsync(new Promise((res) => res('Hello, World!'))).map(toLowerCase); // Maybe
 
 -   **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow b)\rightarrow Promise\ b$$
+$$\overline{MaybeAsync\ a}\to (Nothing\to b)\to (a\to b)\to Promise\ b$$
 
 -   **Example**
 
@@ -106,7 +106,7 @@ await JustAsync(new Promise((res) => res(null))).fold(() => 'fuck', id); //"fuck
 
 -   **Type**
 
-$$\overline{MaybeAsync\ a}\rightarrow (a\rightarrow MaybeAsync\ b)\rightarrow MaybeAsync\ b$$
+$$\overline{MaybeAsync\ a}\to (a\to MaybeAsync\ b)\to MaybeAsync\ b$$
 
 -   **Example**
 
@@ -140,7 +140,7 @@ $Maybe$ 类型的构造函数。
 
 -   **Type**
 
-$$a\rightarrow MaybeAsync\ a$$
+$$a\to MaybeAsync\ a$$
 
 -   **Example**
 

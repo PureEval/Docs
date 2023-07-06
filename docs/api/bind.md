@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$(a\rightarrow b \rightarrow c \rightarrow ...\rightarrow x)\rightarrow a \rightarrow b \rightarrow \bar{c} \rightarrow ... \rightarrow c \rightarrow x$$
+$$(a\to b \to c \to ...\to x)\to a \to b \to \bar{c} \to ... \to c \to x$$
 
 -   **Details**
 

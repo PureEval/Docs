@@ -14,7 +14,7 @@
 
 -   **Type**
 
-$$Iterable \ a \Rightarrow \ a \rightarrow List\ a$$
+$$Iterable \ a \Rightarrow \ a \to List\ a$$
 
 -   **Details**
 
@@ -32,7 +32,7 @@ L.lazy([1, 1, 4, 5, 1, 4]); //List [1, 1, 4, 5, 1, 4]
 
 -   **Type**
 
-$$List\ a \rightarrow Array\ a$$
+$$List\ a \to Array\ a$$
 
 -   **Details**
 
@@ -50,7 +50,7 @@ L.seq(L.lazy([1, 1, 4, 5, 1, 4])); // [1, 1, 4, 5, 1, 4]
 
 -   **Type**
 
-$$[x]\rightarrow x$$
+$$[x]\to x$$
 
 -   **Details**
 
@@ -68,7 +68,7 @@ L.head(L.lazy([1, 1, 4, 5, 1, 4])); // 1
 
 -   **Type**
 
-$$List \rightarrow Bool$$
+$$List \to Bool$$
 
 -   **Details**
 
@@ -86,7 +86,7 @@ L.isEmpty(L.lazy([])); // true
 
 -   **Type**
 
-$$Iterable \ a \Rightarrow List\ a \rightarrow \ a$$
+$$Iterable \ a \Rightarrow List\ a \to \ a$$
 
 -   **Details**
 
@@ -105,7 +105,7 @@ for (const x of L.iter(myList)) console.log(x); //1 2 3 4 5
 
 -   **Type**
 
-$$Number \rightarrow Number \rightarrow (Number\rightarrow Number) \rightarrow List\ Number$$
+$$Number \to Number \to (Number\to Number) \to List\ Number$$
 
 -   **Details**
 
@@ -123,7 +123,7 @@ L.range(1, 5, add(1)); // List [1, 2, 3, 4, 5]
 
 -   **Type**
 
-$$x:[x] \rightarrow [x]$$
+$$x:[x] \to [x]$$
 
 -   **Details**
 
@@ -141,7 +141,7 @@ L.tail(L.lazy(1, 2, 3, 4, 5)); // List [2, 3, 4, 5]
 
 -   **Type**
 
-$$(x \rightarrow x) \rightarrow x \rightarrow [x]$$
+$$(x \to x) \to x \to [x]$$
 
 -   **Details**
 
@@ -159,7 +159,7 @@ L.iterate((x) => x * 2, 1); // List [2, 4, 8, 16, 32...]
 
 -   **Type**
 
-$$(x \rightarrow y) \rightarrow [x] \rightarrow [y]$$
+$$(x \to y) \to [x] \to [y]$$
 
 -   **Details**
 
@@ -180,7 +180,7 @@ L.map(
 
 -   **Type**
 
-$$(x \rightarrow [y]) \rightarrow [x] \rightarrow [y]$$
+$$(x \to [y]) \to [x] \to [y]$$
 
 -   **Details**
 
@@ -203,7 +203,7 @@ L.flatMap(
 
 -   **Type**
 
-$$[x] \rightarrow [x] \rightarrow [x]$$
+$$[x] \to [x] \to [x]$$
 
 -   **Details**
 
@@ -222,7 +222,7 @@ L.concat(L.lazy([1, 2, 3]), L.lazy([4, 5, 6]));
 
 -   **Type**
 
-$$[x] \rightarrow Number \rightarrow [x]$$
+$$[x] \to Number \to [x]$$
 
 -   **Details**
 
@@ -240,7 +240,7 @@ L.take(2, L.lazy([1, 2, 3])); // List [1, 2]
 
 -   **Type**
 
-$$[x] \rightarrow Number \rightarrow [x]$$
+$$[x] \to Number \to [x]$$
 
 -   **Details**
 
@@ -258,7 +258,7 @@ L.drop(2, L.lazy([1, 2, 3])); // List [3]
 
 -   **Type**
 
-$$x \rightarrow [x]$$
+$$x \to [x]$$
 
 -   **Details**
 
@@ -277,7 +277,7 @@ L.repeat('Screeps is a amazing game.');
 
 -   **Type**
 
-$$(x \rightarrow Bool) \rightarrow [x] \rightarrow [x]$$
+$$(x \to Bool) \to [x] \to [x]$$
 
 -   **Details**
 
@@ -295,7 +295,7 @@ L.filter(lte(3), L.lazy([1, 2, 3, 4, 5])); // List [1, 2, 3]
 
 -   **Type**
 
-$$(x \rightarrow Bool) \rightarrow [x] \rightarrow [x]$$
+$$(x \to Bool) \to [x] \to [x]$$
 
 -   **Details**
 
@@ -313,7 +313,7 @@ L.filter(lte(3), L.lazy([1, 2, 3, 4, 5])); // List [4, 5]
 
 -   **Type**
 
-$$(x \rightarrow void) \rightarrow [x] \rightarrow void$$
+$$(x \to void) \to [x] \to void$$
 
 -   **Details**
 
@@ -332,7 +332,7 @@ L.forEach((v) => console.log(v), L.lazy([1, 2, 3]));
 
 -   **Type**
 
-$$(x \rightarrow Bool) \rightarrow [x] \rightarrow [x]$$
+$$(x \to Bool) \to [x] \to [x]$$
 
 -   **Details**
 
@@ -351,7 +351,7 @@ L.takeWhile(includes('a'), L.lazy(['ab', 'ac', 'bb']));
 
 -   **Type**
 
-$$(x \rightarrow Bool) \rightarrow [x] \rightarrow [x]$$
+$$(x \to Bool) \to [x] \to [x]$$
 
 -   **Details**
 
@@ -370,7 +370,7 @@ L.takeWhile(includes('a'), L.lazy(['ab', 'ac', 'bb']));
 
 -   **Type**
 
-$$(a \rightarrow b \rightarrow c)\rightarrow [a]\rightarrow [b]\rightarrow [c]$$
+$$(a \to b \to c)\to [a]\to [b]\to [c]$$
 
 -   **Details**
 
@@ -391,7 +391,7 @@ L.zipWith((a, b) => a + b, L.lazy([1, 2, 3]), L.lazy([1, 2, 3]));
 
 -   **Type**
 
-$$a\rightarrow [a] \rightarrow [a]$$
+$$a\to [a] \to [a]$$
 
 -   **Details**
 
@@ -410,7 +410,7 @@ L.shield(1, L.Lazy([1, 1, 4, 5, 1, 4]));
 
 -   **Type**
 
-$$a\rightarrow [a] \rightarrow [a]$$
+$$a\to [a] \to [a]$$
 
 -   **Details**
 

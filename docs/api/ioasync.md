@@ -26,7 +26,7 @@ IOAsync 的构造函数，用来进行 IOAsync 的常规构造，传入的函数
 
 -   **Type**
 
-$$async()\rightarrow a\rightarrow IOAsync\ a$$
+$$async()\to a\to IOAsync\ a$$
 
 -   **Example**
 
@@ -40,7 +40,7 @@ IOAsync(async () => 1); //IOAsync 1
 
 -   **Type**
 
-$$IOAsync\ a\rightarrow (a\rightarrow b)\rightarrow IOAsync\ b$$
+$$IOAsync\ a\to (a\to b)\to IOAsync\ b$$
 
 -   **Example**
 
@@ -54,7 +54,7 @@ IO(async () => 1).map(add(1)); //IOAsync 2
 
 -   **Type**
 
-$$IOAsync a\rightarrow (a\rightarrow IOAsync\ b)\rightarrow IOAsync\ b$$
+$$IOAsync a\to (a\to IOAsync\ b)\to IOAsync\ b$$
 
 -   **Example**
 
@@ -98,7 +98,7 @@ run 方法用来执行一个 IOAsync 单子。
 
 -   **Type**
 
-$$IOAsync\ a\rightarrow Async\ a$$
+$$IOAsync\ a\to Async\ a$$
 
 -   **Example**
 

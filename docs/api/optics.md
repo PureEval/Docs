@@ -12,7 +12,7 @@
 
 -   **Type**
 
-$$(s\rightarrow a)\rightarrow(s\rightarrow a\rightarrow s)\rightarrow Len \ s \ a$$
+$$(s\to a)\to(s\to a\to s)\to Len \ s \ a$$
 
 -   **Details**
 
@@ -34,11 +34,11 @@ Lens.of((s) => s.a, assoc('a'));
 
 ##### Overload 1
 
-$$String|Int\rightarrow Lens$$
+$$String|Int\to Lens$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow Lens$$
+$$[String|Int]\to Lens$$
 
 -   **Details**
 
@@ -61,7 +61,7 @@ Lens.bind(['a', 'b']);
 
 -   **Type**
 
-$$Len\rightarrow a\rightarrow b$$
+$$Len\to a\to b$$
 
 -   **Details**
 
@@ -82,7 +82,7 @@ view(lens, { a: 1 }); //1
 
 -   **Type**
 
-$$Len\rightarrow a \rightarrow b\rightarrow c$$
+$$Len\to a \to b\to c$$
 
 -   **Details**
 
@@ -103,7 +103,7 @@ set(lens, 2, { a: 1 }); //{ a: 2 }
 
 -   **Type**
 
-$$Len\rightarrow (a\rightarrow b) \rightarrow Data \ a\rightarrow Data \ b$$
+$$Len\to (a\to b) \to Data \ a\to Data \ b$$
 
 -   **Details**
 

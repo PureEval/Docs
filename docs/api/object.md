@@ -8,11 +8,11 @@
 
 ##### Overload 1
 
-$$String|Int\rightarrow Object \ a \rightarrow a$$
+$$String|Int\to Object \ a \to a$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow Object \ a \rightarrow a$$
+$$[String|Int]\to Object \ a \to a$$
 
 -   **Details**
 
@@ -41,11 +41,11 @@ prop(['inside', 'homo'], { inside: { homo: 114514 } }); //114514
 
 ##### Overload 1
 
-$$String|Int\rightarrow b\rightarrow Object \ a \rightarrow Object \ b$$
+$$String|Int\to b\to Object \ a \to Object \ b$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow b\rightarrow Object \ a \rightarrow Object \ b$$
+$$[String|Int]\to b\to Object \ a \to Object \ b$$
 
 -   **Details**
 
@@ -76,11 +76,11 @@ assoc(['inside', 'homo'], 'yeah', { inside: { homo: 114514 } }); //{ "inside": {
 
 ##### Overload 1
 
-$$String|Int\rightarrow (a\rightarrow b)\rightarrow Object \ a \rightarrow Object\ b$$
+$$String|Int\to (a\to b)\to Object \ a \to Object\ b$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow (a\rightarrow b)\rightarrow Object \ a \rightarrow Object\ b$$
+$$[String|Int]\to (a\to b)\to Object \ a \to Object\ b$$
 
 -   **Details**
 
@@ -111,11 +111,11 @@ modify(['inside', 'homo'], (v) => 'yeah', { inside: { homo: 114514 } }); //{ "in
 
 ##### Overload 1
 
-$$String|Int\rightarrow Object \ a \rightarrow Object \ *$$
+$$String|Int\to Object \ a \to Object \ *$$
 
 ##### Overload 2
 
-$$[String|Int]\rightarrow Object \ a \rightarrow Object \ *$$
+$$[String|Int]\to Object \ a \to Object \ *$$
 
 -   **Details**
 
@@ -144,7 +144,7 @@ dissoc(['inside', 'homo'], { inside: { homo: 114514 } }); //{ "inside": {} }
 
 -   **Type**
 
-$$Object\rightarrow Object$$
+$$Object\to Object$$
 
 -   **Details**
 
@@ -162,7 +162,7 @@ deepClone({ a: 1, b: 2, c: 3 }); //{ a: 1, b: 2, c: 3 }
 
 -   **Type**
 
-$$Object\rightarrow [String]$$
+$$Object\to [String]$$
 
 -   **Details**
 
@@ -180,7 +180,7 @@ keys({ a: 1, b: 2, c: 3 }); //['a', 'b', 'c']
 
 -   **Type**
 
-$$Object\rightarrow [*]$$
+$$Object\to [*]$$
 
 -   **Details**
 
@@ -198,7 +198,7 @@ values({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
 
 -   **Type**
 
-$$[(a,b)]\rightarrow Object \ b $$
+$$[(a,b)]\to Object \ b $$
 
 -   **Details**
 
@@ -243,7 +243,7 @@ construct(foo)(1)(2)(3);
 
 -   **Type**
 
-$$String|Int\rightarrow Object\rightarrow Bool$$
+$$String|Int\to Object\to Bool$$
 
 -   **Details**
 

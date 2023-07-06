@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$Int\rightarrow Bool$$
+$$Int\to Bool$$
 
 -   **Details**
 
@@ -24,7 +24,7 @@ odd(114514); //false
 
 -   **Type**
 
-$$Int\rightarrow Bool$$
+$$Int\to Bool$$
 
 -   **Details**
 
@@ -42,7 +42,7 @@ odd(114514); //true
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -61,7 +61,7 @@ add(1)(114513); //114514
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -80,7 +80,7 @@ minus(114515)(1); //114514
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -99,7 +99,7 @@ mul(57257)(2); //114514
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -118,7 +118,7 @@ div(229030)(2); //114514
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -137,7 +137,7 @@ div(2)(229030); //114514
 
 -   **Type**
 
-$$Int\rightarrow Int\rightarrow Int$$
+$$Int\to Int\to Int$$
 
 -   **Details**
 
@@ -158,7 +158,7 @@ mod(114514)(1); //0
 
 -   **Type**
 
-$$Int\rightarrow Int\rightarrow Int$$
+$$Int\to Int\to Int$$
 
 -   **Details**
 
@@ -179,7 +179,7 @@ rema(114514)(1); //0
 
 -   **Type**
 
-$$Number\rightarrow Number\rightarrow Number$$
+$$Number\to Number\to Number$$
 
 -   **Details**
 
@@ -198,7 +198,7 @@ pow(2)(3); //8
 
 -   **Type**
 
-$$Number\rightarrow Number$$
+$$Number\to Number$$
 
 -   **Details**
 
@@ -216,7 +216,7 @@ negate(-114514); //114514
 
 -   **Type**
 
-$$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
+$$Ord \ a \Rightarrow ()\to ((a,a)\to Int)$$
 
 -   **Details**
 
@@ -234,7 +234,7 @@ sort(upper(), [3, 2, 1]); //[3, 2, 1]
 
 -   **Type**
 
-$$Ord \ a \Rightarrow ()\rightarrow ((a,a)\rightarrow Int)$$
+$$Ord \ a \Rightarrow ()\to ((a,a)\to Int)$$
 
 -   **Details**
 
@@ -252,7 +252,7 @@ sort(under(), [3, 2, 1]); //[1, 2, 3]
 
 -   **Type**
 
-$$Ord \ a \Rightarrow [a] \rightarrow ((a,a)\rightarrow Int) \rightarrow [a]$$
+$$Ord \ a \Rightarrow [a] \to ((a,a)\to Int) \to [a]$$
 
 -   **Details**
 
@@ -274,7 +274,7 @@ sort(under(), [3, 2, 1]); //[1, 2, 3]
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -292,7 +292,7 @@ median([1, 2, 3, 4, 5, 6]); //3.5
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -310,7 +310,7 @@ sum([1, 2, 3, 4, 5, 6]); //21
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -328,7 +328,7 @@ average([1, 2, 3, 4, 5, 6]); //3.5
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -346,7 +346,7 @@ prod([1, 2, 3, 4, 5, 6]); //720
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -364,7 +364,7 @@ max([1, 1, 4, 5, 1, 4]); //5
 
 -   **Type**
 
-$$[Number]\rightarrow Number$$
+$$[Number]\to Number$$
 
 -   **Details**
 
@@ -382,7 +382,7 @@ min([1, 1, 4, 5, 1, 4]); //1
 
 -   **Type**
 
-$$Number\rightarrow Number$$
+$$Number\to Number$$
 
 -   **Details**
 
@@ -400,7 +400,7 @@ dec(114515); //114514
 
 -   **Type**
 
-$$Number\rightarrow Number$$
+$$Number\to Number$$
 
 -   **Details**
 

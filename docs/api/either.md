@@ -28,7 +28,7 @@ Left 代表发生错误的值，其中的值会被 Either 链只读传递。
 
 -   **Type**
 
-$$a\rightarrow Either\ a$$
+$$a\to Either\ a$$
 
 -   **Example**
 
@@ -43,7 +43,7 @@ Left(1); //Left 1
 
 -   **Type**
 
-$$Either\ a\rightarrow (a\rightarrow b)\rightarrow Either\ b$$
+$$Either\ a\to (a\to b)\to Either\ b$$
 
 -   **Example**
 
@@ -60,7 +60,7 @@ Left(1).map(add(1)); //Left 1
 
 -   **Type**
 
-$$Either\ a\rightarrow(e\rightarrow a)\rightarrow(b\rightarrow\  c)\rightarrow c$$
+$$Either\ a\to(e\to a)\to(b\to\  c)\to c$$
 
 -   **Example**
 
@@ -75,7 +75,7 @@ Light(1).map(add(1)).fold(console.error, id); //err: 1
 
 -   **Type**
 
-$$Either\ a\rightarrow(a\rightarrow Either \ b)\rightarrow Either \ b$$
+$$Either\ a\to(a\to Either \ b)\to Either \ b$$
 
 -   **Example**
 

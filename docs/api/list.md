@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$((a\rightarrow b)\rightarrow c)\rightarrow [a]\rightarrow [b]\rightarrow [c]$$
+$$((a\to b)\to c)\to [a]\to [b]\to [c]$$
 
 -   **Details**
 
@@ -27,7 +27,7 @@ zipWith(f, [1, 2, 3], [4, 5, 6]); //[5, 7, 9]
 
 -   **Type**
 
-$$[a]\rightarrow [b]\rightarrow [[a,b]]$$
+$$[a]\to [b]\to [[a,b]]$$
 
 -   **Details**
 
@@ -49,7 +49,7 @@ zip([1, 2, 3], [4, 5, 6]); //[[1, 4], [2, 5], [3, 6]]
 
 -   **Type**
 
-$$String\rightarrow [a]\rightarrow String$$
+$$String\to [a]\to String$$
 
 -   **Details**
 
@@ -68,7 +68,7 @@ join('|')([1, 2, 3]); //"1|2|3"
 
 -   **Type**
 
-$$Int\rightarrow Int\rightarrow [a]\rightarrow [a]$$
+$$Int\to Int\to [a]\to [a]$$
 
 -   **Details**
 
@@ -86,7 +86,7 @@ slice(0, 3, [1, 2, 3, 4]); //[1, 2, 3]
 
 -   **Type**
 
-$$Int\rightarrow [a]\rightarrow [a]$$
+$$Int\to [a]\to [a]$$
 
 -   **Details**
 
@@ -104,7 +104,7 @@ take(3, [1, 2, 3, 4]); //[1, 2, 3]]
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
+$$(a\to Bool)\to [a]\to [a]$$
 
 -   **Details**
 
@@ -126,7 +126,7 @@ takeWhile((v) => v < 3, [1, 1, 4, 5, 1, 4]); //[1, 1]
 
 -   **Type**
 
-$$Int\rightarrow [a]\rightarrow [a]$$
+$$Int\to [a]\to [a]$$
 
 -   **Details**
 
@@ -146,7 +146,7 @@ drop(3, [1, 2, 3, 4]); //[4]
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
+$$(a\to Bool)\to [a]\to [a]$$
 
 -   **Details**
 
@@ -170,7 +170,7 @@ dropWhile((v) => v < 3, [4, 5, 1, 4]); //[4, 5, 1, 4]
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
+$$(a\to Bool)\to [a]\to Bool$$
 
 -   **Details**
 
@@ -190,7 +190,7 @@ every((v) => v < 3, [1, 1, 4, 5, 1, 4]); //false
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow Bool$$
+$$(a\to Bool)\to [a]\to Bool$$
 
 -   **Details**
 
@@ -210,7 +210,7 @@ some((v) => v < 3, [1, 1, 4, 5, 1, 4]); //true
 
 -   **Type**
 
-$$[*]\rightarrow [*]\rightarrow [*]$$
+$$[*]\to [*]\to [*]$$
 
 -   **Details**
 
@@ -228,7 +228,7 @@ concat([1, 2, 3], [1, 2, 3]); //[1, 2, 3, 4, 5, 6]
 
 -   **Type**
 
-$$[a]\rightarrow a$$
+$$[a]\to a$$
 
 -   **Details**
 
@@ -246,7 +246,7 @@ head([1, 2, 3]); //1
 
 -   **Type**
 
-$$[a]\rightarrow a$$
+$$[a]\to a$$
 
 -   **Details**
 
@@ -264,7 +264,7 @@ tail([1, 2, 3]); //3
 
 -   **Type**
 
-$$[a]\rightarrow [a]$$
+$$[a]\to [a]$$
 
 -   **Details**
 
@@ -282,7 +282,7 @@ dropHead([1, 2, 3]); //[2, 3]
 
 -   **Type**
 
-$$[a]\rightarrow [a]$$
+$$[a]\to [a]$$
 
 -   **Details**
 
@@ -300,7 +300,7 @@ dropTail([1, 2, 3]); //[1, 2]
 
 -   **Type**
 
-$$a\rightarrow [a]\rightarrow Bool$$
+$$a\to [a]\to Bool$$
 
 -   **Details**
 
@@ -319,7 +319,7 @@ includes(5)([1, 3, 4]); //false
 
 -   **Type**
 
-$$[a]\rightarrow [a]$$
+$$[a]\to [a]$$
 
 -   **Details**
 
@@ -335,7 +335,7 @@ reverse([1, 2, 3]); //[3, 2, 1]
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow Number$$
+$$(a\to Bool)\to [a]\to Number$$
 
 -   **Details**
 
@@ -351,7 +351,7 @@ countWith(equal(5), [1, 2, 3, 4, 5, 5, 5]); //3
 
 -   **Type**
 
-$$a\rightarrow [a]\rightarrow Number$$
+$$a\to [a]\to Number$$
 
 -   **Details**
 
@@ -367,7 +367,7 @@ count([1, 2, 3, 4, 5, 5, 5]); //3
 
 -   **Type**
 
-$$[a,...a]\rightarrow [a,[...a]]$$
+$$[a,...a]\to [a,[...a]]$$
 
 -   **Details**
 

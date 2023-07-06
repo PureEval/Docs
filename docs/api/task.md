@@ -27,7 +27,7 @@ Task 的构造函数，用来进行 Task 的常规构造。
 
 -   **Type**
 
-$$(reject\rightarrow e, resolve\rightarrow a)\rightarrow Task\ (a|e)$$
+$$(reject\to e, resolve\to a)\to Task\ (a|e)$$
 
 -   **Example**
 
@@ -44,7 +44,7 @@ Task((reject, resolve) => {
 
 -   **Type**
 
-$$Task\ (a|e)\rightarrow(a\rightarrow b)\rightarrow Task\ (b|e)$$
+$$Task\ (a|e)\to(a\to b)\to Task\ (b|e)$$
 
 -   **Example**
 
@@ -61,7 +61,7 @@ Task((reject, resolve) => {
 
 -   **Type**
 
-$$Task\ (a|e)\rightarrow(a\rightarrow Task(b|e))\rightarrow Task\ (b|e)$$
+$$Task\ (a|e)\to(a\to Task(b|e))\to Task\ (b|e)$$
 
 -   **Example**
 
@@ -90,7 +90,7 @@ combinedTask.fold(
 
 -   **Type**
 
-$$Task\ (a|e)\rightarrow(e\rightarrow b)\rightarrow(a\rightarrow c)\rightarrow a|c$$
+$$Task\ (a|e)\to(e\to b)\to(a\to c)\to a|c$$
 
 -   **Example**
 

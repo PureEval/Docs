@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$a\rightarrow (a\rightarrow b)\rightarrow a \rightarrow (a\rightarrow c) \rightarrow ... \rightarrow a \rightarrow *$$
+$$a\to (a\to b)\to a \to (a\to c) \to ... \to a \to *$$
 
 -   **Details**
 

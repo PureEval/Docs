@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$Number|Char \rightarrow Number|Char \rightarrow [Number|Char]$$
+$$Number|Char \to Number|Char \to [Number|Char]$$
 
 -   **Details**
 

@@ -20,7 +20,7 @@ $$Data\ Maybe\ a=Just\ a\ |\ Nothing$$
 
 -   **Type**
 
-$$a\rightarrow Maybe\ a$$
+$$a\to Maybe\ a$$
 
 -   **Example**
 
@@ -35,7 +35,7 @@ Maybe.of(null); //Nothing
 
 -   **Type**
 
-$$*\rightarrow Bool$$
+$$*\to Bool$$
 
 -   **Example**
 
@@ -50,7 +50,7 @@ Maybe.is(Nothing); //true
 
 -   **Type**
 
-$$\overline{Maybe\ a}\rightarrow Bool$$
+$$\overline{Maybe\ a}\to Bool$$
 
 -   **Example**
 
@@ -65,7 +65,7 @@ Just(null).isNothing(); //true
 
 -   **Type**
 
-$$\overline{Maybe\ a}\rightarrow (a\rightarrow b)\rightarrow Maybe\ b$$
+$$\overline{Maybe\ a}\to (a\to b)\to Maybe\ b$$
 
 -   **Example**
 
@@ -83,7 +83,7 @@ Just(1).map(add(114513)); //Just 114514
 
 -   **Type**
 
-$$\overline{Maybe\ a}\rightarrow (Nothing\rightarrow b)\rightarrow (a\rightarrow b)\rightarrow b$$
+$$\overline{Maybe\ a}\to (Nothing\to b)\to (a\to b)\to b$$
 
 -   **Example**
 
@@ -99,7 +99,7 @@ Just('The body next door').fold(() => 'Nothing', id); //"The body next door"
 
 -   **Type**
 
-$$\overline{Maybe\ a}\rightarrow (a\rightarrow Maybe\ b)\rightarrow Maybe\ b$$
+$$\overline{Maybe\ a}\to (a\to Maybe\ b)\to Maybe\ b$$
 
 -   **Example**
 
@@ -148,7 +148,7 @@ $Maybe$ 类型的构造函数。
 
 -   **Type**
 
-$$a\rightarrow Maybe\ a$$
+$$a\to Maybe\ a$$
 
 -   **Example**
 

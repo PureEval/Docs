@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
+$$(a\to Bool)\to [a]\to [a]$$
 
 -   **Details**
 
@@ -26,7 +26,7 @@ filter((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[1, 1, 1]
 
 -   **Type**
 
-$$(a\rightarrow Bool)\rightarrow [a]\rightarrow [a]$$
+$$(a\to Bool)\to [a]\to [a]$$
 
 -   **Details**
 
@@ -46,7 +46,7 @@ reject((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 
 -   **Type**
 
-$$[a]\rightarrow [a]\rightarrow [a]$$
+$$[a]\to [a]\to [a]$$
 
 -   **Details**
 
@@ -66,7 +66,7 @@ shield([1])([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 
 -   **Type**
 
-$$[a]\rightarrow [a]\rightarrow [a]$$
+$$[a]\to [a]\to [a]$$
 
 -   **Details**
 

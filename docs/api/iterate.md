@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$(a,b,...,n)\rightarrow x\rightarrow a|[a]\rightarrow b|[b]\rightarrow ...\rightarrow n|[n]\rightarrow [x]$$
+$$(a,b,...,n)\to x\to a|[a]\to b|[b]\to ...\to n|[n]\to [x]$$
 
 -   **Details**
 
@@ -30,7 +30,7 @@ iterate(foo, [1, 2], [6, 7]);
 
 -   **Type**
 
-$$(a\rightarrow b)\rightarrow [a]\rightarrow [b]$$
+$$(a\to b)\to [a]\to [b]$$
 
 -   **Details**
 
@@ -50,7 +50,7 @@ map(add(1))([1, 2, 3]); //[2, 3, 4]
 
 -   **Type**
 
-$$(a\rightarrow [b])\rightarrow [a]\rightarrow [b]$$
+$$(a\to [b])\to [a]\to [b]$$
 
 -   **Details**
 
@@ -72,7 +72,7 @@ flatMap((v) => [v, v])([1, 2, 3]); //[1, 1, 2, 2, 3, 3]
 
 -   **Type**
 
-$$(a\rightarrow *)\rightarrow [a]$$
+$$(a\to *)\to [a]$$
 
 -   **Details**
 
@@ -94,7 +94,7 @@ forEach((v) => list.push(v), [1, 2, 3]);
 
 -   **Type**
 
-$$(a,b,c)\rightarrow a \rightarrow a$$
+$$(a,b,c)\to a \to a$$
 
 -   **Details**
 
@@ -117,7 +117,7 @@ reduce((a, b) => a + b, _, [1, 2, 3]); //6
 
 -   **Type**
 
-$$(a\rightarrow a)\rightarrow Int\rightarrow a\rightarrow a$$
+$$(a\to a)\to Int\to a\to a$$
 
 -   **Details**
 
@@ -137,7 +137,7 @@ fold((v) => v + 1, 5, 0); //5
 
 -   **Type**
 
-$$(a\rightarrow a)\rightarrow Int\rightarrow a\rightarrow [a]$$
+$$(a\to a)\to Int\to a\to [a]$$
 
 -   **Details**
 

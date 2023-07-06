@@ -24,7 +24,7 @@ IO 的构造函数，用来进行 IO 的常规构造，传入的值必须是一�
 
 -   **Type**
 
-$$()\rightarrow a\rightarrow IO\ a$$
+$$()\to a\to IO\ a$$
 
 -   **Example**
 
@@ -38,7 +38,7 @@ IO(() => 1); //IO 1
 
 -   **Type**
 
-$$IO\ a\rightarrow (a\rightarrow b)\rightarrow IO\ b$$
+$$IO\ a\to (a\to b)\to IO\ b$$
 
 -   **Example**
 
@@ -52,7 +52,7 @@ IO(() => 1).map(add(1)); //IO 2
 
 -   **Type**
 
-$$IO a\rightarrow (a\rightarrow IO\ b)\rightarrow IO\ b$$
+$$IO a\to (a\to IO\ b)\to IO\ b$$
 
 -   **Example**
 
@@ -84,7 +84,7 @@ run 方法用来执行一个 IO 单子。
 
 -   **Type**
 
-$$IO\ a\rightarrow a$$
+$$IO\ a\to a$$
 
 -   **Example**
 

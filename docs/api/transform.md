@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$((b\rightarrow a),(c \rightarrow b),...,(o\rightarrow p),((u,v,...,n)\rightarrow o))\rightarrow ((u,v,...,n)\rightarrow a)$$
+$$((b\to a),(c \to b),...,(o\to p),((u,v,...,n)\to o))\to ((u,v,...,n)\to a)$$
 
 -   **Details**
 
@@ -28,7 +28,7 @@ div_and_add(229026); //114514
 
 -   **Type**
 
-$$(((u,v,...,n)\rightarrow o),(o\rightarrow p),...,(c \rightarrow b),(b\rightarrow a))\rightarrow ((u,v,...,n)\rightarrow a)$$
+$$(((u,v,...,n)\to o),(o\to p),...,(c \to b),(b\to a))\to ((u,v,...,n)\to a)$$
 
 -   **Details**
 
@@ -50,7 +50,7 @@ div_and_add(229026); //114514
 
 -   **Type**
 
-$$((a,b,...,n)\rightarrow x)\rightarrow [a,b,...,n]\rightarrow x$$
+$$((a,b,...,n)\to x)\to [a,b,...,n]\to x$$
 
 -   **Details**
 
@@ -70,7 +70,7 @@ call(foo, ['114', '514']); //"114514"
 
 -   **Type**
 
-$$(resolve,reject)\rightarrow a|e\rightarrow Promise\ a\rightarrow a|e$$
+$$(resolve,reject)\to a|e\to Promise\ a\to a|e$$
 
 -   **Details**
 
@@ -93,7 +93,7 @@ await pipe(fetch, then(toUpper));
 
 -   **Type**
 
-$$f\rightarrow (e\rightarrow *)\rightarrow f$$
+$$f\to (e\to *)\to f$$
 
 -   **Details**
 

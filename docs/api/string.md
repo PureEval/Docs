@@ -6,7 +6,7 @@
 
 -   **Type**
 
-$$RegExp \rightarrow String \rightarrow [String|null]$$
+$$RegExp \to String \to [String|null]$$
 
 -   **Details**
 
@@ -26,7 +26,7 @@ rexMatch(/([a-z]m)/g, 'homomomo'); //[ 'om', 'om', 'om' ]
 
 -   **Type**
 
-$$RegExp|String \rightarrow String \rightarrow String \rightarrow String$$
+$$RegExp|String \to String \to String \to String$$
 
 -   **Details**
 
@@ -46,7 +46,7 @@ rexReplace('homo', 'nimo', 'homomomo'); //nimomomo
 
 -   **Type**
 
-$$RegExp \rightarrow String \rightarrow Bool$$
+$$RegExp \to String \to Bool$$
 
 -   **Details**
 
@@ -66,7 +66,7 @@ rexTest(/^h/, 'homo'); //true
 
 -   **Type**
 
-$$RexExp|String \rightarrow Char \rightarrow [String]$$
+$$RexExp|String \to Char \to [String]$$
 
 -   **Details**
 
@@ -87,7 +87,7 @@ split('1')('ho1mo'); //["ho","mo"];
 
 -   **Type**
 
-$$String \rightarrow String$$
+$$String \to String$$
 
 -   **Details**
 
@@ -105,7 +105,7 @@ toLower('ABCD'); //"abcd"
 
 -   **Type**
 
-$$String \rightarrow String$$
+$$String \to String$$
 
 -   **Details**
 
@@ -123,7 +123,7 @@ toUpper('abcd'); //"ABCD"
 
 -   **Type**
 
-$$String \rightarrow String$$
+$$String \to String$$
 
 -   **Details**
 
@@ -141,7 +141,7 @@ trim(' homo '); //"homo"
 
 -   **Type**
 
-$$String \rightarrow [String]$$
+$$String \to [String]$$
 
 -   **Details**
 

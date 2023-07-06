@@ -8,7 +8,7 @@
 
 -   **Type**
 
-$$((a,b,...,n)\rightarrow x)\rightarrow a\rightarrow b\rightarrow ... \rightarrow n\rightarrow x$$
+$$((a,b,...,n)\to x)\to a\to b\to ... \to n\to x$$
 
 -   **Details**
 
@@ -32,7 +32,7 @@ curry(foo)(1)(2, 3); //6
 
 -   **Type**
 
-$$(a\rightarrow b\rightarrow ... \rightarrow n\rightarrow x)\rightarrow (a,b,...,n)\rightarrow x$$
+$$(a\to b\to ... \to n\to x)\to (a,b,...,n)\to x$$
 
 -   **Details**
 
