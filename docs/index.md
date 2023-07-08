@@ -16,7 +16,7 @@ hero:
       text: View on GitHub
       link: https://github.com/PureEval/PureEval
     - theme: alt
-      text: API Doc
+      text: API Reference
       link: /api/
     - theme: alt
       text: Blog
