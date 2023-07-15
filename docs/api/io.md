@@ -2,8 +2,6 @@
 
 IO 是一个用来控制流程、隔离副作用的单子。
 
-## Example - IO
-
 此处是一个 IO 单子使用的总例。
 
 ```js
@@ -97,7 +95,7 @@ function foo(x, y, z) {
 		.run();
 }
 
-console.log(foo(1, 2, 3));//14
+console.log(foo(1, 2, 3)); //14
 ```
 
 ## IO.run() {#iorun}

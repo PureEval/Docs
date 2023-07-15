@@ -2,10 +2,6 @@
 
 Task 可以安全的处理异步操作，可以被认为是异步版本的 Either 函子。
 
-## Example - Task
-
-此处是一个 Task 函子使用的总例。
-
 ```js
 import { readFile } from 'fs';
 

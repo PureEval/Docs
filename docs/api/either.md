@@ -2,8 +2,6 @@
 
 Either 是一个用来安全实现处理错误的流程的函子，分为右值(Right)与左值(Left)。
 
-## Example - Either
-
 此处是一个 Either 函子使用的总例。
 
 ```js

@@ -4,8 +4,6 @@ IO 是一个用来控制流程、隔离副作用的单子。
 
 IOAsync 是它的异步版本，支持对 Promise 的包装。
 
-## Example - IOAsync
-
 此处是一个 IOAsync 单子使用的总例。
 
 ```js
@@ -106,20 +104,19 @@ $$IOAsync\ a\to *\to IOAsync\ a$$
 //calc 1*x + 2*y + 3*z
 function fooAsync(x, y, z) {
 	return IOAsync(async (perform) => {
-		const a = 1 * await perform('x');
-		const b = 2 * await perform('y');
-		const c = 3 * await perform('z');
+		const a = 1 * (await perform('x'));
+		const b = 2 * (await perform('y'));
+		const c = 3 * (await perform('z'));
 		return a + b + c;
 	})
 		.handle(match('x', x, 'y', y, 'z', z))
 		.run();
 }
 
-console.log(await fooAsync(1, 2, 3));//14
+console.log(await fooAsync(1, 2, 3)); //14
 ```
 
 ## IOAsync.run() {#iorun}
-
 
 一个 IOAsync 单子在没有执行 run 方法之前都是不会执行的。
 
