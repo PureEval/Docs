@@ -62,7 +62,7 @@ $$IOAsync a\to (a\to IOAsync\ b)\to IOAsync\ b$$
 import { readFile, writeFile } from 'fs';
 
 const myReadFile = (filename) =>
-	IOAsync.of(
+	IOAsync(
 		() =>
 			new Promise((resolve, reject) => {
 				readFile(filename, 'utf8', (err, data) => {
@@ -73,7 +73,7 @@ const myReadFile = (filename) =>
 	);
 
 const writeFile = (filename, data) =>
-	IOAsync.of(
+	IOAsync(
 		() =>
 			new Promise((resolve, reject) => {
 				writeFile(filename, data, 'utf8', (err) => {
@@ -90,15 +90,48 @@ const program = myReadFile('input.txt')
 program.run();
 ```
 
+## IOAsync.handle(Algebraic Effects) {#iohandle}
+
+handle 方法是一个代数效应(Algebraic Effects)的实现。
+
+采用该方法可以挂载 perform 函数的内容到 IOAsync 上，进而在 effect 中通过 perform 函数执行。
+
+-   **Type**
+
+$$IOAsync\ a\to *\to IOAsync\ a$$
+
+-   **Example**
+
+```js
+//calc 1*x + 2*y + 3*z
+function fooAsync(x, y, z) {
+	return IOAsync(async (perform) => {
+		const a = 1 * await perform('x');
+		const b = 2 * await perform('y');
+		const c = 3 * await perform('z');
+		return a + b + c;
+	})
+		.handle(match('x', x, 'y', y, 'z', z))
+		.run();
+}
+
+console.log(await fooAsync(1, 2, 3));//14
+```
+
 ## IOAsync.run() {#iorun}
+
 
 一个 IOAsync 单子在没有执行 run 方法之前都是不会执行的。
 
 run 方法用来执行一个 IOAsync 单子。
 
+::: warning
+这个操作是 Unsafe 的。
+:::
+
 -   **Type**
 
-$$IOAsync\ a\to Async\ a$$
+$$IOAsync\ a\to Promise\ a$$
 
 -   **Example**
 
@@ -106,7 +139,7 @@ $$IOAsync\ a\to Async\ a$$
 import { readFile, writeFile } from 'fs';
 
 const myReadFile = (filename) =>
-	IOAsync.of(
+	IOAsync(
 		() =>
 			new Promise((resolve, reject) => {
 				readFile(filename, 'utf8', (err, data) => {
@@ -117,7 +150,7 @@ const myReadFile = (filename) =>
 	);
 
 const writeFile = (filename, data) =>
-	IOAsync.of(
+	IOAsync(
 		() =>
 			new Promise((resolve, reject) => {
 				writeFile(filename, data, 'utf8', (err) => {

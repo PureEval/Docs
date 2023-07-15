@@ -15,7 +15,7 @@ $ npm i pureeval
 
 Then we go as follows.
 
-```javascript
+```js
 const P = require('pureeval');
 console.log(P.add(1)(114513)); //114514
 ```
@@ -24,7 +24,7 @@ console.log(P.add(1)(114513)); //114514
 
 Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.common.min.js` and `require` it in your code like below.
 
-```javascript
+```js
 const P = require('PureEval.common.min.js');
 console.log(P.add(1)(114513)); //114514
 ```
@@ -33,7 +33,7 @@ console.log(P.add(1)(114513)); //114514
 
 Get the build version from [GitHub Releases](https://github.com/PureEval/PureEval/releases), extract `PureEval.es.min.js` and `import` it in your code like below.
 
-```javascript
+```js
 import * as P from 'PureEval.es.min.js';
 console.log(P.add(1)(114513)); //114514
 ```

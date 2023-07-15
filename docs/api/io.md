@@ -9,9 +9,9 @@ IO 是一个用来控制流程、隔离副作用的单子。
 ```js
 import { readFileSync } from 'fs';
 
-const myReadFileSync = (path) => IO.of(() => fs.readFileSync(path, 'utf8'));
+const myReadFileSync = (path) => IO(() => fs.readFileSync(path, 'utf8'));
 
-const print = (message) => IO.of(() => console.log(message));
+const print = (message) => IO(() => console.log(message));
 
 const program = myReadFileSync('./example.txt').chain((content) => print(content));
 
@@ -70,6 +70,34 @@ const example = readFile('example.json')
 	.run();
 
 console.log(example);
+```
+
+## IO.handle(Algebraic Effects) {#iohandle}
+
+handle 方法是一个代数效应(Algebraic Effects)的实现。
+
+采用该方法可以挂载 perform 函数的内容到 IO 上，进而在 effect 中通过 perform 函数执行。
+
+-   **Type**
+
+$$IO\ a\to *\to IO\ a$$
+
+-   **Example**
+
+```js
+//calc 1*x + 2*y + 3*z
+function foo(x, y, z) {
+	return IO((perform) => {
+		const a = 1 * perform('x');
+		const b = 2 * perform('y');
+		const c = 3 * perform('z');
+		return a + b + c;
+	})
+		.handle(match('x', x, 'y', y, 'z', z))
+		.run();
+}
+
+console.log(foo(1, 2, 3));//14
 ```
 
 ## IO.run() {#iorun}
