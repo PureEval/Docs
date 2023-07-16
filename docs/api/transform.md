@@ -64,7 +64,7 @@ const foo = (a, b) => a + b;
 call(foo, ['114', '514']); //"114514"
 ```
 
-## then() {#then}
+## andThen() {#andThen}
 
 在 Promise 后添加函数，等同于 Promise.then。
 
@@ -84,7 +84,7 @@ const fetch = () =>
 		//...do sth.
 	});
 
-await pipe(fetch, then(toUpper));
+await pipe(fetch, andThen(toUpper));
 ```
 
 ## tryCatch() {#tryCatch}
