@@ -21,7 +21,7 @@ console.log(P.add(1)(114513)); //114514
 #### For ESM
 
 ```js
-import * as P from 'pureeval';
+import * as P from 'pureeval-es';
 console.log(P.add(1)(114513)); //114514
 ```
 
