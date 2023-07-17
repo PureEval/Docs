@@ -14,3 +14,4 @@ yarn.lock
 package.json
 pnpm-lock.yaml
 .directory
+package-lock.json
