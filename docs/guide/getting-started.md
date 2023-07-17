@@ -5,7 +5,10 @@ This section will guide you through the use of PureEval.
 ### Using NPM
 
 ```sh
+//For CommonJs
 $ npm i pureeval
+//For ESM
+$ npm i pureeval-es
 # or use any package manager you like, such as yarn, etc.
 ```
 
