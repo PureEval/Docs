@@ -2,83 +2,82 @@
 
 ## match() {#match}
 
-进行模式匹配
-
--   **Type**
-
-$$a\to (a\to b)\to a \to (a\to c) \to ... \to a \to *$$
+进行模式匹配。
 
 -   **Details**
 
-传入偶数个参数，每两个参数被认为是一对匹配规则（记为 $r_i$ 与 $f_i$，其中 $r_i$ 为一个值或函数，$f_i$ 为一个单元函数）。
+传入若干组数组一一对应每条规则，每个数组中有两个元素，这里记为 checker 与 executer。
 
-而返回值为一个接受一个参数的单元函数（其参数记为 $v$），进行模式匹配。
+match 将会返回一个函数，该函数接收一定数量的参数，并根据每条规则按顺序匹配第一个符合条件的 checker，执行对应的 executer 并返回结果。
 
-对于每对匹配规则从上到下匹配，如果 $v$ 与 $r_i$ 相等，则将执行 $f_i$ 传入 $v$ 并返回其结果。
+对于每个 checker 的详细检测规则如下：
 
-特别的，如果 $r_i$ 为一个单元函数，则 $v$ 将作为参数传入其中，若其返回值为 `true`，则匹配成功，否则匹配失败。
+|                                     checker 类型                                      | 模式匹配参数个数<sup>[2]</sup> |                                         匹配规则                                         |
+| :-----------------------------------------------------------------------------------: | :----------------------------: | :--------------------------------------------------------------------------------------: |
+| 基本量字面值(number/string/object/array<sup>[1]</sup>/[maybe](/api/maybe.html#maybe)) |               1                |               将会比较参数与字面值是否相等<sup>[3]</sup>来判断是否匹配成功               |
+|                                    function(sync)                                     |              任意              |          将匹配值全部传给该函数，根据函数返回的 true/false 信息判断是否匹配成功          |
+|                                         array                                         |           Array 长度           | Array 中可包含前两种匹配方式，将会对每个值采取单独的匹配方式，若都匹配成功则认为匹配成功 |
+|                     [otherwise](/api/placeholder.html#otherwise)                      |              任意              |                  采用该方式的匹配总是成功的，用于处理分类为“其他”的情况                  |
 
-另外，如果匹配到的是一个列表，则 $f_i$ 可以是三元函数，第一个参数为原列表，第二个参数为原列表的第一个元素，第三个参数为原列表去除第一个元素后的列表。
+对于每个 executer 的执行规则如下：
 
-附加的，如果 $f_i$ 为一个字面值，则 $f_i$ 的语义为一个返回该字面值的常函数。
+| executer 类型 |                    执行规则                    |                                                             备注                                                              |
+| :-----------: | :--------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------: |
+|    字面值     |          匹配成功后将直接返回该字面值          |                                                               /                                                               |
+|   function    | 将匹配值全部传给该函数，并返回该函数的执行结果 | 虽然该函数没有像 checker 那样标注必须为同步函数，但如果是一个返回 Promise 的函数，我们会原样返回一个 Promise 而不对其进行处理 |
 
-还可以使用占位符 [\_](/api/placeholder.html#_) 表示任意值传入都可以匹配成功，而对于 $Array$ 和 $Object$ 的匹配亦可。
+备注：
 
-目前支持匹配的类型：字面值，$Maybe$，$Array$，$Object$。
+[1] : 因为 match 的设计依赖于 array 来进行分类，所以当您想编写匹配一个 array 字面量的逻辑时，请为其多套一层数组（可见下文例子）。
+
+[2] : 此列只作标识作用，实际通过 match 返回的函数的 length 属性的值为 0。
+
+[3] : match 对于 number/string 的相等规则与 [equalStrict](/api/logic.html#equalstrict) 相同；对于 object/array 的相等规则与 [deepEqual](/api/logic.html#deepequal) 相同；对于 maybe 的相等规则为 按 [equalStrict](/api/logic.html#equalstrict) 规则比对 fold 后的值。
 
 -   **Example**
 
+##### Example 1
+
 ```js
 const sort = match(
-    [], [],
-    _ , (a, x, s) => [...sort(filter(lte(x), s)), x, ...sort(filter(gt(x), s))]
+	[[[]], []],
+	[
+		_,
+		([x, ...xs]) => [
+			...sort(filter(lte(x), xs)),
+			x,
+			...sort(filter(gt(x), xs))
+		]
+	]
 );
 
 const fib = match(
-    1, 1,
-    2, 2,
-    _, (v) => fib(v-1) + fib(v-2)
+    [1, 1],
+    [2, 2],
+    [_, (v) => fib(v - 1) + fib(v - 2)]
+);
+```
+
+##### Example 2
+
+```js
+// Data Nat = Succ Nat | Zero
+const Nat = Data('Succ m', 'Zero');
+Object.assign(global, Nat.binder);
+
+// instance Show Nat
+Nat.bindShow(match(
+    [Zero.is, 0],
+    [Succ.is, ({ m }) => m.show() + 1]
+));
+
+// add :: Nat -> Nat -> Nat
+// add n Zero = n
+// add n (Succ m) = Succ (add n m)
+const add = match(
+	[[_, eqData(Zero)], (n, _) => n],
+	[[_, eqData(Succ(_))], (n, { m }) => Succ(add(n, m))]
 );
 
-
-/*
-(In Haskell)
-Data Square = Round x y r
-Square :: Round -> Number
-Square Round x y r = 3.14 * r * r
-Square _ = "Error" 
-*/
-Object.assign(global, Data('Round x y r'));
-const Square = match(
-	eqData(
-        Round, {
-		    x: _,
-		    y: _,
-		    r: _
-	    }
-    ), (v) => 3.14 * v.r ** 2,
-	_, 'Error'
-);
-
-const maybeFoo = match(
-    Just("homo"), id,
-    Nothing,      "Nothing",
-    _,            "Others"
-);
-
-const check = (obj) => obj.homo ? true : false;
-const homoInside = match(
-    check, "Yes",
-    _,     "No"
-);
-
-const objectFoo = match(
-    { homo: "Yes" }, "Yes",
-    _,               "No"
-);
-
-const autoFoo = match(
-    { a: _, b: [_, 1, _, 2, _, 3] }, "Yes",
-    _,                               "No"
-);
+add(Succ(Succ(Zero)), Succ(Zero)).show(); //3
 ```
