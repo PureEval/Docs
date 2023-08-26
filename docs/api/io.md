@@ -78,7 +78,7 @@ handle 方法是一个代数效应(Algebraic Effects)的实现。
 
 -   **Type**
 
-$$IO\ a\to *\to IO\ a$$
+$$IO\ a\to (*\to *)\to IO\ a$$
 
 -   **Example**
 
