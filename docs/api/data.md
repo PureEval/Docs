@@ -77,7 +77,6 @@ Square(Round.Round(1, 1, 5)); //78.5
 每个代数数据类型的 binder 属性提供了可以安全绑定到全局的量的对象集合，他们只会包含每个类型的构造函数。
 
 ```js
-//Node.js v16.15.0
 Object.assign(global, Data('Round x y r').binder);
 
 // Square Round x y r => Number
