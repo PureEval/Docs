@@ -5,9 +5,9 @@ This section will guide you through the use of PureEval.
 ### Using NPM
 
 ```sh
-//For CommonJs
+# For CommonJs
 $ npm i pureeval
-//For ESM
+# For ESM
 $ npm i pureeval-es
 # or use any package manager you like, such as yarn, etc.
 ```
@@ -50,4 +50,4 @@ console.log(P.add(1)(114513)); //114514
 
 ## What's next?
 
-By now, [API Reference Documentation](https://pureeval.org/api/) is ready for use PureEval. (Do forget to read the [Notations](/blog/notations) )
+By now, [API Reference Documentation](https://pureeval.org/api/) is ready for use PureEval. (Do not forget to read the [Notations](/blog/notations) )
