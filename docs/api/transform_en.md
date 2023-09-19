@@ -6,9 +6,7 @@ Performs function composition from right to left (the output of the function on 
 
 -   **Type**
 
-\[
-((b\to a),(c \to b),\ldots,(o\to p),((u,v,\ldots,n)\to o))\to ((u,v,\ldots,n)\to a)
-\]
+$$((b\to a),(c \to b),...,(o\to p),((u,v,...,n)\to o))\to ((u,v,...,n)\to a)$$
 
 -   **Details**
 
@@ -30,9 +28,7 @@ Performs function composition from left to right (the output of the function on 
 
 -   **Type**
 
-\[
-(((u,v,\ldots,n)\to o),(o\to p),\ldots,(c \to b),(b\to a))\to ((u,v,\ldots,n)\to a)
-\]
+$$(((u,v,...,n)\to o),(o\to p),...,(c \to b),(b\to a))\to ((u,v,...,n)\to a)$$
 
 -   **Details**
 
@@ -54,9 +50,7 @@ Executes an existing function.
 
 -   **Type**
 
-\[
-((a,b,\ldots,n)\to x)\to [a,b,\ldots,n]\to x
-\]
+$$((a,b,...,n)\to x)\to [a,b,...,n]\to x$$
 
 -   **Details**
 
@@ -76,9 +70,7 @@ Adds a function after a Promise, equivalent to `Promise.then`.
 
 -   **Type**
 
-\[
-(resolve,reject)\to a|e\to \text{Promise}\ a\to a|e
-\]
+$$(resolve,reject)\to a|e\to Promise\ a\to a|e$$
 
 -   **Details**
 
@@ -101,9 +93,7 @@ Function wrapper for error detection.
 
 -   **Type**
 
-\[
-f\to (e\to *)\to f
-\]
+$$f\to (e\to *)\to f$$
 
 -   **Details**
 
