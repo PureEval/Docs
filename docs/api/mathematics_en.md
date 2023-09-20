@@ -52,7 +52,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(a + b\).
+Takes two numbers $a, b$ as arguments; returns $a + b$.
 
 -   **Example**
 
@@ -73,7 +73,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(a - b\).
+Takes two numbers $a, b$ as arguments; returns $a - b$.
 
 -   **Example**
 
@@ -94,7 +94,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(a \times b\).
+Takes two numbers $a, b$ as arguments; returns $a \times b$.
 
 -   **Example**
 
@@ -115,7 +115,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(a / b\).
+Takes two numbers $a, b$ as arguments; returns $a / b$.
 
 -   **Example**
 
@@ -136,7 +136,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(b / a\).
+Takes two numbers $a, b$ as arguments; returns $b / a$.
 
 -   **Example**
 
@@ -157,7 +157,7 @@ $$
 
 -   **Details**
 
-Takes two integers \(a, b\) as arguments; returns \(a \mod b\).
+Takes two integers $a, b$ as arguments; returns $a \mod b$.
 
 For modulo operation instead of remainder, use [rema()](#rema).
 
@@ -180,7 +180,7 @@ $$
 
 -   **Details**
 
-Takes two integers \(a, b\) as arguments; returns \(a \mod b\).
+Takes two integers $a, b$ as arguments; returns $a \mod b$.
 
 For remainder operation instead of modulo, use [mod()](#mod).
 
@@ -203,7 +203,7 @@ $$
 
 -   **Details**
 
-Takes two numbers \(a, b\) as arguments; returns \(a^b\).
+Takes two numbers $a, b$ as arguments; returns $a^b$.
 
 -   **Example**
 
