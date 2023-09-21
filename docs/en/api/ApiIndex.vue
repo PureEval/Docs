@@ -49,44 +49,33 @@ const filtered = computed(() => {
 </script>
 
 <template>
+  <div class="section-content">
+    <span>
+      Translation for this page is in progress for English users, some content may not be available.
+    </span>
+  </div>
   <div id="api-index">
     <div class="header">
       <h1>API Reference</h1>
-      <h3>hi</h3>
       <div class="api-filter">
         <label for="api-filter">Filter</label>
-        <input
-          id="api-filter"
-          v-model="query"
-          type="search"
-          placeholder="Enter keyword"
-        >
+        <input id="api-filter" v-model="query" type="search" placeholder="Enter keyword">
       </div>
     </div>
 
-    <div
-      v-for="section of filtered"
-      :key="section.text"
-      class="api-section"
-    >
+    <div v-for="section of filtered" :key="section.text" class="api-section">
       <h2 :id="section.anchor">
         {{ section.text }}
       </h2>
       <div class="api-groups">
-        <div
-          v-for="item of section.items"
-          :id="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? item.text.slice(1) : item.text"
-          :key="item.text"
-          class="api-group"
-        >
+        <div v-for="item of section.items"
+          :id="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? item.text.slice(1) : item.text" :key="item.text"
+          class="api-group">
           <h3>
             <a :href="item.link">{{ item.text }}</a>
           </h3>
           <ul>
-            <li
-              v-for="h of item.headers"
-              :key="h.anchor"
-            >
+            <li v-for="h of item.headers" :key="h.anchor">
               <a :href="item.link + '.html#' + h.anchor">{{ h.text }}</a>
             </li>
           </ul>
@@ -94,16 +83,33 @@ const filtered = computed(() => {
       </div>
     </div>
 
-    <div
-      v-if="!filtered.length"
-      class="no-match"
-    >
+    <div v-if="!filtered.length" class="no-match">
       No API matching "{{ query }}" found.
     </div>
   </div>
 </template>
 
 <style scoped>
+.section-content {
+  background-color: whitesmoke;
+  -webkit-text-size-adjust: 100%;
+  quotes: "“" "”";
+  font-size: 17px;
+  line-height: 1.47059;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(29, 29, 31);
+  font-style: normal;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  direction: 1tr;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
 #api-index {
   max-width: 1024px;
   margin: 0px auto;
@@ -222,18 +228,22 @@ h2 {
   #api-index {
     padding: 42px 24px;
   }
+
   h1 {
     font-size: 32px;
     margin-bottom: 24px;
   }
+
   h2 {
     font-size: 22px;
     margin: 42px 0 32px;
     padding-top: 32px;
   }
+
   .api-groups a {
     font-size: 14px;
   }
+
   .header {
     display: block;
   }

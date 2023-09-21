@@ -2,6 +2,7 @@
   "name": "pureeval-documentation",
   "version": "0.3.3453.amazing.grace",
   "description": "PureEval Documentation",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "docs:dev": "node load_articles.mjs && vitepress dev docs",
