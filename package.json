@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "node load_articles.mjs && vitepress dev docs",
-    "docs:build": "node load_articles.mjs && vitepress build docs",
+    "docs:dev": "node load_articles.js && vitepress dev docs",
+    "docs:build": "node load_articles.js && vitepress build docs",
     "docs:preview": "vitepress preview docs"
   },
   "repository": "https://github.com/PureEval/documentation",
