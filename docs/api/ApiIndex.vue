@@ -52,7 +52,6 @@ const filtered = computed(() => {
   <div id="api-index">
     <div class="header">
       <h1>API Reference</h1>
-      <h3>hi</h3>
       <div class="api-filter">
         <label for="api-filter">Filter</label>
         <input

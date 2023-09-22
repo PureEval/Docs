@@ -59,23 +59,38 @@ const filtered = computed(() => {
       <h1>API Reference</h1>
       <div class="api-filter">
         <label for="api-filter">Filter</label>
-        <input id="api-filter" v-model="query" type="search" placeholder="Enter keyword">
+        <input
+          id="api-filter"
+          v-model="query"
+          type="search"
+          placeholder="Enter keyword"
+        >
       </div>
     </div>
 
-    <div v-for="section of filtered" :key="section.text" class="api-section">
+    <div
+      v-for="section of filtered"
+      :key="section.text"
+      class="api-section"
+    >
       <h2 :id="section.anchor">
         {{ section.text }}
       </h2>
       <div class="api-groups">
-        <div v-for="item of section.items"
-          :id="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? item.text.slice(1) : item.text" :key="item.text"
-          class="api-group">
+        <div
+          v-for="item of section.items"
+          :id="(item.text.startsWith('⭐') || item.text.startsWith('⚠')) ? item.text.slice(1) : item.text"
+          :key="item.text"
+          class="api-group"
+        >
           <h3>
             <a :href="item.link">{{ item.text }}</a>
           </h3>
           <ul>
-            <li v-for="h of item.headers" :key="h.anchor">
+            <li
+              v-for="h of item.headers"
+              :key="h.anchor"
+            >
               <a :href="item.link + '.html#' + h.anchor">{{ h.text }}</a>
             </li>
           </ul>
@@ -83,7 +98,10 @@ const filtered = computed(() => {
       </div>
     </div>
 
-    <div v-if="!filtered.length" class="no-match">
+    <div
+      v-if="!filtered.length"
+      class="no-match"
+    >
       No API matching "{{ query }}" found.
     </div>
   </div>
