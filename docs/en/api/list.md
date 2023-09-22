@@ -12,9 +12,9 @@ $$
 
 -   **Details**
 
-The first parameter is a binary function $ f $, followed by two lists of equal length $ a, b $.
+The first parameter is a binary function $f$, followed by two lists of equal length $a, b$.
 
-Returns a new list $ c $ of the same length as the input lists, where $ c_i = f(a_i, b_i) $.
+Returns a new list $c$ of the same length as the input lists, where $c_i = f(a_i, b_i)$.
 
 -   **Example**
 
@@ -35,9 +35,9 @@ $$
 
 -   **Details**
 
-Takes two lists $ a, b $ of equal length.
+Takes two lists $a, b$ of equal length.
 
-Returns a new list $ c $ of the same length as the input lists, where $ c_i = [a_i, b_i] $.
+Returns a new list $c$ of the same length as the input lists, where $c_i = [a_i, b_i]$.
 
 This is equivalent to `zipWith((a, b) => [a, b])`.
 
@@ -89,7 +89,7 @@ slice(0, 3, [1, 2, 3, 4]); //[1, 2, 3]
 
 ## take() {#take}
 
-Takes the first $ n $ elements from a list.
+Takes the first $n$ elements from a list.
 
 -   **Type**
 
@@ -99,7 +99,7 @@ $$
 
 -   **Details**
 
-Takes an integer $ n $ and a list as parameters. Returns a new list containing the first $ n $ elements from the given list.
+Takes an integer $n$ and a list as parameters. Returns a new list containing the first $n$ elements from the given list.
 
 -   **Example**
 
@@ -119,7 +119,7 @@ $$
 
 -   **Details**
 
-The first parameter is a predicate function $ f $, and the second parameter is a list. Elements are taken from the beginning of the list as long as they satisfy $ f $.
+The first parameter is a predicate function $f$, and the second parameter is a list. Elements are taken from the beginning of the list as long as they satisfy $f$.
 
 -   **Example**
 
@@ -129,7 +129,7 @@ takeWhile((v) => v < 3, [1, 1, 4, 5, 1, 4]); //[1, 1]
 
 ## drop() {#drop}
 
-Drops the first $ n $ elements from a list.
+Drops the first $n$ elements from a list.
 
 -   **Type**
 
@@ -139,7 +139,7 @@ $$
 
 -   **Details**
 
-Takes an integer $ n $ and a list as parameters. Returns a new list with the first $ n $ elements removed.
+Takes an integer $n$ and a list as parameters. Returns a new list with the first $n$ elements removed.
 
 -   **Example**
 
@@ -159,7 +159,7 @@ $$
 
 -   **Details**
 
-The first parameter is a predicate function $ f $, and the second parameter is a list. Elements are dropped from the beginning of the list as long as they satisfy $ f $.
+The first parameter is a predicate function $f$, and the second parameter is a list. Elements are dropped from the beginning of the list as long as they satisfy $f$.
 
 -   **Example**
 
@@ -179,7 +179,7 @@ $$
 
 -   **Details**
 
-Takes a predicate function $ f $ and a list as parameters. Returns `true` if all elements in the list satisfy $ f $, and `false` otherwise.
+Takes a predicate function $f$ and a list as parameters. Returns `true` if all elements in the list satisfy $f$, and `false` otherwise.
 
 -   **Example**
 
@@ -199,7 +199,7 @@ $$
 
 -   **Details**
 
-Takes a predicate function $ f $ and a list as parameters. Returns `true` if any element in the list satisfies $ f $, and `false` otherwise.
+Takes a predicate function $f$ and a list as parameters. Returns `true` if any element in the list satisfies $f$, and `false` otherwise.
 
 -   **Example**
 
@@ -381,7 +381,7 @@ $$
 
 -   **Details**
 
-Takes a predicate function $ f $ and a list, and returns the number of elements that satisfy $ f $.
+Takes a predicate function $f$ and a list, and returns the number of elements that satisfy $f$.
 
 -   **Example**
 
