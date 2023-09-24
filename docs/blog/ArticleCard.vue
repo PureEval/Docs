@@ -5,12 +5,16 @@
         <img 
           :src="image" 
           :alt="title"
+          class="media-image"
         >
       </div>
       <div class="details">
-        <a :href="href">
+        <a
+          class="article"
+          :href="href"
+        >
           <h2 class="title">{{ title }}</h2>
-          <p class="excerpt">{{ truncateText(excerpt, 40) }}</p>
+          <p class="excerpt">{{ truncateText(excerpt, 60) }}</p>
         </a>
         <div class="author">
           <div>
@@ -66,11 +70,11 @@ export default {
   margin-bottom: 1.5rem;
   overflow: hidden;
   width: 100%;
+  transition: ease-in-out 0.2s all;
 }
 
 .card:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
-  transition: ease-in-out 0.2s all;
 }
 
 .flex {
@@ -79,13 +83,21 @@ export default {
 
 .media {
   width: 30%;
-  height: 30%;
+}
+
+.media-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
 .details {
   margin-left: 1.2rem;
+}
+
+.article {
+  text-decoration: none;
 }
 
 .title {
