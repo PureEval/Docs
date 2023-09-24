@@ -28,7 +28,7 @@ export default {
   watch: './*.md',
   // read from fs and generate the data
   load(): APIGroup[] {
-    return (cnSidebar as MultiSidebarConfig)['/api/'].map((group) => ({
+    return (cnSidebar as MultiSidebarConfig)['/cn/api/'].map((group) => ({
       text: group.text,
       anchor: slugify(group.text),
       items: group.items.map((item) => ({
