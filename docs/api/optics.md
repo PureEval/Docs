@@ -1,8 +1,6 @@
 # Optics {#optics-api}
 
-## Overview
-
-The Optics API focuses on providing "lenses" which allow you to focus on specific parts of a data structure. Lenses are composable and can be used to get, set, or modify data within a structure. For a comprehensive understanding of the optics concept, you can refer to [arxiv 2001.07488v3](https://arxiv.org/pdf/2001.07488v3.pdf).
+For a comprehensive understanding of the optics concept, you can refer to [arxiv 2001.07488v3](https://arxiv.org/pdf/2001.07488v3.pdf).
 
 ## Lens {#Lens}
 

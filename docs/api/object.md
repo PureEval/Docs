@@ -1,9 +1,5 @@
 # Object {#object-api}
 
-## Overview
-
-This section of the PureEval API is focused on manipulating and querying JavaScript objects. The functions provided offer different ways to interact with object properties, allowing you to select, update, remove, or transform them. 
-
 ## prop() {#prop}
 
 Fetches a property from an object.
@@ -212,7 +208,7 @@ Curries a class constructor.
 
 - **Type**
 
-Please refer to the flow image.
+<img class="constructFlowImage" :src="constructFlowImage()" style="margin: 0 auto;">
 
 - **Details**
 
@@ -248,3 +244,16 @@ Checks if a property exists in an object and returns `true` if it does, otherwis
 ```js
 has('homo')({ homo: 1 }); // true
 ```
+
+<script setup>
+import { useData } from 'vitepress'
+const { isDark } = useData()
+
+const constructFlowImage = function () {
+    if (isDark.value) {
+        return "/images/api/pureeval.ist.drawio-pi-dark.svg"
+    } else {
+        return "/images/api/pureeval.ist.drawio-pi-light.svg"
+    }
+}
+</script>
