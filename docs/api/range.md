@@ -1,20 +1,25 @@
 # Range {#range-api}
 
+## Overview
+
+The Range API is designed to easily create a range of numbers or characters given the left and right endpoints. This is particularly useful when you need to generate sequences for various purposes such as iteration, data generation, or mathematical calculations.
+
 ## range() {#range}
 
-给定左右端点构造一个范围。
+Creates a range given the left and right endpoints.
 
--   **Type**
+- **Type**
+$$
+\text{Number|Char} \to \text{Number|Char} \to [\text{Number|Char}]
+$$
 
-$$Number|Char \to Number|Char \to [Number|Char]$$
+- **Details**
 
--   **Details**
+Takes two arguments, either numbers or characters \( a, b \), and returns an array representing the closed interval \([a, b]\) in mathematical terms.
 
-传入两个数字或字符类型的参数（记为 $a,b$），则结果为数学意义上的闭区间 $[a,b]$。
-
--   **Example**
+- **Example**
 
 ```js
-range(1, 5); //[1, 2, 3, 4, 5]
-range('a')('c'); //['a', 'b', 'c']
+range(1, 5); // [1, 2, 3, 4, 5]
+range('a', 'c'); // ['a', 'b', 'c']
 ```

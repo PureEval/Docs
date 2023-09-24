@@ -1,24 +1,26 @@
-# List {#listc-api}
+# List (Cons-based) {#listc-api}
 
 ::: warning
-本节内容为实验性内容，当前的性能可能不适用于正常的代码生产，本节的 API 随时可能被移除或更改。
+This section contains experimental features. The current performance may not be suitable for regular code production, and the APIs in this section may be removed or changed at any time.
 :::
 
-本节的 List 特指大部分函数式编程语言中基于 Cons 方法定义的 List，而非本库中另一节所定义的基于 Array 的 List。
+The List in this section specifically refers to the Cons List commonly defined in most functional programming languages, as opposed to the Array-based List defined in another section of this library.
 
-不可否认的，这是一个在逻辑上完美的 Cons List，充分利用了 JavaScript 语言提供的 yield 语法。它支持很多嵌套的 Lazy 操作或者无限列表，由于 Cons List 的性质，我们在很短时间内就完成了它。但目前无法存放太多的元素，这是它在实验性内容中的原因。
+Undeniably, this is a logically perfect Cons List, making full use of the `yield` syntax provided by the JavaScript language. It supports many nested Lazy operations or infinite lists. Due to the nature of the Cons List, we completed it in a very short time. However, it currently cannot hold too many elements, which is why it is in the experimental section.
 
 ## L.lazy() {#lazy}
 
-基于任何可迭代对象生成一个 List。
+Generates a List based on any iterable object.
 
 -   **Type**
 
-$$Iterable \ a \Rightarrow \ a \to List\ a$$
+$$
+\text{Iterable} \ a \Rightarrow \ a \to \text{List}\ a
+$$
 
 -   **Details**
 
-传入一个可迭代对象，该对象将会被转化为 Cons List。
+Takes an iterable object as an argument and transforms it into a Cons List.
 
 -   **Example**
 
@@ -28,15 +30,17 @@ L.lazy([1, 1, 4, 5, 1, 4]); //List [1, 1, 4, 5, 1, 4]
 
 ## L.seq() {#seq}
 
-把 List 转回 Array。
+Converts a List back into an Array.
 
 -   **Type**
 
-$$List\ a \to Array\ a$$
+$$
+\text{List}\ a \to \text{Array}\ a
+$$
 
 -   **Details**
 
-传入一个列表，该函数可以将其转换回数组。
+Takes a list as an argument and transforms it back into an array.
 
 -   **Example**
 
@@ -46,15 +50,17 @@ L.seq(L.lazy([1, 1, 4, 5, 1, 4])); // [1, 1, 4, 5, 1, 4]
 
 ## L.head() {#head}
 
-获取一个 List 的首项。
+Gets the first element of a List.
 
 -   **Type**
 
-$$[x]\to x$$
+$$
+[x]\to x
+$$
 
 -   **Details**
 
-传入一个列表，该函数可以返回其首项。
+Takes a list as an argument and returns its first element.
 
 -   **Example**
 
@@ -64,15 +70,17 @@ L.head(L.lazy([1, 1, 4, 5, 1, 4])); // 1
 
 ## L.isEmpty() {#isempty}
 
-判断一个 List 是否为空。
+Determines whether a List is empty.
 
 -   **Type**
 
-$$List \to Bool$$
+$$
+\text{List} \to \text{Bool}
+$$
 
 -   **Details**
 
-传入一个列表，该函数判断列表是否为空。
+Takes a list as an argument and determines whether it is empty.
 
 -   **Example**
 
@@ -82,15 +90,17 @@ L.isEmpty(L.lazy([])); // true
 
 ## L.iter() {#iter}
 
-为一个 List 生成一个可迭代对象。
+Generates an iterable object for a List.
 
 -   **Type**
 
-$$Iterable \ a \Rightarrow List\ a \to \ a$$
+$$
+\text{Iterable} \ a \Rightarrow \text{List}\ a \to \ a
+$$
 
 -   **Details**
 
-传入一个列表，返回该列表所对应的可迭代对象。
+Takes a list as an argument and returns an iterable object that corresponds to that list.
 
 -   **Example**
 
@@ -101,15 +111,17 @@ for (const x of L.iter(myList)) console.log(x); //1 2 3 4 5
 
 ## L.range() {#range}
 
-按照范围和迭代函数生成一个列表。
+Generates a list based on a range and an iterator function.
 
 -   **Type**
 
-$$Number \to Number \to (Number\to Number) \to List\ Number$$
+$$
+\text{Number} \to \text{Number} \to (\text{Number}\to \text{Number}) \to \text{List}\ \text{Number}
+$$
 
 -   **Details**
 
-传入三个参数，分别为区间起始，区间结束，迭代函数。最终返回一个结果为区间起始开始迭代直到区间结束值为止的列表。
+Takes three arguments: the start of the range, the end of the range, and an iterator function. Returns a list that starts from the beginning of the range and iterates to the end of the range based on the iterator function.
 
 -   **Example**
 
@@ -119,15 +131,17 @@ L.range(1, 5, add(1)); // List [1, 2, 3, 4, 5]
 
 ## L.tail() {#tail}
 
-去除列表的第一个元素。
+Removes the first element from a List.
 
 -   **Type**
 
-$$x:[x] \to [x]$$
+$$
+x:[x] \to [x]
+$$
 
 -   **Details**
 
-传入一个列表，本函数可以去除该列表的第一个元素。
+Takes a list as an argument and removes its first element.
 
 -   **Example**
 
@@ -137,15 +151,17 @@ L.tail(L.lazy(1, 2, 3, 4, 5)); // List [2, 3, 4, 5]
 
 ## L.iterate() {#iterate}
 
-返回一个无限迭代的列表。
+Returns an infinitely iterating list.
 
 -   **Type**
 
-$$(x \to x) \to x \to [x]$$
+$$
+(x \to x) \to x \to [x]
+$$
 
 -   **Details**
 
-传入一个函数和一个初值，返回一个无限列表，为该函数从首项一直迭代的结果。
+Takes a function and an initial value as arguments and returns an infinite list that iteratively applies the function to the initial value.
 
 -   **Example**
 
@@ -155,15 +171,17 @@ L.iterate((x) => x * 2, 1); // List [2, 4, 8, 16, 32...]
 
 ## L.map() {#map}
 
-对列表进行映射。
+Maps over a list.
 
 -   **Type**
 
-$$(x \to y) \to [x] \to [y]$$
+$$
+(x \to y) \to [x] \to [y]
+$$
 
 -   **Details**
 
-传入一个映射函数和一个列表，列表将会全部被映射函数映射。
+Takes a mapping function and a list as arguments, and the entire list will be mapped by the mapping function.
 
 -   **Example**
 
@@ -176,17 +194,19 @@ L.map(
 
 ## L.flatMap() {#flatMap}
 
-对列表进行映射。
+Maps over a list.
 
 -   **Type**
 
-$$(x \to [y]) \to [x] \to [y]$$
+$$
+(x \to [y]) \to [x] \to [y]
+$$
 
 -   **Details**
 
-传入一个映射函数和一个列表，列表将会全部被映射函数映射。
+Takes a mapping function and a list as arguments, and the entire list will be mapped by the mapping function.
 
-本函数与 [map](#map) 不同的地方是参数函数的返回值应是一个列表，而本函数会将其自动合并为一个列表。
+The difference between this function and [map](#map) is that the return value of the argument function should be a list, and this function will automatically flatten it into a single list.
 
 -   **Example**
 
@@ -199,15 +219,17 @@ L.flatMap(
 
 ## L.concat() {#concat}
 
-拼接两个列表。
+Concatenates two lists.
 
 -   **Type**
 
-$$[x] \to [x] \to [x]$$
+$$
+[x] \to [x] \to [x]
+$$
 
 -   **Details**
 
-传入两个列表，本函数将会将其拼接成一个列表。
+Takes two lists as arguments and concatenates them into a single list.
 
 -   **Example**
 
@@ -218,33 +240,39 @@ L.concat(L.lazy([1, 2, 3]), L.lazy([4, 5, 6]));
 
 ## L.take() {#take}
 
-取出列表前指定个数的元素。
+Takes the first $n$ elements from a List.
 
 -   **Type**
 
-$$[x] \to Number \to [x]$$
+$$
+[x] \to \text{Number} \to [x]
+$$
 
 -   **Details**
 
-传入一个正整数 ${n} 和一个列表，返回的列表为原列表的前 ${n} 项所构成的列表。
+Takes a positive integer $n$ and a list as arguments and returns a list containing the first $n$ elements of the given list.
 
 -   **Example**
 
 ```js
+
+
 L.take(2, L.lazy([1, 2, 3])); // List [1, 2]
 ```
 
 ## L.drop() {#drop}
 
-抛弃列表前指定个数的元素。
+Drops the first $n$ elements from a List.
 
 -   **Type**
 
-$$[x] \to Number \to [x]$$
+$$
+[x] \to \text{Number} \to [x]
+$$
 
 -   **Details**
 
-传入一个正整数 ${n} 和一个列表，返回的列表为原列表的去除前 ${n} 项后所构成的列表。
+Takes a positive integer $n$ and a list as arguments and returns a list containing all but the first $n$ elements of the given list.
 
 -   **Example**
 
@@ -254,15 +282,17 @@ L.drop(2, L.lazy([1, 2, 3])); // List [3]
 
 ## L.repeat() {#repeat}
 
-生成一个值永远为常量的无限列表。
+Generates an infinite list of constant values.
 
 -   **Type**
 
-$$x \to [x]$$
+$$
+x \to [x]
+$$
 
 -   **Details**
 
-传入一个值，返回值为值永远为该值的无限列表。
+Takes a value as an argument and returns an infinite list containing that value.
 
 -   **Example**
 
@@ -273,15 +303,17 @@ L.repeat('Screeps is a amazing game.');
 
 ## L.filter() {#filter}
 
-从列表中按规则筛选元素。
+Filters elements from a list based on a rule.
 
 -   **Type**
 
-$$(x \to Bool) \to [x] \to [x]$$
+$$
+(x \to \text{Bool}) \to [x] \to [x]
+$$
 
 -   **Details**
 
-传入一个筛选规则和一个列表，返回包含筛选通过的元素的列表。
+Takes a filtering rule and a list as arguments and returns a list containing the elements that pass the filtering rule.
 
 -   **Example**
 
@@ -291,33 +323,37 @@ L.filter(lte(3), L.lazy([1, 2, 3, 4, 5])); // List [1, 2, 3]
 
 ## L.reject() {#reject}
 
-从列表中按规则反向筛选元素。
+Filters elements from a list based on a rule in reverse.
 
 -   **Type**
 
-$$(x \to Bool) \to [x] \to [x]$$
+$$
+(x \to \text{Bool}) \to [x] \to [x]
+$$
 
 -   **Details**
 
-传入一个筛选规则和一个列表，返回包含筛选不通过的元素的列表。
+Takes a filtering rule and a list as arguments and returns a list containing the elements that do not pass the filtering rule.
 
 -   **Example**
 
 ```js
-L.filter(lte(3), L.lazy([1, 2, 3, 4, 5])); // List [4, 5]
+L.reject(lte(3), L.lazy([1, 2, 3, 4, 5])); // List [4, 5]
 ```
 
 ## L.forEach() {#forEach}
 
-将函数应用于列表的每一元素。
+Applies a function to each element in a list.
 
 -   **Type**
 
-$$(x \to void) \to [x] \to void$$
+$$
+(x \to \text{void}) \to [x] \to \text{void}
+$$
 
 -   **Details**
 
-传入一个函数和一个列表，列表中的所有值将会依次应用该函数。
+Takes a function and a list as arguments. Each element in the list will be applied to the function.
 
 -   **Example**
 
@@ -328,15 +364,17 @@ L.forEach((v) => console.log(v), L.lazy([1, 2, 3]));
 
 ## L.takeWhile() {#takeWhile}
 
-按规则从头开始从列表取元素直到不满足规则。
+Takes elements from the beginning of the list based on a rule until the rule is not satisfied.
 
 -   **Type**
 
-$$(x \to Bool) \to [x] \to [x]$$
+$$
+(x \to \text{Bool}) \to [x] \to [x]
+$$
 
 -   **Details**
 
-传入一个规则函数和一个列表，返回值为按规则从列表首个元素开始取符合规则的元素，直到遇到第一个不满足规则的元素为止的元素组成的列表。
+Takes a rule function and a list as arguments. Returns a list containing the elements taken from the beginning of the list based on the rule until an element is encountered that does not satisfy the rule.
 
 -   **Example**
 
@@ -347,36 +385,40 @@ L.takeWhile(includes('a'), L.lazy(['ab', 'ac', 'bb']));
 
 ## L.dropWhile() {#dropWhile}
 
-按规则从头开始从列表抛弃直到不满足规则。
+Drops elements from the beginning of the list based on a rule until the rule is not satisfied.
 
 -   **Type**
 
-$$(x \to Bool) \to [x] \to [x]$$
+$$
+(x \to \text{Bool}) \to [x] \to [x]
+$$
 
 -   **Details**
 
-传入一个规则函数和一个列表，返回值为按规则从列表首个元素开始抛弃符合规则的元素，直到遇到第一个不满足规则的元素为止的剩余元素组成的列表。
+Takes a rule function and a list as arguments. Returns a list containing the remaining elements after dropping the elements from the beginning of the list based on the rule until an element is encountered that does not satisfy the rule.
 
 -   **Example**
 
 ```js
-L.takeWhile(includes('a'), L.lazy(['ab', 'ac', 'bb']));
+L.dropWhile(includes('a'), L.lazy(['ab', 'ac', 'bb']));
 // List ["bb"]
 ```
 
 ## L.zipWith() {#zipWith}
 
-将两个列表对位处理后生成新列表。
+Generates a new list by element-wise processing of two lists.
 
 -   **Type**
 
-$$(a \to b \to c)\to [a]\to [b]\to [c]$$
+$$
+(a \to b \to c)\to [a]\to [b]\to [c]
+$$
 
 -   **Details**
 
-第一个函数传入一个二元函数 $f$，接下来传入两个等长的列表（记为 $a,b$）。
+Takes a binary function $f$ as the first argument, followed by two lists of the same length ($a, b$).
 
-返回一个长度与传入的列表长度相同结果列表 $c$，满足 $c_i = f \ a \ b$。
+Returns a new list $c$ of the same length as the input lists, where $c_i = f(a_i, b_i)$.
 
 -   **Example**
 
@@ -387,38 +429,42 @@ L.zipWith((a, b) => a + b, L.lazy([1, 2, 3]), L.lazy([1, 2, 3]));
 
 ## L.shield() {#shield}
 
-删除列表中的某值。
+Removes a specific value from a list.
 
 -   **Type**
 
-$$a\to [a] \to [a]$$
+$$
+a\to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入需要屏蔽的值，再传入一个列表，返回值为该列表中删除屏蔽值后的列表。
+Takes a value to shield as the first argument, followed by a list. Returns a list without the shielded value.
 
 -   **Example**
 
 ```js
-L.shield(1, L.Lazy([1, 1, 4, 5, 1, 4]));
+L.shield(1, L.lazy([1, 1, 4, 5, 1, 4]));
 // List [4, 5, 4]
 ```
 
 ## L.choose() {#choose}
 
-删除列表中的某值。
+Chooses a specific value from a list.
 
 -   **Type**
 
-$$a\to [a] \to [a]$$
+$$
+a\to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入需要选择的值，再传入一个列表，返回值为该列表中选择该值后的列表。
+Takes a value to choose as the first argument, followed by a list. Returns a list containing only the chosen value.
 
 -   **Example**
 
 ```js
-L.choose(1, L.Lazy([1, 1, 4, 5, 1, 4]));
+L.choose(1, L.lazy([1, 1, 4, 5, 1, 4]));
 // List [1, 1, 1]
 ```

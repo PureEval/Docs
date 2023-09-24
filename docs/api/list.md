@@ -2,17 +2,19 @@
 
 ## zipWith() {#zipWith}
 
-将两个列表对位处理后构成新的列表。
+Applies a binary function to corresponding elements of two lists and returns a new list.
 
 -   **Type**
 
-$$((a\to b)\to c)\to [a]\to [b]\to [c]$$
+$$
+((a \to b) \to c) \to [a] \to [b] \to [c]
+$$
 
 -   **Details**
 
-第一个参数传入一个二元函数 $f$，接下来传入两个等长的列表（记为 $a,b$）。
+The first parameter is a binary function $f$, followed by two lists of equal length $a, b$.
 
-返回一个长度与传入的列表相同的结果列表 $c$，满足 $c_i=f \ a_i \  b_i$。
+Returns a new list $c$ of the same length as the input lists, where $c_i = f(a_i, b_i)$.
 
 -   **Example**
 
@@ -23,19 +25,21 @@ zipWith(f, [1, 2, 3], [4, 5, 6]); //[5, 7, 9]
 
 ## zip() {#zip}
 
-将两个列表对位组合后生成新的列表。
+Pairs elements from two lists into a new list of tuples.
 
 -   **Type**
 
-$$[a]\to [b]\to [[a,b]]$$
+$$
+[a] \to [b] \to [[a, b]]
+$$
 
 -   **Details**
 
-传入两个长度相等的列表（记为 $a,b$ ）。
+Takes two lists $a, b$ of equal length.
 
-返回一个长度与传入列表相同的结果列表 $c$，满足 $c_i=[a_i,b_i]$。
+Returns a new list $c$ of the same length as the input lists, where $c_i = [a_i, b_i]$.
 
-该函数与 `zipWith((a,b)=>[a,b])` 等价。
+This is equivalent to `zipWith((a, b) => [a, b])`.
 
 -   **Example**
 
@@ -45,34 +49,37 @@ zip([1, 2, 3], [4, 5, 6]); //[[1, 4], [2, 5], [3, 6]]
 
 ## join() {#join}
 
-将列表中全部元素通过分隔符连接成一个字符串。
+Joins elements in a list into a string, separated by a given delimiter.
 
 -   **Type**
 
-$$String\to [a]\to String$$
+$$
+\text{String} \to [a] \to \text{String}
+$$
 
 -   **Details**
 
-第一个参数传入一个字符串代表分隔符，第二个参数传入一个列表，返回值为最终连接的字符串。
+The first parameter is a string that serves as the delimiter. The second parameter is a list. The function returns a string that joins all the elements in the list, separated by the delimiter.
 
 -   **Example**
 
 ```js
 join('|', [1, 2, 3]); //"1|2|3"
-join('|')([1, 2, 3]); //"1|2|3"
 ```
 
 ## slice() {#slice}
 
-截取列表的一部分区间。
+Slices a section of a list.
 
 -   **Type**
 
-$$Int\to Int\to [a]\to [a]$$
+$$
+\text{Int} \to \text{Int} \to [a] \to [a]
+$$
 
 -   **Details**
 
-前两个参数传入两个整数代表开始截取的位置和结束截取的位置，返回值为截取到的区间。
+Takes two integers representing the start and end indices, and returns a new list containing elements within the specified range.
 
 -   **Example**
 
@@ -82,37 +89,37 @@ slice(0, 3, [1, 2, 3, 4]); //[1, 2, 3]
 
 ## take() {#take}
 
-从列表头开始截取元素。
+Takes the first $n$ elements from a list.
 
 -   **Type**
 
-$$Int\to [a]\to [a]$$
+$$
+\text{Int} \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个整数 $n$，接下来传入一个列表，返回值为该列表的前 $n$ 个元素。
+Takes an integer $n$ and a list as parameters. Returns a new list containing the first $n$ elements from the given list.
 
 -   **Example**
 
 ```js
-take(3, [1, 2, 3, 4]); //[1, 2, 3]]
+take(3, [1, 2, 3, 4]); //[1, 2, 3]
 ```
 
 ## takeWhile() {#takeWhile}
 
-从列表头开始按规则截取元素。
+Takes elements from the beginning of a list as long as they satisfy a given predicate.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to [a]$$
+$$
+(a \to \text{Bool}) \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个函数 $f$ ，第二个参数传入一个列表。
-
-接下来从头开始截取元素加入结果列表，若某元素作为 $f$ 的参数的函数值不为 `true`，则停止截取。
-
-返回值为按规则截取的新列表。
+The first parameter is a predicate function $f$, and the second parameter is a list. Elements are taken from the beginning of the list as long as they satisfy $f$.
 
 -   **Example**
 
@@ -122,17 +129,17 @@ takeWhile((v) => v < 3, [1, 1, 4, 5, 1, 4]); //[1, 1]
 
 ## drop() {#drop}
 
-从列表头开始删除元素。
+Drops the first $n$ elements from a list.
 
 -   **Type**
 
-$$Int\to [a]\to [a]$$
+$$
+\text{Int} \to [a] \to [a]
+$$
 
 -   **Details**
 
-注意：该函数不会改变参数。
-
-第一个参数传入一个整数 $n$，接下来传入一个列表，返回值为该列表去除前 $n$ 个元素后的结果。
+Takes an integer $n$ and a list as parameters. Returns a new list with the first $n$ elements removed.
 
 -   **Example**
 
@@ -142,41 +149,37 @@ drop(3, [1, 2, 3, 4]); //[4]
 
 ## dropWhile() {#dropWhile}
 
-从列表头开始按规则删除元素。
+Drops elements from the beginning of a list as long as they satisfy a given predicate.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to [a]$$
+$$
+(a \to \text{Bool}) \to [a] \to [a]
+$$
 
 -   **Details**
 
-注意：该函数不会改变参数。
-
-第一个参数传入一个函数 $f$ ，第二个参数传入一个列表。
-
-接下来从头开始删除列表中的元素，若某元素作为 $f$ 的参数的函数值不为 `true`，则停止删除。
-
-返回值为按规则删除元素后的新列表。
+The first parameter is a predicate function $f$, and the second parameter is a list. Elements are dropped from the beginning of the list as long as they satisfy $f$.
 
 -   **Example**
 
 ```js
-dropWhile((v) => v < 3, [4, 5, 1, 4]); //[4, 5, 1, 4]
+dropWhile((v) => v < 3, [1, 4, 5, 1, 4]); //[4, 5, 1, 4]
 ```
 
 ## every() {#every}
 
-检查一个列表，其必须完全满足需求。
+Checks if all elements in a list satisfy a given predicate.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to Bool$$
+$$
+(a \to \text{Bool}) \to [a] \to \text{Bool}
+$$
 
 -   **Details**
 
-第一个参数传入一个判断函数，第二个参数传入一个列表。
-
-如果列表中的所有元素都满足：作为判断函数的参数时函数值为 `true`，则返回 `true`，否则返回 `fasle`。
+Takes a predicate function $f$ and a list as parameters. Returns `true` if all elements in the list satisfy $f$, and `false` otherwise.
 
 -   **Example**
 
@@ -186,71 +189,79 @@ every((v) => v < 3, [1, 1, 4, 5, 1, 4]); //false
 
 ## some() {#some}
 
-检查一个列表，其有任意一个元素满足需求即可。
+Checks if any element in a list satisfies a given predicate.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to Bool$$
+$$
+(a \to \text{Bool}) \to [a] \to \text{Bool}
+$$
 
 -   **Details**
 
-第一个参数传入一个判断函数，第二个参数传入一个列表。
-
-如果列表中的任意一个元素满足：作为判断函数的参数时函数值为 `true`，则返回 `true`，否则返回 `fasle`。
+Takes a predicate function $f$ and a list as parameters. Returns `true` if any element in the list satisfies $f$, and `false` otherwise.
 
 -   **Example**
 
 ```js
-some((v) => v < 3, [1, 1, 4, 5, 1, 4]); //true
+some((v) => v < 3, [1, 4, 5, 1, 4]); //true
 ```
 
 ## concat() {#concat}
 
-拼接两个列表(可为字符串)。
+Concatenates two lists.
 
 -   **Type**
 
-$$[*]\to [*]\to [*]$$
+$$
+[*] \to [*] \to [*]
+$$
 
 -   **Details**
 
-传入两个列表，返回其拼接后的结果。
+Takes two lists and returns a new list that is a concatenation of the two.
 
 -   **Example**
 
 ```js
-concat([3, 2, 1], [1, 2, 3]); //[3, 2, 1, 1, 2, 3]
+concat([1, 2, 3], [4, 5, 6]); //[1, 2, 3, 4, 5, 6]
 ```
 
 ## concatr() {#concatr}
 
-反向拼接两个列表(可为字符串)。
+Concatenates two lists in reverse order.
 
 -   **Type**
 
-$$[*]\to [*]\to [*]$$
+$$
+[*] \to [*] \to [*]
+$$
 
 -   **Details**
 
-传入两个列表，返回其反向拼接后的结果。
+Takes two lists and returns a new list that is a reverse concatenation of the two.
 
 -   **Example**
 
 ```js
-concat([3, 2, 1], [1, 2, 3]); //[1, 2, 3, 3, 2, 1]
+concatr([1, 2, 3], [4, 5, 6]); //[4, 5, 6
+
+, 1, 2, 3]
 ```
 
 ## head() {#head}
 
-取出列表的首项。
+Returns the first element of a list.
 
 -   **Type**
 
-$$[a]\to a$$
+$$
+[a] \to a
+$$
 
 -   **Details**
 
-传入一个列表，返回其首项。
+Takes a list and returns its first element.
 
 -   **Example**
 
@@ -260,15 +271,17 @@ head([1, 2, 3]); //1
 
 ## tail() {#tail}
 
-取出列表的尾项。
+Returns the last element of a list.
 
 -   **Type**
 
-$$[a]\to a$$
+$$
+[a] \to a
+$$
 
 -   **Details**
 
-传入一个列表，返回其尾项。
+Takes a list and returns its last element.
 
 -   **Example**
 
@@ -278,15 +291,17 @@ tail([1, 2, 3]); //3
 
 ## dropHead() {#dropHead}
 
-返回列表删除首项后的结果。
+Drops the first element of a list.
 
 -   **Type**
 
-$$[a]\to [a]$$
+$$
+[a] \to [a]
+$$
 
 -   **Details**
 
-传入一个列表，返回列表删除首项后的结果。
+Takes a list and returns a new list with the first element removed.
 
 -   **Example**
 
@@ -296,15 +311,17 @@ dropHead([1, 2, 3]); //[2, 3]
 
 ## dropTail() {#dropTail}
 
-返回列表删除尾项后的结果。
+Drops the last element of a list.
 
 -   **Type**
 
-$$[a]\to [a]$$
+$$
+[a] \to [a]
+$$
 
 -   **Details**
 
-传入一个列表，返回列表删除尾项后的结果。
+Takes a list and returns a new list with the last element removed.
 
 -   **Example**
 
@@ -314,34 +331,37 @@ dropTail([1, 2, 3]); //[1, 2]
 
 ## includes() {#includes}
 
-判断某值是否在列表中。
+Checks if a given element is present in a list.
 
 -   **Type**
 
-$$a\to [a]\to Bool$$
+$$
+a \to [a] \to \text{Bool}
+$$
 
 -   **Details**
 
-传入一个需要检验的值，再传入一个列表，返回的结果为该值是否在列表中。
+Takes an element and a list, and returns `true` if the element is present in the list, and `false` otherwise.
 
 -   **Example**
 
 ```js
-includes(4)([1, 3, 4]); //true
-includes(5)([1, 3, 4]); //false
+includes(4, [1, 2, 3, 4]); //true
 ```
 
 ## reverse() {#reverse}
 
-翻转列表。
+Reverses a list.
 
 -   **Type**
 
-$$[a]\to [a]$$
+$$
+[a] \to [a]
+$$
 
 -   **Details**
 
-传入一个列表，返回其翻转后的结果。
+Takes a list and returns a new list with the elements in reverse order.
 
 -   **Example**
 
@@ -351,45 +371,57 @@ reverse([1, 2, 3]); //[3, 2, 1]
 
 ## countWith() {#countWith}
 
+Counts the number of elements in a list that satisfy a given predicate.
+
 -   **Type**
 
-$$(a\to Bool)\to [a]\to Number$$
+$$
+(a \to \text{Bool}) \to [a] \to \text{Number}
+$$
 
 -   **Details**
 
-传入一个规则，再传入一个列表，按规则统计其中符合规则的元素数。
+Takes a predicate function $f$ and a list, and returns the number of elements that satisfy $f$.
 
 -   **Example**
 
 ```js
-countWith(equal(5), [1, 2, 3, 4, 5, 5, 5]); //3
+countWith((v) => v === 5, [1, 2, 3, 4, 5, 5, 5]); //3
 ```
 
 ## count() {#count}
 
+Counts the occurrences of a specific element in a list.
+
 -   **Type**
 
-$$a\to [a]\to Number$$
+$$
+a \to [a] \to \text{Number}
+$$
 
 -   **Details**
 
-传入一个值，再传入一个列表，查找列表中该值出现的次数。
+Takes an element and a list, and returns the number of occurrences of that element in the list.
 
 -   **Example**
 
 ```js
-count([1, 2, 3, 4, 5, 5, 5]); //3
+count(5, [1, 2, 3, 4, 5, 5, 5]); //3
 ```
 
 ## pairList() {#pairList}
 
+Pairs the first element with the rest of the elements in the list.
+
 -   **Type**
 
-$$[a,...a]\to [a,[...a]]$$
+$$
+[a, \ldots a] \to [a, [\ldots a]]
+$$
 
 -   **Details**
 
-传入一个列表，返回其首项与首项后的元素构成的列表。
+Takes a list and returns a pair consisting of its first element and the rest of the elements.
 
 -   **Example**
 

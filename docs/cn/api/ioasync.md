@@ -1,8 +1,10 @@
-# IOAsync {#IOAsync-api}
+# IOAsync {#IO-api}
 
-IOAsync is an asynchronous version of the IO monad used for controlling flow and isolating side effects. It supports wrapping around Promises.
+IO 是一个用来控制流程、隔离副作用的单子。
 
-Here is a general example of using the IOAsync monad:
+IOAsync 是它的异步版本，支持对 Promise 的包装。
+
+此处是一个 IOAsync 单子使用的总例。
 
 ```js
 const getUserInfo = IOAsync(async () => {
@@ -16,15 +18,13 @@ const greetUser = (userInfo) => `Hello, ${userInfo.name}! You are ${userInfo.age
 getUserInfo.map(greetUser).run().then(console.log).catch(console.error);
 ```
 
-## IOAsync {#IOAsync}
+## IOAsync {#IO}
 
-The constructor function for IOAsync, used for standard IOAsync construction. The function passed in must return a Promise object.
+IOAsync 的构造函数，用来进行 IOAsync 的常规构造，传入的函数必须返回一个 Promise 对象。
 
 -   **Type**
 
-$$
-\text{async}() \to a \to IOAsync\ a
-$$
+$$async()\to a\to IOAsync\ a$$
 
 -   **Example**
 
@@ -32,31 +32,27 @@ $$
 IOAsync(async () => 1); //IOAsync 1
 ```
 
-## IOAsync.map() {#IOAsync-map}
+## IOAsync.map() {#iomap}
 
-Maps the value inside IOAsync.
+对 IOAsync 中的值进行映射。
 
 -   **Type**
 
-$$
-IOAsync\ a \to (a \to b) \to IOAsync\ b
-$$
+$$IOAsync\ a\to (a\to b)\to IOAsync\ b$$
 
 -   **Example**
 
 ```js
-IOAsync(async () => 1).map(add(1)); //IOAsync 2
+IO(async () => 1).map(add(1)); //IOAsync 2
 ```
 
-## IOAsync.chain() {#IOAsync-chain}
+## IOAsync.chain() {#iochain}
 
-Chains a new IOAsync task after the current one.
+在当前 IOAsync 任务后拼接新的 IOAsync 任务。
 
 -   **Type**
 
-$$
-IOAsync\ a \to (a \to IOAsync\ b) \to IOAsync\ b
-$$
+$$IOAsync a\to (a\to IOAsync\ b)\to IOAsync\ b$$
 
 -   **Example**
 
@@ -92,17 +88,15 @@ const program = myReadFile('input.txt')
 program.run();
 ```
 
-## IOAsync.handle(Algebraic Effects) {#IOAsync-handle}
+## IOAsync.handle(Algebraic Effects) {#iohandle}
 
-The `handle` method is an implementation of Algebraic Effects.
+handle 方法是一个代数效应(Algebraic Effects)的实现。
 
-This method allows the content of the `perform` function to be attached to IOAsync, allowing the `perform` function to be executed within the effect.
+采用该方法可以挂载 perform 函数的内容到 IOAsync 上，进而在 effect 中通过 perform 函数执行。
 
 -   **Type**
 
-$$
-IOAsync\ a \to * \to IOAsync\ a
-$$
+$$IOAsync\ a\to *\to IOAsync\ a$$
 
 -   **Example**
 
@@ -122,21 +116,19 @@ function fooAsync(x, y, z) {
 console.log(await fooAsync(1, 2, 3)); //14
 ```
 
-## IOAsync.run() {#IOAsync-run}
+## IOAsync.run() {#iorun}
 
-An IOAsync monad will not execute until the `run` method is called.
+一个 IOAsync 单子在没有执行 run 方法之前都是不会执行的。
 
-The `run` method is used to execute an IOAsync monad.
+run 方法用来执行一个 IOAsync 单子。
 
 ::: warning
-This operation is Unsafe.
+这个操作是 Unsafe 的。
 :::
 
 -   **Type**
 
-$$
-IOAsync\ a \to \text{Promise}\ a
-$$
+$$IOAsync\ a\to Promise\ a$$
 
 -   **Example**
 

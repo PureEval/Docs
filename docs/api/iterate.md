@@ -2,19 +2,21 @@
 
 ## iterate() {#iterate}
 
-对函数进行迭代。
+Iterates over a function with all possible combinations of arguments.
 
 -   **Type**
 
-$$(a,b,...,n)\to x\to a|[a]\to b|[b]\to ...\to n|[n]\to [x]$$
+$$
+(a,b,...,n) \to x \to a|[a] \to b|[b] \to \ldots \to n|[n] \to [x]
+$$
 
 -   **Details**
 
-第一个参数传入一个函数，接下来传入的参数个数等于该函数的参数个数。
+The first argument is a function, followed by arguments equal to the number of parameters of the function.
 
-接下来的每个参数对应原函数中对应位置的参数，若为正常的值，则表示此参数仅有一种可能；若为列表，则列表中的值均会被作为该参数的可能。
+For each parameter in the function, if a normal value is passed, it indicates that there is only one possible value for that parameter. If a list is passed, all the values in the list will be considered as possibilities for that parameter.
 
-该函数将会依次运行所有可能的参数组合并获得结果，作为一个数组返回。
+The function will run all possible combinations of arguments and return the results as an array.
 
 -   **Example**
 
@@ -26,17 +28,19 @@ iterate(foo, [1, 2], [6, 7]);
 
 ## map() {#map}
 
-对数组按规则映射出新数组。
+Maps an array to a new array according to a rule.
 
 -   **Type**
 
-$$(a\to b)\to [a]\to [b]$$
+$$
+(a \to b) \to [a] \to [b]
+$$
 
 -   **Details**
 
-第一个参数传入一个函数，第二个参数传入一个列表。
+The first argument is a function, and the second is a list.
 
-返回值为原列表经过函数映射出的新列表。
+The return value is a new list obtained by mapping the original list through the function.
 
 -   **Example**
 
@@ -46,19 +50,21 @@ map(add(1))([1, 2, 3]); //[2, 3, 4]
 
 ## flatMap() {#flatMap}
 
-对数组按规则映射出新数组。
+Maps an array to a new array according to a rule and flattens the result.
 
 -   **Type**
 
-$$(a\to [b])\to [a]\to [b]$$
+$$
+(a \to [b]) \to [a] \to [b]
+$$
 
 -   **Details**
 
-第一个参数传入一个函数，第二个参数传入一个列表。
+The first argument is a function, and the second is a list.
 
-返回值为原列表经过函数映射出的新列表。
+The return value is a new list obtained by mapping the original list through the function.
 
-本函数与 [map](#map) 不同的地方是参数函数的返回值应是一个列表，而本函数会将其自动合并为一个列表。
+Unlike [map](#map), the function should return a list, and `flatMap` will automatically concatenate these lists into a single list.
 
 -   **Example**
 
@@ -68,17 +74,19 @@ flatMap((v) => [v, v])([1, 2, 3]); //[1, 1, 2, 2, 3, 3]
 
 ## forEach() {#forEach}
 
-遍历数组。
+Iterates over an array.
 
 -   **Type**
 
-$$(a\to *)\to [a]$$
+$$
+(a \to *) \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个函数，第二个参数传入一个列表。
+The first argument is a function, and the second is a list.
 
-接下来将会遍历列表，对每一项执行传入的函数。
+The function will iterate over each item in the list, performing the action specified by the passed-in function.
 
 -   **Example**
 
@@ -90,19 +98,21 @@ forEach((v) => list.push(v), [1, 2, 3]);
 
 ## reduce() {#reduce}
 
-按规则折叠数组为一个值。
+Reduces an array to a single value according to a rule.
 
 -   **Type**
 
-$$(a,b,c)\to a \to a$$
+$$
+(a, b, c) \to a \to a
+$$
 
 -   **Details**
 
-第一个参数传入一个三元（或更低）函数，该函数的第一个函数代表叠加值，第二个参数代表当前值，第三个参数代表其在列表中的位置。
+The first argument is a ternary function (or lower), where the first parameter represents the accumulator, the second represents the current value, and the third represents its position in the list.
 
-接下来的参数传入一个初始值和一个列表，返回值为按规则折叠列表后的结果。
+The next arguments are an initial value and a list. The return value is the result after reducing the list according to the rule.
 
-初始值可以填写占位符 [\_](/api/placeholder.html#_) 来代表采用默认初始值。
+You can use the placeholder [\_](/api/placeholder.html#_) to indicate that the default initial value should be used.
 
 -   **Example**
 
@@ -113,17 +123,19 @@ reduce((a, b) => a + b, _, [1, 2, 3]); //6
 
 ## fold() {#fold}
 
-反复迭代函数。
+Iteratively applies a function.
 
 -   **Type**
 
-$$(a\to a)\to Int\to a\to a$$
+$$
+(a \to a) \to \text{Int} \to a \to a
+$$
 
 -   **Details**
 
-第一个参数传入一个函数，第二个参数传入迭代次数，第三个参数传入初始值。
+The first argument is a function, the second is the number of iterations, and the third is the initial value.
 
-最终返回值为最后一次迭代函数的返回值。
+The final return value is the result of the last iteration of the function.
 
 -   **Example**
 
@@ -133,17 +145,19 @@ fold((v) => v + 1, 5, 0); //5
 
 ## scan() {#scan}
 
-反复迭代函数。
+Iteratively applies a function and records the state at each step.
 
 -   **Type**
 
-$$(a\to a)\to Int\to a\to [a]$$
+$$
+(a \to a) \to \text{Int} \to a \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个初始值，第二个参数传入一个函数，第三个参数传入迭代次数。
+The first argument is the initial value, the second is a function, and the third is the number of iterations.
 
-最终返回值为每次迭代结果构成的列表。
+The final return value is a list of the results of each iteration.
 
 -   **Example**
 

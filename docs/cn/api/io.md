@@ -1,8 +1,8 @@
-# IO (Monad) {#IO-api}
+# IO(Monad) {#IO-api}
 
-IO is a monad used for controlling flow and isolating side effects.
+IO 是一个用来控制流程、隔离副作用的单子。
 
-Here is a general example of using the IO monad:
+此处是一个 IO 单子使用的总例。
 
 ```js
 import { readFileSync } from 'fs';
@@ -18,13 +18,11 @@ program.run();
 
 ## IO {#IO}
 
-The IO constructor function, used for standard IO construction. The value passed in must be a function.
+IO 的构造函数，用来进行 IO 的常规构造，传入的值必须是一个函数。
 
 -   **Type**
 
-$$
-() \to a \to IO\ a
-$$
+$$()\to a\to IO\ a$$
 
 -   **Example**
 
@@ -34,13 +32,11 @@ IO(() => 1); //IO 1
 
 ## IO.map() {#iomap}
 
-Maps the value inside IO.
+对 IO 中的值进行映射。
 
 -   **Type**
 
-$$
-IO\ a \to (a \to b) \to IO\ b
-$$
+$$IO\ a\to (a\to b)\to IO\ b$$
 
 -   **Example**
 
@@ -50,13 +46,11 @@ IO(() => 1).map(add(1)); //IO 2
 
 ## IO.chain() {#iochain}
 
-Chains a new IO task after the current one.
+在当前 IO 任务后拼接新的 IO 任务。
 
 -   **Type**
 
-$$
-IO\ a \to (a \to IO\ b) \to IO\ b
-$$
+$$IO a\to (a\to IO\ b)\to IO\ b$$
 
 -   **Example**
 
@@ -78,15 +72,13 @@ console.log(example);
 
 ## IO.handle(Algebraic Effects) {#iohandle}
 
-The `handle` method is an implementation of Algebraic Effects.
+handle 方法是一个代数效应(Algebraic Effects)的实现。
 
-This method allows the content of the `perform` function to be attached to IO, allowing the `perform` function to be executed within the effect.
+采用该方法可以挂载 perform 函数的内容到 IO 上，进而在 effect 中通过 perform 函数执行。
 
 -   **Type**
 
-$$
-IO\ a \to (* \to *) \to IO\ a
-$$
+$$IO\ a\to (*\to *)\to IO\ a$$
 
 -   **Example**
 
@@ -108,19 +100,17 @@ console.log(foo(1, 2, 3)); //14
 
 ## IO.run() {#iorun}
 
-An IO monad will not execute until the `run` method is called.
+一个 IO 单子在没有执行 run 方法之前都是不会执行的。
 
-The `run` method is used to execute an IO monad.
+run 方法用来执行一个 IO 单子。
 
 ::: warning
-This operation is Unsafe.
+这个操作是 Unsafe 的。
 :::
 
 -   **Type**
 
-$$
-IO\ a \to a
-$$
+$$IO\ a\to a$$
 
 -   **Example**
 

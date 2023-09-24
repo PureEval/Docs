@@ -50,6 +50,9 @@ const headersCache = new Map<
 function parsePageHeaders(link: string) {
   // eslint-disable-next-line no-undef
   const fullPath = path.join(__dirname, '../', link) + '.md'
+  if (!fs.existsSync(fullPath)) {
+    return;
+  }
   const timestamp = fs.statSync(fullPath).mtimeMs
 
   const cached = headersCache.get(fullPath)

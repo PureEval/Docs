@@ -1,26 +1,27 @@
 # Optics {#optics-api}
 
-如果您希望了解光学组件的概念，可以参考[arxiv 2001.07488v3](https://arxiv.org/pdf/2001.07488v3.pdf);
+## Overview
+
+The Optics API focuses on providing "lenses" which allow you to focus on specific parts of a data structure. Lenses are composable and can be used to get, set, or modify data within a structure. For a comprehensive understanding of the optics concept, you can refer to [arxiv 2001.07488v3](https://arxiv.org/pdf/2001.07488v3.pdf).
 
 ## Lens {#Lens}
 
-光学组件透镜。
+Optical components for focusing on specific parts of data structures.
 
 ## Lens.of() {#of}
 
-构造一个透镜。
+Constructs a lens.
 
--   **Type**
+- **Type**
+$$
+(s \to a) \to (s \to a \to s) \to \text{Lens } s \ a
+$$
 
-$$(s\to a)\to(s\to a\to s)\to Len \ s \ a$$
+- **Details**
 
--   **Details**
+The first argument is a getter function, and the second argument is a setter function. The function returns a lens that can be used to get, set, or modify a specific part of a data structure.
 
-第一个参数传入一个 getter 方法，第二个参数传入一个 setter 方法。
-
-返回值为一个透镜。
-
--   **Example**
+- **Example**
 
 ```js
 Lens.of((s) => s.a, assoc('a'));
@@ -28,27 +29,25 @@ Lens.of((s) => s.a, assoc('a'));
 
 ## Lens.bind() {#bind}
 
-直接将元素绑定在透镜。
+Binds an element directly to a lens.
 
--   **Type**
+- **Type**
 
 ##### Overload 1
-
-$$String|Int\to Lens$$
+$$
+\text{String|Int} \to \text{Lens}
+$$
 
 ##### Overload 2
+$$
+[String|Int] \to \text{Lens}
+$$
 
-$$[String|Int]\to Lens$$
+- **Details**
 
--   **Details**
+Creates a lens that focuses on the specified element or path within a data structure.
 
-##### Overload 1
-
-传入一个元素的索引，返回一个绑定到该元素的透镜。
-
-##### Overload 1
-
-传入一个元素的属性路径，返回一个绑定到该元素的透镜。
+- **Example**
 
 ```js
 Lens.bind('a');
@@ -57,63 +56,60 @@ Lens.bind(['a', 'b']);
 
 ## view {#view}
 
-返回一个数据结构中透镜聚焦的部分。
+Returns the part of a data structure that a lens is focused on.
 
--   **Type**
+- **Type**
+$$
+\text{Lens} \to a \to b
+$$
 
-$$Len\to a\to b$$
+- **Details**
 
--   **Details**
+Takes a lens and a data structure as arguments and returns the part of the data structure that the lens is focused on.
 
-第一个参数传入一个透镜，第二个参数传入对应的数据结构。
-
-返回值为该数据结构中透镜聚焦的部分。
-
--   **Example**
+- **Example**
 
 ```js
 const lens = Lens.bind('a');
-view(lens, { a: 1 }); //1
+view(lens, { a: 1 }); // 1
 ```
 
 ## set {#set}
 
-对一个数据结构中透镜聚焦的部分的值进行设置。
+Sets the value of the part of a data structure that a lens is focused on.
 
--   **Type**
+- **Type**
+$$
+\text{Lens} \to a \to b \to c
+$$
 
-$$Len\to a \to b\to c$$
+- **Details**
 
--   **Details**
+Takes a lens, a value to set, and a data structure as arguments. It returns a new data structure with the value set at the focus of the lens.
 
-第一个参数传入一个透镜，第二个参数传入需要设置为的目标值，第三个参数传入对应的数据结构。
-
-返回值为该数据结构被设置完成的结果
-
--   **Example**
+- **Example**
 
 ```js
 const lens = Lens.bind('a');
-set(lens, 2, { a: 1 }); //{ a: 2 }
+set(lens, 2, { a: 1 }); // { a: 2 }
 ```
 
 ## over {#over}
 
-对一个数据结构中透镜聚焦的部分的应用函数。
+Applies a function to the part of a data structure that a lens is focused on.
 
--   **Type**
+- **Type**
+$$
+\text{Lens} \to (a \to b) \to \text{Data } a \to \text{Data } b
+$$
 
-$$Len\to (a\to b) \to Data \ a\to Data \ b$$
+- **Details**
 
--   **Details**
+Takes a lens, a function to apply, and a data structure as arguments. It returns a new data structure where the function has been applied to the focus of the lens.
 
-第一个参数传入一个透镜，第二个参数传入要应用的函数，第三个参数传入对应的数据结构。
-
-返回值为该数据结构应用函数后的结果。
-
--   **Example**
+- **Example**
 
 ```js
 const lens = Lens.bind('a');
-over(lens, add(1), { a: 1 }); //{ a: 2 }
+over(lens, add(1), { a: 1 }); // { a: 2 }
 ```

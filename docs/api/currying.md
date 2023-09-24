@@ -1,22 +1,24 @@
 # Currying {#curry-api}
 
-在这里要提醒您：除非特别说明，PureEval 中一切的多参函数都是柯里化的。
+Note: Unless otherwise stated, all multi-argument functions in PureEval are curried.
 
 ## curry() {#curry}
 
-将一个函数变为柯里化函数
+Turns a function into a curried function.
 
 -   **Type**
 
-$$((a,b,...,n)\to x)\to a\to b\to ... \to n\to x$$
+$$
+((a, b, \ldots, n) \to x) \to a \to b \to \ldots \to n \to x
+$$
 
 -   **Details**
 
-传入一个非柯里化函数作为参数，返回值为对应的柯里化后的函数。
+Takes a non-curried function as an argument and returns the corresponding curried function.
 
-柯里化后的函数一次传入一个参数或多个参数，如果没有达到原函数所需要接收的参数的量，则会返回一个函数继续接受接下来的参数。
+The curried function accepts one or more arguments at a time. If the number of provided arguments has not yet reached the required number for the original function, it returns another function that continues to accept the remaining arguments.
 
-显然的，非柯里化的函数必须要有与需求相符合的 `length` 属性以表明其参数数量。
+It is evident that the non-curried function must have a `length` property that accurately reflects the number of its parameters.
 
 -   **Example**
 
@@ -28,15 +30,17 @@ curry(foo)(1)(2, 3); //6
 
 ## uncurry() {#uncurry}
 
-逆柯里化一个函数，[curry](#curry) 的逆操作。
+Uncurries a function, the inverse operation of [curry](#curry).
 
 -   **Type**
 
-$$(a\to b\to ... \to n\to x)\to (a,b,...,n)\to x$$
+$$
+(a \to b \to \ldots \to n \to x) \to (a, b, \ldots, n) \to x
+$$
 
 -   **Details**
 
-传入一个经过 [curry](#curry) 柯里化后的函数作为参数，返回值为对应函数的逆柯里化函数。
+Takes a function that has been curried via [curry](#curry) as an argument and returns the corresponding uncurried function.
 
 -   **Example**
 

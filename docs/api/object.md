@@ -1,269 +1,250 @@
 # Object {#object-api}
-> 约定： $Object \ a$ 指某函数处理的 $Obejct$ 的属性为类型 $a$
+
+## Overview
+
+This section of the PureEval API is focused on manipulating and querying JavaScript objects. The functions provided offer different ways to interact with object properties, allowing you to select, update, remove, or transform them. 
+
 ## prop() {#prop}
 
-取出 $Object$ 中的一个属性。
+Fetches a property from an object.
 
--   **Type**
-
-##### Overload 1
-
-$$String|Int\to Object \ a \to a$$
-
-##### Overload 2
-
-$$[String|Int]\to Object \ a \to a$$
-
--   **Details**
+- **Type**
 
 ##### Overload 1
-
-传入一个属性名，再传入一个对象，取出对象中对应属性名的元素。
+$$
+\text{String|Int} \to \text{Object } a \to a
+$$
 
 ##### Overload 2
+$$
+[String|Int] \to \text{Object } a \to a
+$$
 
-传入一个属性路径，再传入一个对象，取出对象中对应属性路径的元素。
+- **Details**
 
--   **Example**
+Fetches a property or a nested property using either a single property name or an array representing a path.
+
+- **Example**
 
 ```js
-//Overload 1
-prop('homo', { homo: 114514 }); //114514
-//Overload 2
-prop(['inside', 'homo'], { inside: { homo: 114514 } }); //114514
+// Overload 1
+prop('homo', { homo: 114514 }); // 114514
+// Overload 2
+prop(['inside', 'homo'], { inside: { homo: 114514 } }); // 114514
 ```
 
 ## assoc() {#assoc}
 
-修改 $Object$ 中的一个属性。
+Modifies a property in an object without mutating the original object.
 
--   **Type**
-
-##### Overload 1
-
-$$String|Int\to b\to Object \ a \to Object \ b$$
-
-##### Overload 2
-
-$$[String|Int]\to b\to Object \ a \to Object \ b$$
-
--   **Details**
-
-请注意：该函数不会改变原 $Object$。
+- **Type**
 
 ##### Overload 1
-
-传入一个属性名和目标值，再传入一个对象，将对象中属性名对应的值改为目标值并返回。
+$$
+\text{String|Int} \to b \to \text{Object } a \to \text{Object } b
+$$
 
 ##### Overload 2
+$$
+[String|Int] \to b \to \text{Object } a \to \text{Object } b
+$$
 
-传入一个属性路径和目标值，再传入一个对象，将对象中对应属性路径的元素改为目标值并返回。
+- **Details**
 
--   **Example**
+Associates a new value to a property or a nested property in the object, returning a new object.
+
+- **Example**
 
 ```js
-//Overload 1
-assoc('homo', 'yeah', { homo: 114514 }); //{ "homo": "yeah" }
-//Overload 2
-assoc(['inside', 'homo'], 'yeah', { inside: { homo: 114514 } }); //{ "inside": { "homo": "yeah" } }
+// Overload 1
+assoc('homo', 'yeah', { homo: 114514 }); // { "homo": "yeah" }
+// Overload 2
+assoc(['inside', 'homo'], 'yeah', { inside: { homo: 114514 } }); // { "inside": { "homo": "yeah" } }
 ```
 
 ## modify() {#modify}
 
-将一个函数应用于 $Object$。
+Applies a function to a property in an object.
 
--   **Type**
-
-##### Overload 1
-
-$$String|Int\to (a\to b)\to Object \ a \to Object\ b$$
-
-##### Overload 2
-
-$$[String|Int]\to (a\to b)\to Object \ a \to Object\ b$$
-
--   **Details**
-
-请注意：该函数会改变原 $Object$。
+- **Type**
 
 ##### Overload 1
-
-传入一个属性名和一个函数 $f$，再传入一个对象，将对象中属性名对应的元素 $v$ 改为 $f v$ 并返回。
+$$
+\text{String|Int} \to (a \to b) \to \text{Object } a \to \text{Object } b
+$$
 
 ##### Overload 2
+$$
+[String|Int] \to (a \to b) \to \text{Object } a \to \text{Object } b
+$$
 
-传入一个属性路径和一个函数 $f$，再传入一个对象，将对象中对应属性路径的元素 $v$ 改为 $f v$ 并返回。
+- **Details**
 
--   **Example**
+Modifies a property or a nested property in an object by applying a function to it.
+
+- **Example**
 
 ```js
-//Overload 1
-modify('homo', (v) => 'yeah', { homo: 114514 }); //{ "homo": "yeah" }
-//Overload 2
-modify(['inside', 'homo'], (v) => 'yeah', { inside: { homo: 114514 } }); //{ "inside": { "homo": "yeah" } }
+// Overload 1
+modify('homo', (v) => 'yeah', { homo: 114514 }); // { "homo": "yeah" }
+// Overload 2
+modify(['inside', 'homo'], (v) => 'yeah', { inside: { homo: 114514 } }); // { "inside": { "homo": "yeah" } }
 ```
 
 ## dissoc() {#dissoc}
 
-删除 $Object$ 中的一个属性。
+Removes a property from an object.
 
--   **Type**
-
-##### Overload 1
-
-$$String|Int\to Object \ a \to Object \ *$$
-
-##### Overload 2
-
-$$[String|Int]\to Object \ a \to Object \ *$$
-
--   **Details**
-
-请注意：该函数不会改变原 $Object$。
+- **Type**
 
 ##### Overload 1
-
-传入一个属性名和目标值，再传入一个对象，将对象中属性名对应的元素删除并返回。
+$$
+\text{String|Int} \to \text{Object } a \to \text{Object } *
+$$
 
 ##### Overload 2
+$$
+[String|Int] \to \text{Object } a \to \text{Object } *
+$$
 
-传入一个属性路径和目标值，再传入一个对象，将对象中对应属性路径的元素删除并返回。
+- **Details**
 
--   **Example**
+Deletes a property or a nested property from an object and returns the modified object.
+
+- **Example**
 
 ```js
-//Overload 1
-dissoc('homo', { homo: 114514 }); //{}
-//Overload 2
-dissoc(['inside', 'homo'], { inside: { homo: 114514 } }); //{ "inside": {} }
+// Overload 1
+dissoc('homo', { homo: 114514 }); // {}
+// Overload 2
+dissoc(['inside', 'homo'], { inside: { homo: 114514 } }); // { "inside": {} }
 ```
 
 ## deepClone() {#deepClone}
 
-深复制一个对象。
+Creates a deep clone of an object.
 
--   **Type**
+- **Type**
 
-$$Object\to Object$$
+$$
+\text{Object} \to \text{Object}
+$$
 
--   **Details**
+- **Details**
 
-传入一个 $Object$，返回其深复制的结果。
+Returns a deep clone of the given object.
 
--   **Example**
+- **Example**
 
 ```js
-deepClone({ a: 1, b: 2, c: 3 }); //{ a: 1, b: 2, c: 3 }
+deepClone({ a: 1, b: 2, c: 3 }); // { a: 1, b: 2, c: 3 }
 ```
 
 ## keys() {#keys}
 
-取出 Object 内的所有键。
+Fetches all the keys of an object.
 
--   **Type**
+- **Type**
 
-$$Object\to [String]$$
+$$
+\text{Object} \to [String]
+$$
 
--   **Details**
+- **Details**
 
-传入一个 $Object$，返回一个其所有键组成的列表。
+Returns an array of all the keys of the given object.
 
--   **Example**
+- **Example**
 
 ```js
-keys({ a: 1, b: 2, c: 3 }); //['a', 'b', 'c']
+keys({ a: 1, b: 2, c: 3 }); // ['a', 'b', 'c']
 ```
 
 ## values() {#values}
 
-取出 Object 内的所有值。
+Fetches all the values of an object.
 
--   **Type**
+- **Type**
 
-$$Object\to [*]$$
+$$
+\text{Object} \to [*]
+$$
 
--   **Details**
+- **Details**
 
-传入一个 $Object$，返回一个其所有值组成的列表。
+Returns an array of all the values of the given object.
 
--   **Example**
+- **Example**
 
 ```js
-values({ a: 1, b: 2, c: 3 }); //[1, 2, 3]
+values
+
+({ a: 1, b: 2, c: 3 }); // [1, 2, 3]
 ```
 
 ## makePair() {#makePair}
 
-将一个元组数组转换为对象。
+Converts an array of tuples into an object.
 
--   **Type**
+- **Type**
 
-$$[(a,b)]\to Object \ b $$
+$$
+[(a, b)] \to \text{Object } b
+$$
 
--   **Details**
+- **Details**
 
-传入一个元素形如 $[a,b]$ 的元组数组，返回一个每个键值形如 ${a:b}$ 的 $Object$。
+Transforms an array of tuples into an object where the first element of each tuple is a key, and the second element is the corresponding value.
 
--   **Example**
+- **Example**
 
 ```js
 makePair([
-	['c', 'm'],
-	['a', 'e'],
-	['i', 'o']
-]); //{ c: "m", a: "e", i: "o" }
+  ['c', 'm'],
+  ['a', 'e'],
+  ['i', 'o']
+]); // { c: "m", a: "e", i: "o" }
 ```
 
 ## construct() {#construct}
 
-将一个 class 的构造函数柯里化。
+Curries a class constructor.
 
--   **Type**
+- **Type**
 
-<img class="constructFlowImage" :src="constructFlowImage()" style="margin: 0 auto;">
+Please refer to the flow image.
 
--   **Details**
+- **Details**
 
-传入一个 class，返回一个柯里化后的构造函数。
+Accepts a class and returns a curried constructor function.
 
--   **Example**
+- **Example**
 
 ```js
 class foo {
-	constructor(a, b, c) {
-		//do something...
-	}
+  constructor(a, b, c) {
+    //do something...
+  }
 }
 construct(foo)(1)(2)(3);
 ```
 
 ## has() {#has}
 
-判断 $Object$ 中是否有某属性。
+Checks if a property exists in an object.
 
--   **Type**
+- **Type**
 
-$$String|Int\to Object\to Bool$$
+$$
+\text{String|Int} \to \text{Object} \to \text{Bool}
+$$
 
--   **Details**
+- **Details**
 
-第一个参数传入一个属性名，接下来传入一个对象，若对象中有属性名对应的元素，则返回 `true`，否则返回 `false`。
+Checks if a property exists in an object and returns `true` if it does, otherwise returns `false`.
 
--   **Example**
+- **Example**
 
 ```js
-has('homo')({ homo: 1 }); //true
+has('homo')({ homo: 1 }); // true
 ```
-
-<script setup>
-import { useData } from 'vitepress'
-const { isDark } = useData()
-
-const constructFlowImage = function () {
-    if (isDark.value) {
-        return "/images/api/pureeval.ist.drawio-pi-dark.svg"
-    } else {
-        return "/images/api/pureeval.ist.drawio-pi-light.svg"
-    }
-}
-</script>

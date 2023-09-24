@@ -3,7 +3,7 @@
 import fs from 'fs'
 import path from 'path'
 import { MultiSidebarConfig } from '@vue/theme/src/vitepress/config'
-import { sidebar } from '../../.vitepress/config'
+import { cnSidebar } from '../../.vitepress/config'
 
 interface APIHeader {
   anchor: string
@@ -28,7 +28,7 @@ export default {
   watch: './*.md',
   // read from fs and generate the data
   load(): APIGroup[] {
-    return (sidebar as MultiSidebarConfig)['/api/'].map((group) => ({
+    return (cnSidebar as MultiSidebarConfig)['/api/'].map((group) => ({
       text: group.text,
       anchor: slugify(group.text),
       items: group.items.map((item) => ({
@@ -49,10 +49,7 @@ const headersCache = new Map<
 
 function parsePageHeaders(link: string) {
   // eslint-disable-next-line no-undef
-  const fullPath = path.join(__dirname, '../', link) + '.md'
-  if (!fs.existsSync(fullPath)) {
-    return;
-  }
+  const fullPath = path.join(__dirname, '../../', link) + '.md'
   const timestamp = fs.statSync(fullPath).mtimeMs
 
   const cached = headersCache.get(fullPath)

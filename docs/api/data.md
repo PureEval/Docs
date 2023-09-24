@@ -1,18 +1,18 @@
 # Data {#data-api}
 
 ::: warning
-本节内容为实验性内容，当前的性能可能不适用于正常的代码生产，本节的 API 随时可能被移除或更改。
+The content in this section is experimental. Current performance may not be suitable for regular code production, and the APIs in this section may be removed or changed at any time.
 :::
 
-本节提供了并不完美的定义抽象数据结构的方法。
+This section provides an imperfect method for defining abstract data structures.
 
 ## Data() {#data}
 
-构造一个抽象数据结构。
+Constructs an abstract data structure.
 
 -   **Details**
 
-传入一组构造函数，返回这些构造函数所组成的代数数据结构。
+Takes a set of constructor functions and returns an algebraic data structure composed of these constructors.
 
 -   **Example**
 
@@ -22,32 +22,32 @@
 const Maybe = Data('Just a', 'Nothing');
 ```
 
-此时 Maybe 对象的定义如下：
+At this point, the definition of the Maybe object is as follows:
 
 ```
 Maybe
-    - binder //用于绑定到外部环境的对象
-    - function bindShow(show) => show //设置 Data 展示方式的函数
-    - function from(data) => boolean //用以判断是否为 Maybe 类型的函数
-    - function Just(a) => (Just a) // 实际的构造函数
-    - Nothing => Nothing // 实际的构造函数
+    - binder // Object for binding to an external environment
+    - function bindShow(show) => show // Function for setting how the Data is displayed
+    - function from(data) => boolean // Function to determine whether it's of type Maybe
+    - function Just(a) => (Just a) // Actual constructor function
+    - Nothing => Nothing // Actual constructor function
 ```
 
-对于 Just/Nothing，其构造为：
+For Just/Nothing, their structures are:
 
 ```
 Just
-    - function is(data) => boolean //用以判断是否为 Just 类型的函数
+    - function is(data) => boolean // Function to determine whether it's of type Just
 
 (Just a)
     - a = a
     - args = [a]
 
 Nothing
-    - function is(data) => boolean //用以判断是否为 Nothing 类型的函数
+    - function is(data) => boolean // Function to determine whether it's of type Nothing
 ```
 
-你可以这样使用他：
+You can use it like this:
 
 ```js
 const foo = Maybe.Just(1);
@@ -59,7 +59,7 @@ Maybe.Just.is(foo); // true
 
 ##### Example 2
 
-你还可以引入多个构造参数来完成更复杂的代数数据结构：
+You can also introduce multiple constructor arguments to complete more complex algebraic data structures:
 
 ```js
 const Round = Data('Round x y r');
@@ -72,9 +72,9 @@ Square(Round.Round(1, 1, 5)); //78.5
 
 ##### Example 3
 
-如果您使用 Node.js 或者您的 env 有全局变量这一概念，您可以直接把 Data 绑定到环境中：
+If you are using Node.js, or your environment has the concept of global variables, you can directly bind Data to the environment:
 
-每个代数数据类型的 binder 属性提供了可以安全绑定到全局的量的对象集合，他们只会包含每个类型的构造函数。
+Each algebraic data type's `binder` property provides a collection of quantities that can be safely bound to the global scope. These will only include the constructors for each type.
 
 ```js
 Object.assign(global, Data('Round x y r').binder);
@@ -87,9 +87,9 @@ Square(Round(1, 1, 5)); //78.5
 
 ##### Example 4
 
-您可以使用 bindShow 为您的代数数据类型定义 show 方法来将代数类型与基本类型转换。
+You can use `bindShow` to define a `show` method for your algebraic data types to convert between algebraic types and basic types.
 
-请注意：show 方法在未经过 bindShow 绑定前将返回该类型的类型名称。
+Note: The `show` method will return the type name of that type before it is bound by `bindShow`.
 
 ```js
 const Nat = Data('Succ m', 'Zero');

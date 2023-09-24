@@ -1,8 +1,8 @@
 # Either {#either-api}
 
-Either 是一个用来安全实现处理错误的流程的函子，分为右值(Right)与左值(Left)。
+`Either` is a functor used for safely implementing error-handling flows, consisting of a Right value and a Left value.
 
-此处是一个 Either 函子使用的总例。
+Here's an example demonstrating the use of the `Either` functor:
 
 ```js
 function parseJSON(str) {
@@ -17,63 +17,71 @@ function parseJSON(str) {
 parseJSON('{sfdas').map(JSON.stringify).fold(console.error, console.log);
 ```
 
-## Right/Left{#right-left}
+## Right/Left {#right-left}
 
-Right 代表可以被接受的值，其中的值将会被 Either 链一直传递并参与映射。
-Left 代表发生错误的值，其中的值会被 Either 链只读传递。
+`Right` represents an acceptable value, and its value will be propagated through the `Either` chain and participate in mapping.  
+`Left` represents an erroneous value, and its value will be passed through the `Either` chain in a read-only manner.
 
-在 Right 执行过程中如果产生错误，该 Right 值会变为 Left。
+If an error occurs during the execution of `Right`, the `Right` value will turn into `Left`.
 
 -   **Type**
 
-$$a\to Either\ a$$
+$$
+a \to Either\ a
+$$
 
 -   **Example**
 
 ```js
-Right(1); //Right 1
-Left(1); //Left 1
+Right(1); // Right 1
+Left(1); // Left 1
 ```
 
 ## Either.map() {#map}
 
-将 Right/Left 中的值进行映射。
+Maps the values inside `Right` or `Left`.
 
 -   **Type**
 
-$$Either\ a\to (a\to b)\to Either\ b$$
+$$
+Either\ a \to (a \to b) \to Either\ b
+$$
 
 -   **Example**
 
 ```js
-Right(1).map(add(1)); //Right 2
-Left(1).map(add(1)); //Left 1
+Right(1).map(add(1)); // Right 2
+Left(1).map(add(1)); // Left 1
 ```
 
 ## Either.fold() {#fold}
 
-将 Either 中的值进行映射并折叠出值。
+Maps and folds the values inside `Either`.
 
-传入一个 reject 函数与一个 resolve 函数，对于 Right 只会执行 resolve，而对于 Left 只会执行 reject。
+Pass in a `reject` function and a `resolve` function. For `Right`, only `resolve` will be executed, and for `Left`, only `reject` will be executed.
 
 -   **Type**
 
-$$Either\ a\to(e\to a)\to(b\to\  c)\to c$$
+$$
+Either\ a \to (e \to a) \to (b \to c) \to c
+$$
 
 -   **Example**
 
 ```js
-Right(1).map(add(1)).fold(console.error, id); //2
-Light(1).map(add(1)).fold(console.error, id); //err: 1
+Right(1).map(add(1)).fold(console.error, id); // 2
+Left(1).map(add(1)).fold(console.error, id); // err: 1
 ```
 
 ## Either.chain() {#chain}
 
-向 Either 链后添加新的 Either 任务。
+Adds a new `Either` task to the end of the `Either` chain.
 
 -   **Type**
 
-$$Either\ a\to(a\to Either \ b)\to Either \ b$$
+$$
+Either\ a \to (a \to Either\ b) \to Either\ b
+$$
 
 -   **Example**
 

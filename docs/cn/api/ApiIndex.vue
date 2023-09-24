@@ -49,11 +49,6 @@ const filtered = computed(() => {
 </script>
 
 <template>
-  <div class="section-content">
-    <span>
-      Translation for this page is in progress for English users, some content may not be available.
-    </span>
-  </div>
   <div id="api-index">
     <div class="header">
       <h1>API Reference</h1>
@@ -108,26 +103,6 @@ const filtered = computed(() => {
 </template>
 
 <style scoped>
-.section-content {
-  background-color: whitesmoke;
-  -webkit-text-size-adjust: 100%;
-  quotes: "“" "”";
-  font-size: 17px;
-  line-height: 1.47059;
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: rgb(29, 29, 31);
-  font-style: normal;
-  font-synthesis: none;
-  -webkit-font-smoothing: antialiased;
-  direction: 1tr;
-  text-align: center;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-
 #api-index {
   max-width: 1024px;
   margin: 0px auto;
@@ -246,22 +221,18 @@ h2 {
   #api-index {
     padding: 42px 24px;
   }
-
   h1 {
     font-size: 32px;
     margin-bottom: 24px;
   }
-
   h2 {
     font-size: 22px;
     margin: 42px 0 32px;
     padding-top: 32px;
   }
-
   .api-groups a {
     font-size: 14px;
   }
-
   .header {
     display: block;
   }

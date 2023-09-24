@@ -2,17 +2,19 @@
 
 ## filter() {#filter}
 
-从列表中筛选符合条件的元素。
+Filters elements in a list based on a condition.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to [a]$$
+$$
+(a \to \text{Bool}) \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个检验函数，第二个参数传入一个列表。
+The first argument is a test function, and the second argument is a list.
 
-返回值为一个列表，为所有作为参数可使检验函数函数值为 `true` 的元素。
+The return value is a list containing all the elements for which the test function returns `true`.
 
 -   **Example**
 
@@ -22,17 +24,19 @@ filter((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[1, 1, 1]
 
 ## reject() {#reject}
 
-从列表中筛选不符合条件的元素。
+Filters elements in a list that do not meet a certain condition.
 
 -   **Type**
 
-$$(a\to Bool)\to [a]\to [a]$$
+$$
+(a \to \text{Bool}) \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个检验函数，第二个参数传入一个列表。
+The first argument is a test function, and the second argument is a list.
 
-返回值为一个列表，为所有作为参数可使检验函数函数值为 `false` 的元素。
+The return value is a list containing all the elements for which the test function returns `false`.
 
 -   **Example**
 
@@ -42,17 +46,19 @@ reject((v) => v == 1)([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 
 ## shield() {#shield}
 
-从列表中删除指定的元素列表中的元素。
+Removes specified elements from a list.
 
 -   **Type**
 
-$$[a]\to [a]\to [a]$$
+$$
+[a] \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个屏蔽列表，第二个参数传入一个待处理列表。
+The first argument is a list of elements to be removed (shield list), and the second argument is the list to be processed.
 
-返回值为待处理列表中删除屏蔽列表中元素后的结果。
+The return value is the list after removing the elements present in the shield list.
 
 -   **Example**
 
@@ -62,17 +68,19 @@ shield([1])([1, 1, 4, 5, 1, 4]); //[4, 5, 4]
 
 ## choose() {#choose}
 
-从列表中选定指定的元素列表中的元素。
+Selects specified elements from a list.
 
 -   **Type**
 
-$$[a]\to [a]\to [a]$$
+$$
+[a] \to [a] \to [a]
+$$
 
 -   **Details**
 
-第一个参数传入一个允许通入列表，第二个参数传入一个待处理列表。
+The first argument is a list of elements to be included (allow list), and the second argument is the list to be processed.
 
-返回值为待处理列表与允许通入列表的交集列表。
+The return value is the intersection list of the list to be processed and the allow list.
 
 -   **Example**
 
