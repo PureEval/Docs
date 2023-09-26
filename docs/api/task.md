@@ -1,4 +1,4 @@
-## Task {#task-api}
+# Task {#task-api}
 
 Task can safely handle asynchronous operations and can be considered as the asynchronous version of the Either functor.
 
@@ -17,7 +17,7 @@ function myReadFile(fileName) {
 myReadFile('test.js').map(trim).map(toUpper).fold(console.error, console.log);
 ```
 
-### Task {#task}
+## Task {#task}
 
 The constructor function for Task, used for regular Task construction.
 
@@ -36,7 +36,7 @@ Task((reject, resolve) => {
 }); //Task actually 114514
 ```
 
-### Task.map() {#taskmap}
+## Task.map() {#taskmap}
 
 Maps over the value inside the Task.
 
@@ -55,7 +55,7 @@ Task((reject, resolve) => {
 }).map(add(1)); //Task actually 114514
 ```
 
-### Task.chain() {#taskchain}
+## Task.chain() {#taskchain}
 
 Chains a new Task operation after the current Task.
 
@@ -86,7 +86,7 @@ combinedTask.fold(
 );
 ```
 
-### Task.fold() {#taskfold}
+## Task.fold() {#taskfold}
 
 Extracts the value from the Task by applying two handling functions; the first one for the `reject` case and the second one for the `resolve` case.
 
