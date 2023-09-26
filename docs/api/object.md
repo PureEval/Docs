@@ -1,5 +1,7 @@
 # Object {#object-api}
 
+> Convention: $Object \ a$ refers to the type $a$ of the properties in the $Object$ being processed by a function.
+
 ## prop() {#prop}
 
 Fetches a property from an object.
