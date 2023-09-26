@@ -8,9 +8,9 @@ Performs high-dimensional function composition from left to right.
 
 Note: The type is not unique and depends on the offset array.
 
-\[
+$$
 [(a \to a), \ldots, (a \to a)] \to [Int] \to (a \to a)
-\]
+$$
 
 - **Details**
 
@@ -34,9 +34,9 @@ Performs high-dimensional function composition from right to left.
 
 Note: The type is not unique and depends on the offset array.
 
-\[
+$$
 [(a \to a), \ldots, (a \to a)] \to [Int] \to (a \to a)
-\]
+$$
 
 - **Details**
 
@@ -60,9 +60,9 @@ Generates a function that supports infinite iteration.
 
 - **Type**
 
-\[
+$$
 a \to (a \to a) \to (() \to a)
-\]
+$$
 
 - **Details**
 
@@ -91,9 +91,9 @@ Generates a state machine function that shifts states through an offset.
 
 Note: The type is not unique and depends on the offset array.
 
-\[
+$$
 a \to [(a \to b), \ldots, (c \to d)] \to ([Int] \to d)
-\]
+$$
 
 - **Details**
 
