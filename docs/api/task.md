@@ -23,9 +23,9 @@ The constructor function for Task, used for regular Task construction.
 
 - **Type**
 
-\[
+$$
 (reject \to e, resolve \to a) \to Task\ (a|e)
-\]
+$$
 
 - **Example**
 
@@ -42,9 +42,9 @@ Maps over the value inside the Task.
 
 - **Type**
 
-\[
+$$
 Task\ (a|e) \to (a \to b) \to Task\ (b|e)
-\]
+$$
 
 - **Example**
 
@@ -61,9 +61,9 @@ Chains a new Task operation after the current Task.
 
 - **Type**
 
-\[
+$$
 Task\ (a|e) \to (a \to Task(b|e)) \to Task\ (b|e)
-\]
+$$
 
 - **Example**
 
@@ -92,9 +92,9 @@ Extracts the value from the Task by applying two handling functions; the first o
 
 - **Type**
 
-\[
+$$
 Task\ (a|e) \to (e \to b) \to (a \to c) \to a|c
-\]
+$$
 
 - **Example**
 
