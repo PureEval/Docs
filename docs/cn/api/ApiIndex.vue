@@ -51,14 +51,14 @@ const filtered = computed(() => {
 <template>
   <div id="api-index">
     <div class="header">
-      <h1>API Reference</h1>
+      <h1>API 参考</h1>
       <div class="api-filter">
-        <label for="api-filter">Filter</label>
+        <label for="api-filter">筛选</label>
         <input
           id="api-filter"
           v-model="query"
           type="search"
-          placeholder="Enter keyword"
+          placeholder="输入关键词"
         >
       </div>
     </div>

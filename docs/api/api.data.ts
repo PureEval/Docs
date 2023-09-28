@@ -51,7 +51,7 @@ function parsePageHeaders(link: string) {
   // eslint-disable-next-line no-undef
   const fullPath = path.join(__dirname, '../', link) + '.md'
   if (!fs.existsSync(fullPath)) {
-    return;
+    return [{text: 'Translation not available.', anchor: 'utrs'}]
   }
   const timestamp = fs.statSync(fullPath).mtimeMs
 

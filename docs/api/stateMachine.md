@@ -82,7 +82,7 @@ foo(); //3
 ### stateMachine() {#stateMachine}
 
 ::: warning
-Although this function is a pure function, its return value is not a pure function (Pure Function), meaning it may have different return values for the same parameters.
+Although this function is a pure function, its return value is not a pure function, meaning it may have different return values for the same parameters.
 :::
 
 Generates a state machine function that shifts states through an offset.
