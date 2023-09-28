@@ -1,8 +1,6 @@
 # List (Cons-based) {#listc-api}
 
-::: warning
-This section contains experimental features. The current performance may not be suitable for regular code production, and the APIs in this section may be removed or changed at any time.
-:::
+<!--@include: ./Experimental.md-->
 
 The List in this section specifically refers to the Cons List commonly defined in most functional programming languages, as opposed to the Array-based List defined in another section of this library.
 

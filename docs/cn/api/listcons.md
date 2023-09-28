@@ -1,8 +1,6 @@
 # List {#listc-api}
 
-::: warning
-本节内容为实验性内容，当前的性能可能不适用于正常的代码生产，本节的 API 随时可能被移除或更改。
-:::
+<!--@include: ./Experimental.md-->
 
 本节的 List 特指大部分函数式编程语言中基于 Cons 方法定义的 List，而非本库中另一节所定义的基于 Array 的 List。
 

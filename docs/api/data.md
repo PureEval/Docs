@@ -1,8 +1,6 @@
 # Data {#data-api}
 
-::: warning
-The content in this section is experimental. Current performance may not be suitable for regular code production, and the APIs in this section may be removed or changed at any time.
-:::
+<!--@include: ./Experimental.md-->
 
 This section provides an imperfect method for defining abstract data structures.
 
