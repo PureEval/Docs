@@ -75,6 +75,10 @@ export default defineConfig({
     title: 'PureEval',
     description: 'PureEval Documentation',
 
+    sitemap: {
+        hostname: 'https://pureeval.org'
+    },
+
     lastUpdated: true,
 
     themeConfig: {
