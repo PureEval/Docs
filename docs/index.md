@@ -2,7 +2,7 @@
 layout: home
 
 title: PureEval
-titleTemplate: A JavaScript Functional Programming Toolset
+titleTemplate: A JavaScript Functional Programming Library
 
 hero:
   name: PureEval

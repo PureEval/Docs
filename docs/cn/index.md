@@ -2,12 +2,12 @@
 layout: home
 
 title: PureEval
-titleTemplate: A JavaScript Functional Programming Toolset
+titleTemplate: A JavaScript Functional Programming Library
 
 hero:
   name: PureEval
   text: Functional Programming in JavaScript
-  tagline: 即开即用的 JavaScript 函数式编程库。
+  tagline: 开箱即用的 JavaScript 函数式编程库。
   actions:
     - theme: brand
       text: Get Started (English)
@@ -21,12 +21,4 @@ hero:
     - theme: alt
       text: Blog
       link: /blog/index
-
-# features:
-#   - title: Currying or Partial Evaluation
-#     details: Support for functions with arbitrary arguments to be curried.
-#   - title: Everything you need for Functional Programming with JavaScript
-#     details: PureEval has built-in Monad and Optics components, and unique non-variable binding iterate strategy included.
-#   - title: Lightweight
-#     details: PureEval is lightweight and easy to integrate.
 ---

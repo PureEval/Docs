@@ -73,7 +73,7 @@ export const cnSidebar = {
 export default defineConfig({
     lang: 'en-US',
     title: 'PureEval',
-    description: 'PureEval Documentation',
+    description: 'Functional Programming in JavaScript | PureEval',
 
     sitemap: {
         hostname: 'https://pureeval.org'
@@ -82,6 +82,11 @@ export default defineConfig({
     lastUpdated: true,
 
     themeConfig: {
+
+        search: {
+            provider: 'local'
+        },
+
         socialLinks: [
             { icon: 'github', link: 'https://github.com/PureEval/PureEval' },
         ],
@@ -120,6 +125,10 @@ export default defineConfig({
                         text: 'Blog', link: '/blog/', activeMatch: '/blog'
                     }
                 ],
+
+                lastUpdated: {
+                    text: '最近一次更新'
+                }
             }
         },
         root: {
