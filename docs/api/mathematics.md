@@ -311,9 +311,7 @@ Takes an array of numbers as an argument; returns its median.
 -   **Example**
 
 ```js
-median([1, 2, 3, 
-
-4, 5, 6]); // 3.5
+median([1, 2, 3, 4, 5, 6]); // 3.5
 ```
 
 ## sum() {#sum}
